@@ -1,0 +1,136 @@
+html {
+    background-image: url(Resource/background.png);
+    background-size: cover;
+    background-repeat: repeat-y;
+}
+body {
+    width: 700px;
+	height: 1488px;
+    background-color: #f6fbfd;
+    margin: 0 auto;
+    -moz-box-shadow:    0px 3px 3px 2px #333;
+    -webkit-box-shadow: 0px 3px 3px 2px #333;
+    box-shadow:         0px 3px 3px 2px #333;
+    font-family: "Helvetica", "맑은 고딕", Helvetica, Arial, sans-serif;
+}
+#verse{
+width: 1px;
+height: 140px;
+float: left;
+}
+#title{
+width: 700px;
+}
+#totalscore{
+margin-top: 10px;
+margin-bottom: 10px;
+}
+#KAISTtotalscore{
+	height: 150px;
+	display: inline;
+	
+}
+#POSTECHtotalscore{
+	height: 150px;
+	display: inline;
+	float: left;
+}
+#KAIST{
+font-size: 35pt;
+text-align: center;
+font-color: blue;
+}
+.score{
+font-size: 50pt;
+text-align: center;
+border-top: 10px;
+}
+#POSTECH{
+font-size: 35pt;
+text-align: center;
+}
+.total{
+width: 339px;
+float: left;
+}
+.border {
+    width: 680px;
+    height: 2px;
+    background-color: #666;
+	float: left;
+	}
+ul {
+    padding-left: 0px;
+}
+ul li {
+    list-style: none;
+    display: inline;
+    float: left;
+    margin-bottom: 30px;
+}
+.score {
+    font-family: Arial;
+    font-size: 80px;
+    text-align: center;
+}
+#container {
+    margin-left: 20px;
+}
+#up {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+#up_img {
+    margin-top: 20px;
+	width: 680px;
+}
+#footer {
+    background-color:#444;
+    /*height: 20px;*/
+}
+#hacking {
+    background-image:url(Resource/hacking.png);
+}
+#prof_soccer {
+    background-image:url(Resource/soccer_prof.png);
+}
+#basketball {
+    background-image:url(Resource/basketball.png);
+}
+#ai {
+    background-image:url(Resource/ai.png);
+}
+#lol {
+    background-image:url(Resource/lol.png);
+}
+#baseball {
+    background-image:url(Resource/baseball.png);
+}
+#sciencequiz {
+    background-image:url(Resource/sciencequiz.png);
+}
+#soccer {
+    background-image:url(Resource/soccer.png);
+}
+.match {
+    padding-top:61px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    width: 450px;
+    height: 111px;
+    -moz-box-shadow:    0px 3px 3px 2px #333;
+    -webkit-box-shadow: 0px 3px 3px 2px #333;
+    box-shadow:         0px 3px 3px 2px #333;
+}
+.KaistScore {
+    
+}
+table {
+    border: 1px solid black;
+}
+tr {
+    border : 1px solid black;
+}
+td {
+    border : 1px solid black;
+}
