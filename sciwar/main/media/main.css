@@ -1,5 +1,5 @@
 html {
-    background-image: url(Resource/background.png);
+    background-image: url(/background.png);
     background-size: cover;
     background-repeat: repeat-y;
 }
@@ -89,28 +89,28 @@ ul li {
     /*height: 20px;*/
 }
 #hacking {
-    background-image:url(Resource/hacking.png);
+    background-image:url(hacking.png);
 }
 #prof_soccer {
-    background-image:url(Resource/soccer_prof.png);
+    background-image:url(soccer_prof.png);
 }
 #basketball {
-    background-image:url(Resource/basketball.png);
+    background-image:url(basketball.png);
 }
 #ai {
-    background-image:url(Resource/ai.png);
+    background-image:url(ai.png);
 }
 #lol {
-    background-image:url(Resource/lol.png);
+    background-image:url(lol.png);
 }
 #baseball {
-    background-image:url(Resource/baseball.png);
+    background-image:url(baseball.png);
 }
 #sciencequiz {
-    background-image:url(Resource/sciencequiz.png);
+    background-image:url(sciencequiz.png);
 }
 #soccer {
-    background-image:url(Resource/soccer.png);
+    background-image:url(soccer.png);
 }
 .match {
     padding-top:61px;
