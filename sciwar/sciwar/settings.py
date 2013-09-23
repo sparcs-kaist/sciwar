@@ -57,7 +57,7 @@ MEDIA_ROOT = PROJECT_PATH + '/../main/media/'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = PROJECT_PATH + '/../main/media/'
+MEDIA_URL = '/media/'
 
 
 # Absolute path to the directory static files should be collected to.
