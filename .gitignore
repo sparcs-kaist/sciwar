@@ -9,6 +9,6 @@ src/*.egg-info
 lib
 lib64
 *.pyc
-.swp
-swp
+<<<<<<< HEAD
 .gitignore
+*.swp
