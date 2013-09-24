@@ -1,0 +1,191 @@
+/* COMMON STYLESHEET */
+
+*{
+	font-family: "Roboto", serif;
+	display:block;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+}
+script{
+	display:none;
+}
+a{
+	text-decoration:none;
+}
+title{
+	display:none;
+}
+body{
+	width:100%;
+	height:100%;
+	background:#e4e4e4;
+}
+#wrapper{
+	width:960px;
+	margin:0 auto;
+}
+.test{
+	font-size:40px;
+	color:orangered;
+	background:blue;
+}
+aside{
+	width:276px;
+	margin-top:24px;
+	margin-right:24px;
+	float:left;
+}
+#content{
+	width:660px;
+	margin-top:24px;
+	float:right;
+}
+
+/* HEADER */
+
+header{
+	width:100%;
+	height:70px;
+	background:#1b2023;
+}
+header *{
+	font-family:"Roboto Condensed", sans-serif;
+	text-transform:uppercase;
+}
+header #header-content{
+	width:960px;
+	height:100%;
+	margin:0 auto;
+}
+header #logo{
+	float:left;
+	height:24px;
+	margin-top:23px;
+	display:inline-block;
+}
+header #logo a#nav-home{
+	margin-top:-1px;
+	font-size:24px;
+	line-height:24px;
+	font-weight:400;
+	color:#fff;
+	padding-left:48px;
+	background:transparent url("/media/res/img_logo.png") left 1px no-repeat;
+	float:left;
+	margin-right:10px;
+}
+header #logo span{
+	font-size:0;
+	width:56px;
+	height:24px;
+	background:transparent url("/media/res/img_onair.png") top left no-repeat;
+}
+header #nav{
+	float:right;
+}
+header #nav a{
+	float:left;
+	margin-left:40px;
+	color:#fff;
+	font-size:18px;
+	line-height:22px;
+	font-weight:300;
+	height:24px;
+	padding-left:34px;
+	margin-top:23px;
+	padding-bottom:23px;
+}
+header #nav a:hover{
+	box-shadow:inset 0 -4px 0 #ed462f;
+	-moz-box-shadow:inset 0 -4px 0 #ed462f;
+	-webkit-box-shadow:inset 0 -4px 0 #ed462f;
+}
+header #nav a#nav-info{
+	background:transparent url("/media/res/icon_nav_info_nor.png") top left no-repeat;
+}
+header #nav a#nav-schedule{
+	background:transparent url("/media/res/icon_nav_schedule_nor.png") top left no-repeat;
+}
+header #nav a#nav-map{
+	background:transparent url("/media/res/icon_nav_map_nor.png") top left no-repeat;
+}
+header #nav a#nav-video{
+	background:transparent url("/media/res/icon_nav_video_nor.png") top left no-repeat;
+}
+header #nav a.sel{
+	box-shadow:inset 0 -4px 0 #ed462f;
+	-moz-box-shadow:inset 0 -4px 0 #ed462f;
+	-webkit-box-shadow:inset 0 -4px 0 #ed462f;
+}
+
+/* ASIDE */
+
+aside #total-score{
+	width:100%;
+	height:210px;
+	border-radius:2px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	background:#fff;
+}
+aside #total-score section{
+	width:120px;
+	height:116px;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	background:#37bec9;
+	float:left;
+	margin-left:12px;
+	margin-top:20px;
+}
+aside #total-score section *{
+	font-family:"Roboto Condensed", sans-serif;
+}
+aside #total-score section h2{
+	width:100%;
+	height:30px;
+	padding-top:6px;
+	font-size:20px;
+	line-height:20px;
+	font-weight:400;
+	color:#aae0e4;
+	text-align:center;
+	background:#199ea7;
+}
+aside #total-score section p{
+	width:100%;
+	font-size:56px;
+	font-weight:700;
+	color:#fff;
+	line-height:56px;
+	text-align:center;
+	margin-top:9px;
+}
+aside #total-score section.process{
+	width:100%;
+	height:54px;
+	clear:both;
+	border:none;
+	background:#f5f5f5;
+	margin-left:0;
+}
+aside #total-score section.process h2{
+	display:none;
+}
+aside #total-score section.process p{
+	width:100%;
+	font-family:"Roboto", sans-serif;
+	font-size:20px;
+	font-weight:300;
+	line-height:20px;
+	color:#bdbdbd;
+	margin-top:15px;
+}
+
+/* OPTION */
+
+aside #option{
+	margin-top:16px;
+}

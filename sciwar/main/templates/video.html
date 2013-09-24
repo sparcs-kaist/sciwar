@@ -1,28 +1,30 @@
 {% extends "layout.html" %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/video.css">
+{% endblock %}
 {% block right %}
-<link rel="stylesheet" type="text/css" href="/media/video.css" media="screen">
 <div class="video-item">
-	<div class="video-info">
-		<div class="video-title">
-			Video Title
-		</div>
-		<div class="video-event-info">
-			<div class="video-event">
-				Event Name
-			</div>
-			<div class="video-time">
-				Event Time
-			</div>
-		</div>
-	</div>
-	<div class="video-area">
-		<iframe width="420" height="345"
-			src="http://www.youtube.com/embed/CM-3W_QXan8">
-		</iframe>
-	</div>
-	<div class="video-link">
-		<a href="http://www.youtube.com/watch?v=CM-3W_QXan8">Video Link</a>
-	</div>
+    <div class="video-info">
+        <div class="video-title">
+            Video Title
+        </div>
+        <div class="video-event-info">
+            <div class="video-event">
+                Event Name
+            </div>
+            <div class="video-time">
+                Event Time
+            </div>
+        </div>
+    </div>
+    <div class="video-area">
+        <iframe width="420" height="345"
+            src="http://www.youtube.com/embed/CM-3W_QXan8">
+        </iframe>
+    </div>
+    <div class="video-link">
+        <a href="http://www.youtube.com/watch?v=CM-3W_QXan8">Video Link</a>
+    </div>
 </div>
 {% endblock %}
 

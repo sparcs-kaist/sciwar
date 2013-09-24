@@ -5,14 +5,17 @@ from django.db import models
 def main_page(request):
     return render(request, 'index.html')
 
-def proto(request):
-    return render(request, 'main.html')
-
-def video_page(request):
-    return render(request, 'video.html')
+def info_page(request):
+    return render(request, 'info.html')
 
 def schedule_page(request):
     return render(request, 'schedule.html')
+
+def map_page(request):
+    return render(request, 'map.html')
+
+def video_page(request):
+    return render(request, 'video.html')
 
 def _get_kaist_total_score():
     kaist_total = 0
