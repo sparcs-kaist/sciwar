@@ -24,6 +24,7 @@ class Video(models.Model):
 class Event(models.Model):
     event_id = models.IntegerField()
     event_name = models.CharField(max_length=100,db_index=True)
+    event_is_finished = models.BooleanField()
     event_time = models.DateTimeField()
     event_building = models.ForeignKey(Building,db_index=True)
     event_kaist_score = models.SmallIntegerField()
@@ -39,4 +40,4 @@ class PlayerAdmin(admin.ModelAdmin):
     list_display = ('player_name', 'player_school')
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('event_id', 'event_name', 'event_time', 'event_building', 'event_kaist_score', 'event_postech_score', 'event_kaist_players', 'event_postech_players', 'event_videos')
+    list_display = ('event_id', 'event_name', 'event_time', 'event_is_finished', 'event_building', 'event_kaist_score', 'event_postech_score', 'event_kaist_players', 'event_postech_players', 'event_videos')
