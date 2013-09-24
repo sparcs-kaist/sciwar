@@ -6,6 +6,7 @@ from django.conf import settings
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+        url(ur'^$', 'main.views.main_page'),
         url(ur'^main', 'main.views.proto'),
         url(ur'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
     # Examples:
