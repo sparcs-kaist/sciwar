@@ -5,6 +5,7 @@ from django.contrib import admin
 SCHOOLS = (
     (1, u'KAIST'),
     (2, u'POSTECH'),
+    (3, u'NONE'),
 )
 
 NOTIFY = (
@@ -19,14 +20,15 @@ class Player(models.Model):
 
 class Event(models.Model):
     name = models.CharField(max_length=100,db_index=True)
-    is_finished = models.BooleanField()
+    winner = models.SmallIntegerField(choices=SCHOOLS)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     building = models.CharField(max_length=50)
     kaist_score = models.SmallIntegerField()
     postech_score = models.SmallIntegerField()
-    kaist_players = models.ManyToManyField(Player, related_name='KAIST', null=True, db_index=True)
-    postech_players = models.ManyToManyField(Player, related_name='POSTECH', null=True, db_index=True)
+    score = models.SmallIntegerField()
+    kaist_players = models.ManyToManyField(Player, related_name='KAIST', blank=True, db_index=True)
+    postech_players = models.ManyToManyField(Player, related_name='POSTECH', blank=True, db_index=True)
 
 class Video(models.Model):
     link = models.CharField(max_length=300,db_index=True)
@@ -47,7 +49,7 @@ class VideoAdmin(admin.ModelAdmin):
     list_display = ('link','name','time','event')
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('name', 'is_finished', 'start_time', 'end_time', 'building', 'kaist_score', 'postech_score')
+    list_display = ('name', 'winner', 'score', 'start_time', 'end_time', 'building', 'kaist_score', 'postech_score')
 
 class InforAdmin(admin.ModelAdmin):
     list_display = ('title', 'content', 'category', 'time')
