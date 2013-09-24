@@ -1,3 +1,4 @@
+/* block right */
 .video-item
 {
     background-color: #FFFFFF;
@@ -30,4 +31,29 @@
 .video-link
 {
     color: #3366FF;
+}
+
+/* block leftdown */
+#video-lister
+{
+    background-color: #FFFFFF;
+    padding: 10px;
+}
+
+.lister-selector
+{
+   margin-top: 10px; 
+}
+
+.title
+{
+    
+}
+
+.criterion
+{
+    background-color: #E8E8E8;
+    margin-bottom: 5px;
+    padding: 10px;
+    color: #808080;
 }
