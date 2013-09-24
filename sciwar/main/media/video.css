@@ -1,0 +1,33 @@
+.video-item
+{
+    background-color: #FFFFFF;
+    padding: 5px;
+    width: 660px;
+}
+
+.video-event-info
+{
+    height: 18px;
+}
+
+.video-title
+{
+    color: #303030;
+}
+
+.video-event
+{
+    color: #A0A0A0;
+    float: left;
+}
+
+.video-time
+{
+    color: #C8C8C8;
+    float: right;
+}
+
+.video-link
+{
+    color: #3366FF;
+}

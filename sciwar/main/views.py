@@ -8,6 +8,9 @@ def main_page(request):
 def proto(request):
     return render(request, 'main.html')
 
+def video_page(request):
+    return render(request, 'video.html')
+
 def _get_kaist_total_score():
     kaist_total = 0
     events_list = Event.objects.all()
