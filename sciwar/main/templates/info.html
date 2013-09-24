@@ -1,2 +1,56 @@
 {% extends 'layout.html' %}
+{% block style %}
+<link rel="stylesheet" type="text/css" media="screen" href="{{STATIC_URL}}css/info.css">
+{% endblock %}
 {% block info %}sel{% endblock %}
+{% block right %}
+<div class="info-field">
+	<div class="info-classify">	
+		<!-- NOTICE OR INFO IMAGE HERE -->
+		NOTICE
+	</div>
+	<div class="info-title">
+		TITLE OF ARTICLE
+	</div>
+	<div class="info-date">
+		2013.09.25
+	</div>
+	<div class="info-article">
+		<!-- ADD |SAFE when using variables -->
+		PROF. SOCCER is the contest with professors at kaist and postech.
+		They do soccer game and play with students.
+
+	</div>
+</div>
+{% endblock %}
+{% block leftdown %}
+<div class="info-show">
+	<div class="info-standard">
+		SORT BY
+	</div>
+	<div class="info-click">
+		<div class="info-detail">
+			ALL
+		</div>
+		<div class="info-click-img">
+			>
+		</div>
+	</div>
+	<div class="info-click">
+		<div class="info-detail">
+			NOTICE
+		</div>
+		<div class="info-click-img">
+			>
+		</div>
+	</div>
+	<div class="info-click">
+		<div class="info-detail">
+			INFORMATION
+		</div>
+		<div class="info-click-img">
+			>
+		</div>
+	</div>
+</div>
+{% endblock %}
