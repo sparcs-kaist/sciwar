@@ -24,6 +24,7 @@ body
 }
 .tab_text
 {
+    float:left;
     margin-left:10px;
     font-size:10px;
 }
