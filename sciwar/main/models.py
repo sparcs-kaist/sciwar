@@ -7,37 +7,52 @@ SCHOOLS = (
     (2, u'POSTECH'),
 )
 
-class Building(models.Model):
-    building_name = models.CharField(max_length=100,db_index=True)
-    building_location_x = models.SmallIntegerField() # 지도상의 x,y
-    building_location_y = models.SmallIntegerField()
+NOTIFY = (
+        (1, u'NOTICE'),
+        (2, u'INFOMATION'),
+)
 
 class Player(models.Model):
-    player_name = models.CharField(max_length=100,db_index=True)
-    player_school = models.SmallIntegerField(choices=SCHOOLS)
+    name = models.CharField(max_length=100,db_index=True)
+    school = models.SmallIntegerField(choices=SCHOOLS)
 
-class Video(models.Model):
-    video_link = models.CharField(max_length=300,db_index=True)
-    video_name = models.CharField(max_length=100)
-    video_time = models.DateTimeField()
 
 class Event(models.Model):
-    event_id = models.IntegerField()
-    event_name = models.CharField(max_length=100,db_index=True)
-    event_is_finished = models.BooleanField()
-    event_time = models.DateTimeField()
-    event_building = models.ForeignKey(Building,db_index=True)
-    event_kaist_score = models.SmallIntegerField()
-    event_postech_score = models.SmallIntegerField()
-    event_kaist_players = models.ForeignKey(Player, related_name='KAIST', db_index=True)
-    event_postech_players = models.ForeignKey(Player, related_name='POSTECH', db_index=True)
-    event_videos = models.ForeignKey(Video, db_index=True) # 경기 끝난 후 올라가는 영상들
+    name = models.CharField(max_length=100,db_index=True)
+    is_finished = models.BooleanField()
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+    building = models.CharField(max_length=50)
+    kaist_score = models.SmallIntegerField()
+    postech_score = models.SmallIntegerField()
+    kaist_players = models.ManyToManyField(Player, related_name='KAIST', null=True, db_index=True)
+    postech_players = models.ManyToManyField(Player, related_name='POSTECH', null=True, db_index=True)
 
-class BuildingAdmin(admin.ModelAdmin):
-    list_display = ('building_name', 'building_location_x', 'building_location_y')
+class Video(models.Model):
+    link = models.CharField(max_length=300,db_index=True)
+    name = models.CharField(max_length=100)
+    time = models.DateTimeField()
+    event = models.ForeignKey(Event, db_index=True) # 경기 끝난 후 올라가는 영상들
+
+class Infor(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField(blank=True)
+    category = models.SmallIntegerField(choices=NOTIFY)
+    time = models.DateTimeField()
 
 class PlayerAdmin(admin.ModelAdmin):
-    list_display = ('player_name', 'player_school')
+    list_display = ('name', 'school')
+
+class VideoAdmin(admin.ModelAdmin):
+    list_display = ('link','name','time','event')
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('event_id', 'event_name', 'event_time', 'event_is_finished', 'event_building', 'event_kaist_score', 'event_postech_score', 'event_kaist_players', 'event_postech_players', 'event_videos')
+    list_display = ('name', 'is_finished', 'start_time', 'end_time', 'building', 'kaist_score', 'postech_score')
+
+class InforAdmin(admin.ModelAdmin):
+    list_display = ('title', 'content', 'category', 'time')
+
+admin.site.register(Player, PlayerAdmin)
+admin.site.register(Video, VideoAdmin)
+admin.site.register(Event, EventAdmin)
+admin.site.register(Infor, InforAdmin)
