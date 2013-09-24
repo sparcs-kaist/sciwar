@@ -7,14 +7,11 @@
 	margin:0;
 	padding:0;
 }
-script{
+script, title, style{
 	display:none;
 }
 a{
 	text-decoration:none;
-}
-title{
-	display:none;
 }
 body{
 	width:100%;
@@ -112,6 +109,18 @@ header #nav a#nav-map{
 }
 header #nav a#nav-video{
 	background:transparent url("/media/res/icon_nav_video_nor.png") top left no-repeat;
+}
+header #nav a#nav-info.sel{
+	background:transparent url("/media/res/icon_nav_info_sel.png") top left no-repeat;
+}
+header #nav a#nav-schedule.sel{
+	background:transparent url("/media/res/icon_nav_schedule_sel.png") top left no-repeat;
+}
+header #nav a#nav-map.sel{
+	background:transparent url("/media/res/icon_nav_map_sel.png") top left no-repeat;
+}
+header #nav a#nav-video.sel{
+	background:transparent url("/media/res/icon_nav_video_sel.png") top left no-repeat;
 }
 header #nav a.sel{
 	box-shadow:inset 0 -4px 0 #ed462f;

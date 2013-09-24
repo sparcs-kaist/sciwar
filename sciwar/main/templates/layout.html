@@ -32,10 +32,10 @@
                     <span>ON AIR</span>
                 </h1>
                 <nav id="nav">
-                    <a id="nav-info" href="/info">Info</a>
-                    <a id="nav-schedule" href="/schedule">Schedule</a>
-                    <a id="nav-map" href="/map">Map</a>
-                    <a id="nav-video" href="/video">Video</a>
+                <a id="nav-info" class="{% block info %}{% endblock %}"href="/info">Info</a>
+                    <a id="nav-schedule" class="{% block schedule %}{% endblock %}" href="/schedule">Schedule</a>
+                    <a id="nav-map" class="{% block map %}{% endblock %}" href="/map">Map</a>
+                    <a id="nav-video" class="{% block video %}{% endblock %}" href="/video">Video</a>
                 </nav>
             </div>
         </header>
@@ -45,15 +45,15 @@
                 <div id="total-score">
                     <section class="kaist">
                         <h2>KAIST</h2>
-                        <p>600</p>
+                        <p>{{ state.KAIST }}</p>
                     </section>
                     <section class="postech">
                         <h2>POSTECH</h2>
-                        <p>18</p>
+                        <p>{{ state.POSTECH }}</p>
                     </section>
                     <section class="process">
                         <h2>PROCESS</h2>
-                        <p>4/8 COMPLETED</p>
+                        <p>{{ state.DONE }}/{{ state.ALL }}COMPLETED</p>
                     </section>
                 </div>
                 <!-- ASIDE OPTION -->
