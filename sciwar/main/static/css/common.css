@@ -7,14 +7,11 @@
 	margin:0;
 	padding:0;
 }
-script{
+script, title, style{
 	display:none;
 }
 a{
 	text-decoration:none;
-}
-title{
-	display:none;
 }
 body{
 	width:100%;
