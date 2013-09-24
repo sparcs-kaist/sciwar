@@ -16,11 +16,6 @@ class Player(models.Model):
     name = models.CharField(max_length=100,db_index=True)
     school = models.SmallIntegerField(choices=SCHOOLS)
 
-class Video(models.Model):
-    link = models.CharField(max_length=300,db_index=True)
-    name = models.CharField(max_length=100)
-    time = models.DateTimeField()
-    event = models.ForeignKey(Event, db_index=True) # 경기 끝난 후 올라가는 영상들
 
 class Event(models.Model):
     name = models.CharField(max_length=100,db_index=True)
@@ -30,9 +25,14 @@ class Event(models.Model):
     building = models.ForeignKey(Building,db_index=True)
     kaist_score = models.SmallIntegerField()
     postech_score = models.SmallIntegerField()
-    kaist_players = models.ManyToManyKey(Player, related_name='KAIST', null=True, db_index=True)
-    postech_players = models.ManyToManyKey(Player, related_name='POSTECH', null=True, db_index=True)
+    kaist_players = models.ManyToManyField(Player, related_name='KAIST', null=True, db_index=True)
+    postech_players = models.ManyToManyField(Player, related_name='POSTECH', null=True, db_index=True)
 
+class Video(models.Model):
+    link = models.CharField(max_length=300,db_index=True)
+    name = models.CharField(max_length=100)
+    time = models.DateTimeField()
+    event = models.ForeignKey(Event, db_index=True) # 경기 끝난 후 올라가는 영상들
 
 class BuildingAdmin(admin.ModelAdmin):
     list_display = ('name', 'location_x', 'location_y')
