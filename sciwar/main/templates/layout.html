@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>2013 POSTECH-KAIST Science War</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link href="{{MEDIA_URL}}base.css" rel="stylesheet" type="text/css" media="screen">
+        <style type="text/css">
+            <!--
+            a:link {text-decoration: none}
+            -->
+        </style>
+    </head>
+    <body>
+        <div id="top">
+            <a href='/'>
+                <div id="logo">
+                    <!-- <img id="title" src="{{MEDIA_URL}}title.png"> -->
+                    <span style="color: #FFFFFF"> 2013 카포 </span>
+                </div>
+            </a>
+            <div id="tab">
+                <div class="tab_select">
+                    <div class="tab_upper">
+                        <div id="tab_logo">
+                            <img id="img_video" src="{{MEDIA_URL}}video.png">
+                        </div>
+                        <a class="right{% ifequal section 'video' %} selected{% endifequal %}" href="/video/">
+                            <div class="tab_text">
+                                <span style="color: #FFFFFF">VIDEO</span>
+                            </div>
+                        </a>
+                    </div>
+                    <hr id="tab_valid">
+                </div>
+                <div class="tab_select">
+                    <div class="tab_upper">
+                        <div id="tab_logo">
+                            <img id="img_map" src="{{MEDIA_URL}}map.png">
+                        </div>
+                        <a class="right{% ifequal section 'map' %} selected{% endifequal %}" href="/map/">
+                            <div class="tab_text">
+                                <span style="color: #FFFFFF">MAP</span>
+                            </div>
+                        </a>
+                    </div>
+                    <hr id="tab_valid">
+                </div>
+                <div class="tab_select">
+                    <div class="tab_upper">
+                        <div id="tab_logo">
+                            <img id="img_schedule" src="{{MEDIA_URL}}schedule.png">
+                        </div>
+                        <a class="right{% ifequal section 'schedule' %} selected{% endifequal %}" href="/schedule/">
+                            <div class="tab_text">
+                                <span style="color: #FFFFFF">SCHEDULE</span>
+                            </div>
+                        </a>
+                    </div>
+                    <hr id="tab_valid">
+                </div>
+                <div class="tab_select">
+                    <div class="tab_upper">
+                        <div id="tab_logo">
+                            <img id="img_info" src="{{MEDIA_URL}}info.png">
+                        </div>
+                        <a class="right{% ifequal section 'info' %} selected{% endifequal %}" href="/info/">
+                            <div class="tab_text">
+                                <span style="color: #FFFFFF">INFO</span>
+                            </div>
+                        </a>
+                    </div>
+                    <hr id="tab_valid">
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <div id="left-side">
+                <div id="current-score">
+                    <div id="show-all-score">
+                        <div id="show-kaist-score">
+                            <div class="show-school-name">
+                                <span style="color: #FFFFFF">KAIST</span>
+                            </div>
+                            <div class="show-score">
+                                <span style="color: #FFFFFF">600</span>
+                            </div>
+                        </div>
+                        <div id="show-postech-score">
+                            <div class="show-school-name">
+                                <span style="color: #FFFFFF">POSTECH</span>
+                            </div>
+                            <div class="show-score">
+                                <span style="color: #FFFFFF">200</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ended-event-count">
+                        <span style="color: #E4E4E4">4/8 COMPLETED</span>
+                    </div>
+                </div>
+                {% block leftdown %}
+                {% endblock %}
+            </div>
+            <div id="right-side">
+                {% block right %}
+                right!
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
