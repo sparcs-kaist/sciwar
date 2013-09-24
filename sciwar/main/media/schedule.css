@@ -1,0 +1,34 @@
+.day-field
+{
+    background-color: #FFFFFF;
+    padding: 10px;
+    width: 640px;
+}
+
+.day-text
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.event-field
+{
+    background-color: #A4A4A4;
+    margin-top: 5px;
+    padding: 10px; 
+}
+
+.event-detail
+{
+    height: 18px;
+}
+
+.event-time
+{
+    float: left;
+}
+
+.event-location
+{
+    margin-left: 180px;
+}

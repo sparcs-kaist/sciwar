@@ -10,6 +10,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
         url(ur'^$', 'main.views.main_page'),
         url(ur'^main', 'main.views.proto'),
+        url(ur'^schedule', 'main.views.schedule_page'),
         url(ur'^video', 'main.views.video_page'),
         url(ur'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
         url(r'^admin/', include(admin.site.urls)),

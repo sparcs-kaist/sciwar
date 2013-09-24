@@ -11,6 +11,9 @@ def proto(request):
 def video_page(request):
     return render(request, 'video.html')
 
+def schedule_page(request):
+    return render(request, 'schedule.html')
+
 def _get_kaist_total_score():
     kaist_total = 0
     events_list = Event.objects.all()
