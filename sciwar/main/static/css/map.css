@@ -4,6 +4,9 @@
     background-color: #D8D8D8;
     margin: 10px;
 }
+.map-field-zoomed{
+    height:300px;
+}
 
 .map-title
 {
@@ -21,6 +24,10 @@
 
 .map-image-full{
     background:#fff url('/media/res/map.png') 0 0 no-repeat;
+}
+
+.map-image-zoomed{
+    background:#fff url('/media/res/map_main_field.png') 0 0 no-repeat;
 }
 
 .map-marker
