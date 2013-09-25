@@ -50,6 +50,11 @@
     left: 255px;
     top: 210px;
 }
+#map-marker-main_building
+{
+    left: 262px;
+    top: 295px;
+}
 
 #map-button
 {
@@ -64,19 +69,57 @@
 /* block leftdown */
 #event-list-pane
 {
-    background-color: #FFFFFF;
-    padding: 10px;
+    background-color: #ffffff;
+    padding-top: 12px;
+    padding-bottom:20px;
+    padding-left:12px;
+
+}
+.map-click-img-active
+{
+    float:right;
+    margin-right:5px;
+    background: transparent url("/media/res/img_active.png") top left no-repeat;
+    width: 15px;
+    height: 12px;
+    margin-top:14px;
 }
 
+.map-click-img
+{
+    float:right;
+    margin-right:5px;
+    background: transparent url("/media/res/img_inactive.png") top left no-repeat;
+    width: 15px;
+    height: 12px;
+    margin-top:14px;
+}
+   
 #event-list-title
 {
-
+    font-family:"Roboto Condensed", sans-serif;
+    font-size:24px;
+    font-weight:400;
+    color:#737374;
 }
 
 .event-item
 {
-    background-color: #E8E8E8;
-    padding: 10px;
-    margin-top: 5px;
-    color: #C8C8C8;
+    width: 243px;
+    margin-top:5px;
+    padding-left: 10px;
+    background-color: #f5f5f5;
+    height: 40px;
+    line-height: 40px;
+    text-align:left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    border-radius: 3px;
+    font-family: "Roboto", serif;
+    float:left;
+    font-weight: 300;
+    color:#a1a0a0; 
+    font-size:20px;
+   
 }
