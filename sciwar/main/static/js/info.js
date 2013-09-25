@@ -2,22 +2,15 @@ var SortList = {
 	initialize:function()
 	{
 		this.classify = $('.info-click');
-		this.registerHandles();
-		this.updateInfo(this.classify[0]);
+		this.updateInfo("all");
 	},
-	registerHandles:function()
-	{
-		$.each(this.classify, function(index, item){
-			$(item).bind('click', $.proxy(SortList.updateInfo, SortList, item));
-		});
-	},
-	updateInfo:function(obj)
+	updateInfo:function(name)
 	{
 		var notice = false;
 		var information = false;
-		if(obj.id == "all" || obj.id == "notice")
+		if(name == "all" || name == "notice")
 			notice = true;
-		if(obj.id == "all" || obj.id == "information")
+		if(name == "all" || name == "information")
 			information = true;
 		$.ajax({
 			type: 'GET',
@@ -40,7 +33,6 @@ var InformationList = {
 	},
 	showInfo:function(obj)
 	{
-		console.log(obj);
 		InformationList.right.empty();
 		$.each(obj, function(index, item){
 			var info = $('<div>', {'class': 'info-field'});
