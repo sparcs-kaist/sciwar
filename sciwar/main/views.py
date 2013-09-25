@@ -3,27 +3,9 @@ from django.shortcuts import render
 from django.db import models
 from main.models import *
 from django.utils import simplejson as json
-import time
-from datetime import datetime, timedelta
 
 def main_page(request):
-    today_events = Event.objects.filter(
-            start_time__day = datetime.today().day + 0)\
-    .order_by('start_time')
-    current_event = Event.objects.filter(
-            start_time__lte = datetime.now()).filter(
-                    end_time__gte = datetime.now)
-    if current_event:
-        current_event_name = current_event[0].name
-    else:
-        current_event_name = ""
-
-    events = {}
-    for event in today_events:
-        events[event.name] = event.start_time
-    return render(request, 'index.html', {
-        "state":_get_state(), "events":events,
-        "current_event_name":current_event_name})
+    return render(request, 'index.html', {"state":_get_state()})
 
 def info_page(request):
     return render(request, 'info.html', {"state":_get_state()})
@@ -48,11 +30,37 @@ def update_information(request):
                 'title': info.title,
                 'article': info.content,
                 'classify': info.get_category_display(),
-                'date': info.time.strftime("%y.%m.%d")
+                'date': info.time.strftime("20%y. %m. %d")
                 }
         if info.category == 1 and avail_notice:
             contents.append(item)
         if info.category == 2 and avail_info:
+            contents.append(item)
+    return HttpResponse(json.dumps({
+        'contents': contents}, ensure_ascii=False, indent=4))
+
+def update_video(request):
+    classify = request.GET.get('name','all')
+
+    event_set = []
+    if classify == "etc":
+        event_set.append("HACKING CONTEST")
+        event_set.append("OPENING CONTEST")
+        event_set.append("BEER PARTY")
+        event_set.append("CLOSING CEREMONY")
+    elif classify != "all":
+        event_set.append(classify)
+    
+    contents = []
+    videos = Video.objects.all()
+    for video in videos:
+        if classify=="all" or video.event.name in event_set:
+            item = {
+                'title': video.name,
+                'event': video.event.name,
+                'link': video.link,
+                'time': video.time.strftime("20%y. %m. %d %H:%M")
+                }
             contents.append(item)
     return HttpResponse(json.dumps({
         'contents': contents}, ensure_ascii=False, indent=4))
