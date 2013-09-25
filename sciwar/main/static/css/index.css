@@ -1,0 +1,45 @@
+/* OPTION */
+
+#option section.today-schedule{
+	width:100%;
+	border-radius:2px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	background:#fff;
+}
+#option section.today-schedule h2{
+	font-family:"Roboto Condensed", sans-serif;
+	font-size:40px;
+	font-weight:400;
+	line-height:40px;
+	color:#737374;
+	text-align:center;
+	margin:17px auto;
+}
+#option section.today-schedule .list li{
+	width:220px;
+	height:40px;
+	background:#f5f5f5;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	margin:0px auto 6px auto;
+	padding-left:32px;
+}
+#option section.today-schedule .list li h4{
+	font-family:"Roboto", sans-serif;
+	font-size:20px;
+	line-height:39px;
+	font-weight:300;
+	color:#a1a0a0;
+	float:left;
+}
+#option section.today-schedule .list li p{
+	font-family:"Roboto", sans-serif;
+	font-size:16px;
+	line-height:39px;
+	font-weight:300;
+	padding-right:12px;
+	color:#ed462f;
+	float:right;
+}
