@@ -36,10 +36,15 @@ var InformationList = {
 		InformationList.content.empty();
 		$.each(obj, function(index, item){
 			var info = $('<div>', {'class': 'info-field'});
-		
-			var classify = $('<div>', {'class': 'info-classify'}).text(item.classify);
-			if (item.classify=="INFO")
-				classify.css({"color":"#ffe400"});
+
+			if (item.classify=="INFO"){
+				var classify = $('<div>', {'class': 'info-information'});
+				$('<span>').text("INFO").appendTo(classify);
+			}
+			else{
+				var classify = $('<div>', {'class': 'info-notice'});
+				$('<span>').text("NOTICE").appendTo(classify);
+			}
 			classify.appendTo(info);
 			$('<div>', {'class': 'info-title'}).text(item.title).appendTo(info);
 			$('<div>', {'class': 'info-date'}).text(item.date).appendTo(info);
