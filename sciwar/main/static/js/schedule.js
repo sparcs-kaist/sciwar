@@ -4,7 +4,7 @@ var DayList={
 		this.update(0);
 		this.color(0);
 	},
-	update:function(num)
+	update:function(num,type)
 	{
 		var notice = false;
 		var i;
@@ -16,12 +16,12 @@ var DayList={
 			if(daytext[i]==null) break;
 			if(i==num)
 			{
-				$(daytext[i]).css("color","#ed462f");
+				if(type==0) $(daytext[i]).css("color","#ed462f");
 				$(daydetail[i]).css("background","url('/media/res/img_active.png') right 50% no-repeat");
 			}
 			else
 			{
-				$(daytext[i]).css("color","#6f7274");
+				if(type==0) $(daytext[i]).css("color","#6f7274");
 				$(daydetail[i]).css("background","url('/media/res/img_inactive.png') right 50% no-repeat");
 			}
 		}
