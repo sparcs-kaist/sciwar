@@ -52,7 +52,7 @@
     {% endif %}
     <ul class="event-list">
         {% for event in other_events %}
-        <li class="event-item{% if event.winner != 3%} finished{% endif %}">
+        <li class="event-item{% if event.end_time < current_time %} finished{% endif %}">
             <h2><a href="#">{{ event.name }}</a></h2>
             <span class="info">
                 <p class="time">{{ event.start_time|time:"H:i" }} - {{ event.end_time|time:"H:i" }}</p>
