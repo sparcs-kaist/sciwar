@@ -19,24 +19,36 @@
     height: 480px;
 }
 
+.map-image-full{
+    background:#fff url('/media/res/map.png') 0 0 no-repeat;
+}
+
 .map-marker
 {
     position: absolute;
 }
 
+.map-marker-blue
+{
+    display:none;
+}
+
 #map-marker-main_field
 {
-
+    left: 543px;
+    top: 350px;
 }
 
 #map-marker-sports_complex
 {
-
+    left: 310px;
+    top: 210px;
 }
 
 #map-marker-sub_field
 {
-
+    left: 255px;
+    top: 210px;
 }
 
 #map-button

@@ -17,11 +17,9 @@
 				</div>
 				<div class="event-detail">
 					<div class="event-time">
-						<!-- CLOCK IMAGE COMES HERE -->
 						{{event.start_time|time:"H:i"}} - {{event.end_time|time:"H:i"}}
 					</div>
 					<div class="event-location">
-						<!-- LOCATION IMAGE COMES HERE -->
 						{{event.location}}
 					</div>	
 				</div>
@@ -38,11 +36,7 @@
 		<div class="day-detail">
 			{{ date.date }}
 		</div>
-		<div class="day-click-img">
-			>
-		</div>
 	</div>
 	{% endfor %}
-
 </div>
 {% endblock %}
