@@ -30,60 +30,78 @@ var map = {
 			marker_red=$('#map-marker-main_building-red');
 			blink();
 		};
-
-
-
+                var main_field_show = function(){
+                        $('#zoom-image').css("background","#fff url('/media/res/map_E17, Stadium.png') 0 0 no-repeat");
+                }                
+                var sub_field_show = function(){
+                        $('#zoom-image').css("background","#fff url('/media/res/map_Front of N3, Main Playground.png') 0 0 no-repeat");
+                }
+                var sports_complex_show = function(){
+                        $('#zoom-image').css("background","#fff url('/media/res/map_N3, Sports Complex.png') 0 0 no-repeat");
+                }
+                var main_building_show = function(){
+                        $('#zoom-image').css("background","#fff url('/media/res/map_E14, Field front of the main admin building.png') 0 0 no-repeat");
+                }
 		$('#event-opening_ceremony').click(function(){
+                        sports_complex_show();
 			marker_blue.hide();
 			marker_red.show();
 			sports_complex_click();
 			map.update(1);
 		});	
 		$('#event-beer_party').click(function(){
-			marker_blue.hide();
+                        main_building_show();
+                        marker_blue.hide();
 			marker_red.show();
 			main_building_click();
 			map.update(2);
 		});	
 		$('#event-soccer').click(function(){
-			marker_blue.hide();
+	                main_field_show();
+		        marker_blue.hide();
 			marker_red.show();
 			main_field_click();
 			map.update(3);
 		});	
 		$('#event-basketball').click(function(){
-			marker_blue.hide();
+	                sports_complex_show();
+                        marker_blue.hide();
 			marker_red.show();
 			sports_complex_click();
 			map.update(4);
 		});	
-        $('#event-baseball').click(function(){
-			marker_blue.hide();
+        $('#event-baseball').click(function(){ 
+                        sub_field_show();
+                        marker_blue.hide();
 			marker_red.show();
 			sub_field_click();
 			map.update(5);
 		});
 		$('#event-science_quiz').click(function(){
-			marker_blue.hide();
+			sports_complex_show();
+                        marker_blue.hide();
 			marker_red.show();
 			sports_complex_click();
 			map.update(6);
 		});	
 		$('#event-league_of_legends').click(function(){
-			marker_blue.hide();
+			sports_complex_show();
+                        marker_blue.hide();
 			marker_red.show();
 			sports_complex_click();
 			map.update(7);
 		});	
 
 		$('#event-ai').click(function(){
-			marker_blue.hide();
+		        sports_complex_show();
+                        marker_blue.hide();
 			marker_red.show();
 			sports_complex_click();
 			map.update(8);
 		});	
 		$('#event-closing_ceremony').click(function(){
-			marker_blue.hide();
+	                sports_complex_show();
+                        marker_blue.hide();
 			marker_red.show();
 			sports_complex_click();
 			map.update(9);
