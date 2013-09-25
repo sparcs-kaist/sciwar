@@ -4,14 +4,16 @@
     <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/index.css">
 {% endblock %}
 
+{% block home %}sel{% endblock %}
+
 {% block leftdown %}
     <section class="today-schedule">
         <h2>TODAY</h2>
         <ul class="list">
-            {% for event_title, event_time in today_events.items %}
-            <li{% if current_event.name == event_title %} class="now"{% endif %}>
-                <h4>{{ event_title }}</h4>
-                <p>{{ event_time|time:"H:i" }}</p>
+            {% for event in today_events %}
+            <li{% if event.name == event_title %} class="now"{% endif %}>
+                <h4>{{ event.name }}</h4>
+                <p>{{ event.start_time|time:"H:i" }}</p>
             </li>
             {% endfor %}
         </ul>
@@ -22,7 +24,7 @@
     {% if current_event %}
     <article class="live">
         <span class="status">Live</span>
-        <span class="time">{{ current_event.start_time|time:"H:i" }} - {{ current_event.start_time|time:"H:i" }}</span>
+        <span class="time">{{ current_event.start_time|time:"H:i" }} - {{ current_event.end_time|time:"H:i" }}</span>
         <h2 class="event"><a href="#">{{ current_event.name }}</a></h2>
         <p class="comment">{{ current_event.description }}</p>
         {% if current_event.is_competition %}
@@ -52,7 +54,7 @@
     {% endif %}
     <ul class="event-list">
         {% for event in other_events %}
-        <li class="event-item{% if event.winner != 3%} finished{% endif %}">
+        <li class="event-item{% if event.end_time < current_time %} finished{% endif %}">
             <h2><a href="#">{{ event.name }}</a></h2>
             <span class="info">
                 <p class="time">{{ event.start_time|time:"H:i" }} - {{ event.end_time|time:"H:i" }}</p>
