@@ -18,6 +18,7 @@ var SortList = {
 			data: {'name':this.name, 'order':this.ordering},
 			dataType: 'json',
 			success: $.proxy(function(resObj) {
+				/* TODO: change arrow pointer */
 				VideoList.showVideo(resObj.contents);
 			}, this),
 			error: function(xhr) {
@@ -33,6 +34,7 @@ var SortList = {
 			data: {'name':name, 'order':this.ordering},
 			dataType: 'json',
 			success: $.proxy(function(resObj) {
+				/* TODO: change arrow pointer */
 				VideoList.showVideo(resObj.contents);
 			}, this),
 			error: function(xhr) {
@@ -61,9 +63,16 @@ var VideoList = {
 			video_event_info.appendTo(video_info);
 			video_info.appendTo(video);
 
+			/*
 			var new_link = "http://www.youtube.com/v/" + item.link.split("v=")[1];
 			var video_area = $('<div>', {'class': 'video-area'});
 			$('<embed>', {'width': '630px', 'height': '360px', 'type': 'application/x-shockwave-flash', 'src': new_link}).appendTo(video_area);
+			video_area.appendTo(video);
+			*/
+
+			var new_link = "http://www.youtube.com/embed/" + item.link.split("v=")[1];
+			var video_area = $('<div>', {'class': 'video-area'});
+			$('<iframe>', {'width': '630px', 'height': '360px', 'frameborder': '0', 'src': new_link}).appendTo(video_area);
 			video_area.appendTo(video);
 
 			video.appendTo(VideoList.content);

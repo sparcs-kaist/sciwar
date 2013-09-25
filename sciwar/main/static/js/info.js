@@ -18,6 +18,7 @@ var SortList = {
 			data: {'notice': notice, 'information': information},
 			dataType: 'json',
 			success: $.proxy(function(resObj) {
+				/* active: blue arrow */
 				$('.info-click-img-active').toggleClass("info-click-img-active info-click-img")
 				$($('.info-click-img')[id]).toggleClass("info-click-img info-click-img-active")
 				InformationList.showInfo(resObj.contents);
