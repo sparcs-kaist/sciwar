@@ -3,9 +3,20 @@
 <link rel="stylesheet" type="text/css" media="screen" href="{{STATIC_URL}}css/schedule.css">
 {% endblock %}
 {% block schedule %}sel{% endblock %}
+{% block script %}
+<script type="text/javascript" src="{{STATIC_URL}}js/schedule.js"></script>
+{% endblock %}
+
+{% block initialize %}
+DayList.initialize();
+{% endblock %}
+
 {% block right %}
 
+<a name="frag0" id="frag0"></a>
 {% for date in events %}
+	{% with n=forloop.counter|stringformat:"s" %}
+	{% with frag="frag"|add:n %}
 	<div class="day-field">
 		<div class="day-text">
 			{{ date.date }}
@@ -26,13 +37,16 @@
 			</div>
 		{% endfor %}
 	</div>
+	<a name={{frag}} id={{frag}}></a>
+	{% endwith %}
+	{% endwith %}
 {% endfor %}
 
 {% endblock %}
 {% block leftdown %}
 <div class="day-show">
 	{% for date in events %}
-	<div class="day-click">
+	<div class="day-click" onmouseover="DayList.color({{forloop.counter}})" onclick="DayList.update({{forloop.counter}})">
 		<div class="day-detail">
 			{{ date.date }}
 		</div>
