@@ -32,17 +32,26 @@ class Event(models.Model):
     postech_players = models.ManyToManyField(Player, related_name='POSTECH', blank=True, db_index=True)
     description = models.CharField(max_length=1000, blank=True)
 
+    def __unicode__(self):
+        return u'%s' % (self.name)
+
 class Video(models.Model):
     link = models.CharField(max_length=300,db_index=True)
     name = models.CharField(max_length=100)
     time = models.DateTimeField()
     event = models.ForeignKey(Event, db_index=True) # 경기 끝난 후 올라가는 영상들
 
+    def __unicode__(self):
+        return u'%s : %s' % (self.event.name, self.name)
+
 class Info(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField(blank=True)
     category = models.SmallIntegerField(choices=NOTIFY)
     time = models.DateTimeField()
+
+    def __unicode__(self):
+        return u'%s : %s' % (self.get_category_display(),self.title)
 
 class PlayerAdmin(admin.ModelAdmin):
     list_display = ('name', 'school')
