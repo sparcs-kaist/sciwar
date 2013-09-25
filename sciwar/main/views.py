@@ -103,14 +103,14 @@ def _get_state():
     state["KAIST"] = 0
     state["POSTECH"] = 0
     state["ALL"] = len(events_list)
-    state["DONE"] = state["ALL"]
+    state["DONE"] = 0
     for event in events_list:
         if event.winner == 1:
             state["KAIST"] += event.score
         elif event.winner == 2:
             state["POSTECH"] += event.score
-        else:
-            state["DONE"] -= 1
+        if event.end_time < datetime.now():
+            state["DONE"] += 1
     
     return state
 
