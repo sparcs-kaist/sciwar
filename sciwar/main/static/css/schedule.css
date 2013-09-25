@@ -12,7 +12,7 @@
 
 .day-text
 {
-    font-family:"Roboto Condensed", sans-serif;
+    font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
     font-size:28px;
     margin-bottom: 20px;
     color:#6f7274;
@@ -31,7 +31,7 @@
 
 .event-name
 {
-    font-family:"Roboto Condensed", sans-serif;
+    font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
     font-size:24px;
     font-weight:400;
     color:#525455;
@@ -40,7 +40,7 @@
 .event-detail
 {
     margin-top:12px;
-    font-family:"Roboto Condensed", sans-serif;
+    font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
     font-size:18px;
     font-weight:300;
     color:#676c6d;
@@ -88,7 +88,7 @@
 {
     float:left;
     width:228px;
-    font-family:"Roboto",sans-serif;
+    font-family:"Roboto", "Nanum Gothic",sans-serif;
     font-size:20px;
     font-weight:300;
     color:#a1a0a0; 

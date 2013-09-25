@@ -97,7 +97,7 @@
    
 #event-list-title
 {
-    font-family:"Roboto Condensed", sans-serif;
+    font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
     font-size:24px;
     font-weight:400;
     color:#737374;
@@ -116,7 +116,7 @@
     text-overflow: ellipsis;
     text-transform: uppercase;
     border-radius: 3px;
-    font-family: "Roboto", serif;
+    font-family: "Roboto", "Nanum Gothic", serif;
     float:left;
     font-weight: 300;
     color:#a1a0a0; 

@@ -1,7 +1,8 @@
 /* COMMON STYLESHEET */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css); /* for nanum gothic font */
 
 *{
-	font-family: "Roboto", serif;
+	font-family: "Roboto", "Nanum Gothic", sans-serif;
 	display:block;
 	overflow:hidden;
 	margin:0;
@@ -52,7 +53,8 @@ header{
 	background:#1b2023;
 }
 header *{
-	font-family:"Roboto Condensed", sans-serif;
+	font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
+ans-serif;
 	text-transform:uppercase;
 }
 header #header-content{
@@ -159,7 +161,7 @@ aside #total-score section{
 	margin-top:20px;
 }
 aside #total-score section *{
-	font-family:"Roboto Condensed", sans-serif;
+	font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
 }
 aside #total-score section h2{
 	width:100%;
@@ -194,7 +196,7 @@ aside #total-score section.process h2{
 }
 aside #total-score section.process p{
 	width:100%;
-	font-family:"Roboto", sans-serif;
+	font-family:"Roboto", "Nanum Gothic", sans-serif;
 	font-size:20px;
 	font-weight:300;
 	line-height:20px;
@@ -225,22 +227,28 @@ aside #creators{
 	-webkit-border-radius:2px;
 }
 aside #creators h2{
-	font-family:"Roboto Condensed", sans-serif;
+	font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
 	font-size:24px;
 	font-weight:400;
 	color:#525455;
 	display:inline-block;
 }
 aside #creators h2 em{
+        display:inline-block;
+}
+aside #creators h2 em a{
 	color:#ed462f;
-	font-family:"Roboto Condensed", sans-serif;
+	font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
 	font-size:24px;
 	font-weight:400;
 	font-style:normal;
 	display:inline-block;
 }
+aside #creators h2 em a:hover{
+        color:#eda32f;
+}
 aside #creators p{
-	font-family:"Roboto", sans-serif;
+	font-family:"Roboto", "Nanum Gothic", sans-serif;
 	font-size:18px;
 	font-weight:300;
 	line-height:24px;
@@ -249,7 +257,7 @@ aside #creators p{
 	color:#828586;
 }
 aside #creators div{
-	font-family:"Roboto", sans-serif;
+	font-family:"Roboto", "Nanum Gothic", sans-serif;
 	font-size:18px;
 	font-weight:300;
 	line-height:24px;
@@ -284,7 +292,7 @@ aside #creators .list li{
 	height:32px;
 	background:#f5f5f5;
 	color:#a1a0a0;
-	font-family:"Roboto", sans-serif;
+	font-family:"Roboto", "Nanum Gothic", sans-serif;
 	font-size:18px;
 	line-height:32px;
 	font-weight:300;
@@ -293,7 +301,7 @@ aside #creators .list li{
 }
 aside #creators .list a{
 	color:#a1a0a0;
-	font-family:"Roboto", sans-serif;
+	font-family:"Roboto", "Nanum Gothic", sans-serif;
 	font-size:18px;
 	line-height:32px;
 	font-weight:300;
