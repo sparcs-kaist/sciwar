@@ -116,10 +116,9 @@ def _get_state():
 def _get_schedule():
     Month = [0,"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
     events = []
-    events_list = Event.objects.all()
+    events_list = sorted(Event.objects.all(), key=lambda k: k.start_time)
     exist_date = []
     for event in events_list:
-        print event.start_time
         if not event.start_time.date() in exist_date:
             exist_date.append(event.start_time.date())
     for date in exist_date:
