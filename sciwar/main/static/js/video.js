@@ -55,16 +55,15 @@ var VideoList = {
 			var video_info = $('<div>', {'class': 'video-info'});
 			$('<div>', {'class': 'video-title'}).text(item.title).appendTo(video_info);
 
-			var video_event_info = $('<div>', {'class': 'video-eventt-info'});
+			var video_event_info = $('<div>', {'class': 'video-event-info'});
 			$('<div>', {'class': 'video-event'}).text(item.event).appendTo(video_event_info);
 			$('<div>', {'class': 'video-time'}).text(item.time).appendTo(video_event_info);
 			video_event_info.appendTo(video_info);
 			video_info.appendTo(video);
 
 			var new_link = "http://www.youtube.com/v/" + item.link.split("v=")[1];
-			console.log(new_link);
 			var video_area = $('<div>', {'class': 'video-area'});
-			$('<embed>', {'width': '420px', 'height': '345px', 'type': 'application/x-shockwave-flash', 'src': new_link}).appendTo(video_area);
+			$('<embed>', {'width': '630px', 'height': '360px', 'type': 'application/x-shockwave-flash', 'src': new_link}).appendTo(video_area);
 			video_area.appendTo(video);
 
 			video.appendTo(VideoList.content);
