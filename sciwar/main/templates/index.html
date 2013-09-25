@@ -22,7 +22,7 @@
     {% if current_event %}
     <article class="live">
         <span class="status">Live</span>
-        <span class="time">{{ current_event.start_time|time:"H:i" }} - {{ current_event.start_time|time:"H:i" }}</span>
+        <span class="time">{{ current_event.start_time|time:"H:i" }} - {{ current_event.end_time|time:"H:i" }}</span>
         <h2 class="event"><a href="#">{{ current_event.name }}</a></h2>
         <p class="comment">{{ current_event.description }}</p>
         {% if current_event.is_competition %}
@@ -52,7 +52,7 @@
     {% endif %}
     <ul class="event-list">
         {% for event in other_events %}
-        <li class="event-item{% if event.winner != 3%} finished{% endif %}">
+        <li class="event-item{% if event.end_time < current_time %} finished{% endif %}">
             <h2><a href="#">{{ event.name }}</a></h2>
             <span class="info">
                 <p class="time">{{ event.start_time|time:"H:i" }} - {{ event.end_time|time:"H:i" }}</p>

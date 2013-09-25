@@ -3,8 +3,8 @@
 		"pk": 1,
 		"model": "main.Player",
 		"fields": {
-			"name": u"강기석"
-			"school": 1
+			"name": "\uac15\uae30\uc11d",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -12,8 +12,8 @@
 		"pk": 2,
 		"model": "main.Player",
 		"fields": {
-			"name": u"허시환"
-			"school": 1
+			"name": "\ud5c8\uc2dc\ud658",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -21,8 +21,8 @@
 		"pk": 3,
 		"model": "main.Player",
 		"fields": {
-			"name": u"전해구"
-			"school": 1
+			"name": "\uc804\ud574\uad6c",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -30,8 +30,8 @@
 		"pk": 4,
 		"model": "main.Player",
 		"fields": {
-			"name": u"손윤석"
-			"school": 1
+			"name": "\uc190\uc724\uc11d",
+			"school": 1,
 			"year": "09"
 		}
 	},
@@ -39,8 +39,8 @@
 		"pk": 5,
 		"model": "main.Player",
 		"fields": {
-			"name": u"채준수"
-			"school": 1
+			"name": "\ucc44\uc900\uc218",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -48,8 +48,8 @@
 		"pk": 6,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김윤혁"
-			"school": 1
+			"name": "\uae40\uc724\ud601",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -57,8 +57,8 @@
 		"pk": 7,
 		"model": "main.Player",
 		"fields": {
-			"name": u"최경식"
-			"school": 1
+			"name": "\ucd5c\uacbd\uc2dd",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -66,8 +66,8 @@
 		"pk": 8,
 		"model": "main.Player",
 		"fields": {
-			"name": u"서광균"
-			"school": 1
+			"name": "\uc11c\uad11\uade0",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -75,8 +75,8 @@
 		"pk": 9,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이승형"
-			"school": 1
+			"name": "\uc774\uc2b9\ud615",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -84,8 +84,8 @@
 		"pk": 10,
 		"model": "main.Player",
 		"fields": {
-			"name": u"강성환"
-			"school": 1
+			"name": "\uac15\uc131\ud658",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -93,8 +93,8 @@
 		"pk": 11,
 		"model": "main.Player",
 		"fields": {
-			"name": u"전승원"
-			"school": 1
+			"name": "\uc804\uc2b9\uc6d0",
+			"school": 1,
 			"year": "13"
 		}
 	},
@@ -102,8 +102,8 @@
 		"pk": 12,
 		"model": "main.Player",
 		"fields": {
-			"name": u"최성진"
-			"school": 1
+			"name": "\ucd5c\uc131\uc9c4",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -111,8 +111,8 @@
 		"pk": 13,
 		"model": "main.Player",
 		"fields": {
-			"name": u"구교현"
-			"school": 1
+			"name": "\uad6c\uad50\ud604",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -120,8 +120,8 @@
 		"pk": 14,
 		"model": "main.Player",
 		"fields": {
-			"name": u"허준영"
-			"school": 1
+			"name": "\ud5c8\uc900\uc601",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -129,8 +129,8 @@
 		"pk": 15,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김동호"
-			"school": 1
+			"name": "\uae40\ub3d9\ud638",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -138,8 +138,8 @@
 		"pk": 16,
 		"model": "main.Player",
 		"fields": {
-			"name": u"하정곤"
-			"school": 1
+			"name": "\ud558\uc815\uace4",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -147,8 +147,8 @@
 		"pk": 17,
 		"model": "main.Player",
 		"fields": {
-			"name": u"백승훈"
-			"school": 1
+			"name": "\ubc31\uc2b9\ud6c8",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -156,8 +156,8 @@
 		"pk": 18,
 		"model": "main.Player",
 		"fields": {
-			"name": u"강경원"
-			"school": 1
+			"name": "\uac15\uacbd\uc6d0",
+			"school": 1,
 			"year": "09"
 		}
 	},
@@ -165,8 +165,8 @@
 		"pk": 19,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김태훈"
-			"school": 1
+			"name": "\uae40\ud0dc\ud6c8",
+			"school": 1,
 			"year": "08"
 		}
 	},
@@ -174,8 +174,8 @@
 		"pk": 20,
 		"model": "main.Player",
 		"fields": {
-			"name": u"정재원"
-			"school": 1
+			"name": "\uc815\uc7ac\uc6d0",
+			"school": 1,
 			"year": "08"
 		}
 	},
@@ -183,8 +183,8 @@
 		"pk": 21,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이재진"
-			"school": 1
+			"name": "\uc774\uc7ac\uc9c4",
+			"school": 1,
 			"year": "09"
 		}
 	},
@@ -192,8 +192,8 @@
 		"pk": 22,
 		"model": "main.Player",
 		"fields": {
-			"name": u"임연택"
-			"school": 1
+			"name": "\uc784\uc5f0\ud0dd",
+			"school": 1,
 			"year": "07"
 		}
 	},
@@ -201,8 +201,8 @@
 		"pk": 23,
 		"model": "main.Player",
 		"fields": {
-			"name": u"고성호"
-			"school": 1
+			"name": "\uace0\uc131\ud638",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -210,8 +210,8 @@
 		"pk": 24,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김대한"
-			"school": 1
+			"name": "\uae40\ub300\ud55c",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -219,8 +219,8 @@
 		"pk": 25,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이민호"
-			"school": 1
+			"name": "\uc774\ubbfc\ud638",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -228,8 +228,8 @@
 		"pk": 26,
 		"model": "main.Player",
 		"fields": {
-			"name": u"박주환"
-			"school": 1
+			"name": "\ubc15\uc8fc\ud658",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -237,8 +237,8 @@
 		"pk": 27,
 		"model": "main.Player",
 		"fields": {
-			"name": u"최세환"
-			"school": 1
+			"name": "\ucd5c\uc138\ud658",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -246,8 +246,8 @@
 		"pk": 28,
 		"model": "main.Player",
 		"fields": {
-			"name": u"정한벗"
-			"school": 1
+			"name": "\uc815\ud55c\ubc97",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -255,8 +255,8 @@
 		"pk": 29,
 		"model": "main.Player",
 		"fields": {
-			"name": u"전익근"
-			"school": 1
+			"name": "\uc804\uc775\uadfc",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -264,8 +264,8 @@
 		"pk": 30,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이용욱"
-			"school": 1
+			"name": "\uc774\uc6a9\uc6b1",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -273,8 +273,8 @@
 		"pk": 31,
 		"model": "main.Player",
 		"fields": {
-			"name": u"박준우"
-			"school": 1
+			"name": "\ubc15\uc900\uc6b0",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -282,8 +282,8 @@
 		"pk": 32,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김주형"
-			"school": 1
+			"name": "\uae40\uc8fc\ud615",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -291,8 +291,8 @@
 		"pk": 33,
 		"model": "main.Player",
 		"fields": {
-			"name": u"조현율"
-			"school": 1
+			"name": "\uc870\ud604\uc728",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -300,8 +300,8 @@
 		"pk": 34,
 		"model": "main.Player",
 		"fields": {
-			"name": u"양진열"
-			"school": 1
+			"name": "\uc591\uc9c4\uc5f4",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -309,8 +309,8 @@
 		"pk": 35,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김주창"
-			"school": 1
+			"name": "\uae40\uc8fc\ucc3d",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -318,8 +318,8 @@
 		"pk": 36,
 		"model": "main.Player",
 		"fields": {
-			"name": u"곽진성"
-			"school": 1
+			"name": "\uacfd\uc9c4\uc131",
+			"school": 1,
 			"year": "13"
 		}
 	},
@@ -327,8 +327,8 @@
 		"pk": 37,
 		"model": "main.Player",
 		"fields": {
-			"name": u"전지환"
-			"school": 1
+			"name": "\uc804\uc9c0\ud658",
+			"school": 1,
 			"year": "07"
 		}
 	},
@@ -336,8 +336,8 @@
 		"pk": 38,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이상호"
-			"school": 1
+			"name": "\uc774\uc0c1\ud638",
+			"school": 1,
 			"year": "08"
 		}
 	},
@@ -345,8 +345,8 @@
 		"pk": 39,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김진우"
-			"school": 1
+			"name": "\uae40\uc9c4\uc6b0",
+			"school": 1,
 			"year": "09"
 		}
 	},
@@ -354,8 +354,8 @@
 		"pk": 40,
 		"model": "main.Player",
 		"fields": {
-			"name": u"조제웅"
-			"school": 1
+			"name": "\uc870\uc81c\uc6c5",
+			"school": 1,
 			"year": "09"
 		}
 	},
@@ -363,8 +363,8 @@
 		"pk": 41,
 		"model": "main.Player",
 		"fields": {
-			"name": u"안평환"
-			"school": 1
+			"name": "\uc548\ud3c9\ud658",
+			"school": 1,
 			"year": "09"
 		}
 	},
@@ -372,8 +372,8 @@
 		"pk": 42,
 		"model": "main.Player",
 		"fields": {
-			"name": u"조봉주"
-			"school": 1
+			"name": "\uc870\ubd09\uc8fc",
+			"school": 1,
 			"year": "09"
 		}
 	},
@@ -381,8 +381,8 @@
 		"pk": 43,
 		"model": "main.Player",
 		"fields": {
-			"name": u"권한창"
-			"school": 1
+			"name": "\uad8c\ud55c\ucc3d",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -390,8 +390,8 @@
 		"pk": 44,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이중범"
-			"school": 1
+			"name": "\uc774\uc911\ubc94",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -399,8 +399,8 @@
 		"pk": 45,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김승영"
-			"school": 1
+			"name": "\uae40\uc2b9\uc601",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -408,8 +408,8 @@
 		"pk": 46,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이진환"
-			"school": 1
+			"name": "\uc774\uc9c4\ud658",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -417,8 +417,8 @@
 		"pk": 47,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김승규"
-			"school": 1
+			"name": "\uae40\uc2b9\uaddc",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -426,8 +426,8 @@
 		"pk": 48,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이우재"
-			"school": 1
+			"name": "\uc774\uc6b0\uc7ac",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -435,8 +435,8 @@
 		"pk": 49,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이상민"
-			"school": 1
+			"name": "\uc774\uc0c1\ubbfc",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -444,8 +444,8 @@
 		"pk": 50,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이민석"
-			"school": 1
+			"name": "\uc774\ubbfc\uc11d",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -453,8 +453,8 @@
 		"pk": 51,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김성우"
-			"school": 1
+			"name": "\uae40\uc131\uc6b0",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -462,8 +462,8 @@
 		"pk": 52,
 		"model": "main.Player",
 		"fields": {
-			"name": u"도종용"
-			"school": 1
+			"name": "\ub3c4\uc885\uc6a9",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -471,8 +471,8 @@
 		"pk": 53,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이태헌"
-			"school": 1
+			"name": "\uc774\ud0dc\ud5cc",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -480,8 +480,8 @@
 		"pk": 54,
 		"model": "main.Player",
 		"fields": {
-			"name": u"강윤성"
-			"school": 1
+			"name": "\uac15\uc724\uc131",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -489,8 +489,8 @@
 		"pk": 55,
 		"model": "main.Player",
 		"fields": {
-			"name": u"박지혁"
-			"school": 1
+			"name": "\ubc15\uc9c0\ud601",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -498,8 +498,8 @@
 		"pk": 56,
 		"model": "main.Player",
 		"fields": {
-			"name": u"정유진"
-			"school": 1
+			"name": "\uc815\uc720\uc9c4",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -507,8 +507,8 @@
 		"pk": 57,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김동찬"
-			"school": 1
+			"name": "\uae40\ub3d9\ucc2c",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -516,8 +516,8 @@
 		"pk": 58,
 		"model": "main.Player",
 		"fields": {
-			"name": u"서동주"
-			"school": 1
+			"name": "\uc11c\ub3d9\uc8fc",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -525,8 +525,8 @@
 		"pk": 59,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김윤경"
-			"school": 1
+			"name": "\uae40\uc724\uacbd",
+			"school": 1,
 			"year": "13"
 		}
 	},
@@ -534,8 +534,8 @@
 		"pk": 60,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이성진"
-			"school": 1
+			"name": "\uc774\uc131\uc9c4",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -543,8 +543,8 @@
 		"pk": 61,
 		"model": "main.Player",
 		"fields": {
-			"name": u"박정수"
-			"school": 1
+			"name": "\ubc15\uc815\uc218",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -552,8 +552,8 @@
 		"pk": 62,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김민수"
-			"school": 1
+			"name": "\uae40\ubbfc\uc218",
+			"school": 1,
 			"year": "09"
 		}
 	},
@@ -561,8 +561,8 @@
 		"pk": 63,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이윤석"
-			"school": 1
+			"name": "\uc774\uc724\uc11d",
+			"school": 1,
 			"year": "07"
 		}
 	},
@@ -570,8 +570,8 @@
 		"pk": 64,
 		"model": "main.Player",
 		"fields": {
-			"name": u"박지민"
-			"school": 1
+			"name": "\ubc15\uc9c0\ubbfc",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -579,8 +579,8 @@
 		"pk": 65,
 		"model": "main.Player",
 		"fields": {
-			"name": u"황혁"
-			"school": 1
+			"name": "\ud669\ud601",
+			"school": 1,
 			"year": "13"
 		}
 	},
@@ -588,8 +588,8 @@
 		"pk": 66,
 		"model": "main.Player",
 		"fields": {
-			"name": u"임현진"
-			"school": 1
+			"name": "\uc784\ud604\uc9c4",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -597,8 +597,8 @@
 		"pk": 67,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김홍경"
-			"school": 1
+			"name": "\uae40\ud64d\uacbd",
+			"school": 1,
 			"year": "09"
 		}
 	},
@@ -606,8 +606,8 @@
 		"pk": 68,
 		"model": "main.Player",
 		"fields": {
-			"name": u"최인식"
-			"school": 1
+			"name": "\ucd5c\uc778\uc2dd",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -615,8 +615,8 @@
 		"pk": 69,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이주희"
-			"school": 1
+			"name": "\uc774\uc8fc\ud76c",
+			"school": 1,
 			"year": "13"
 		}
 	},
@@ -624,8 +624,8 @@
 		"pk": 70,
 		"model": "main.Player",
 		"fields": {
-			"name": u"송영기"
-			"school": 1
+			"name": "\uc1a1\uc601\uae30",
+			"school": 1,
 			"year": "13"
 		}
 	},
@@ -633,8 +633,8 @@
 		"pk": 71,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김용진"
-			"school": 1
+			"name": "\uae40\uc6a9\uc9c4",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -642,8 +642,8 @@
 		"pk": 72,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김재현"
-			"school": 1
+			"name": "\uae40\uc7ac\ud604",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -651,8 +651,8 @@
 		"pk": 73,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이나연"
-			"school": 1
+			"name": "\uc774\ub098\uc5f0",
+			"school": 1,
 			"year": "10"
 		}
 	},
@@ -660,8 +660,8 @@
 		"pk": 74,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김도윤"
-			"school": 1
+			"name": "\uae40\ub3c4\uc724",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -669,8 +669,8 @@
 		"pk": 75,
 		"model": "main.Player",
 		"fields": {
-			"name": u"전현기"
-			"school": 1
+			"name": "\uc804\ud604\uae30",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -678,8 +678,8 @@
 		"pk": 76,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이세라"
-			"school": 1
+			"name": "\uc774\uc138\ub77c",
+			"school": 1,
 			"year": "11"
 		}
 	},
@@ -687,8 +687,8 @@
 		"pk": 77,
 		"model": "main.Player",
 		"fields": {
-			"name": u"한형석"
-			"school": 1
+			"name": "\ud55c\ud615\uc11d",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -696,8 +696,8 @@
 		"pk": 78,
 		"model": "main.Player",
 		"fields": {
-			"name": u"박민준"
-			"school": 1
+			"name": "\ubc15\ubbfc\uc900",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -705,8 +705,8 @@
 		"pk": 79,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김준열"
-			"school": 1
+			"name": "\uae40\uc900\uc5f4",
+			"school": 1,
 			"year": "12"
 		}
 	},
@@ -714,8 +714,8 @@
 		"pk": 80,
 		"model": "main.Player",
 		"fields": {
-			"name": u"정윤종"
-			"school": 1
+			"name": "\uc815\uc724\uc885",
+			"school": 1,
 			"year": "13"
 		}
 	},
@@ -723,8 +723,8 @@
 		"pk": 81,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이현섭"
-			"school": 1
+			"name": "\uc774\ud604\uc12d",
+			"school": 1,
 			"year": "13"
 		}
 	},
@@ -732,8 +732,8 @@
 		"pk": 82,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김병주"
-			"school": 2
+			"name": "\uae40\ubcd1\uc8fc",
+			"school": 2,
 			"year": "12"
 		}
 	},
@@ -741,8 +741,8 @@
 		"pk": 83,
 		"model": "main.Player",
 		"fields": {
-			"name": u"백진언"
-			"school": 2
+			"name": "\ubc31\uc9c4\uc5b8",
+			"school": 2,
 			"year": "12"
 		}
 	},
@@ -750,8 +750,8 @@
 		"pk": 84,
 		"model": "main.Player",
 		"fields": {
-			"name": u"백은진"
-			"school": 2
+			"name": "\ubc31\uc740\uc9c4",
+			"school": 2,
 			"year": "12"
 		}
 	},
@@ -759,8 +759,8 @@
 		"pk": 85,
 		"model": "main.Player",
 		"fields": {
-			"name": u"최종민"
-			"school": 2
+			"name": "\ucd5c\uc885\ubbfc",
+			"school": 2,
 			"year": "12"
 		}
 	},
@@ -768,8 +768,8 @@
 		"pk": 86,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이지승"
-			"school": 2
+			"name": "\uc774\uc9c0\uc2b9",
+			"school": 2,
 			"year": "09"
 		}
 	},
@@ -777,8 +777,8 @@
 		"pk": 87,
 		"model": "main.Player",
 		"fields": {
-			"name": u"장태웅"
-			"school": 2
+			"name": "\uc7a5\ud0dc\uc6c5",
+			"school": 2,
 			"year": "07"
 		}
 	},
@@ -786,8 +786,8 @@
 		"pk": 88,
 		"model": "main.Player",
 		"fields": {
-			"name": u"최태훈"
-			"school": 2
+			"name": "\ucd5c\ud0dc\ud6c8",
+			"school": 2,
 			"year": "11"
 		}
 	},
@@ -795,8 +795,8 @@
 		"pk": 89,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김준성"
-			"school": 2
+			"name": "\uae40\uc900\uc131",
+			"school": 2,
 			"year": "09"
 		}
 	},
@@ -804,8 +804,8 @@
 		"pk": 90,
 		"model": "main.Player",
 		"fields": {
-			"name": u"장태웅"
-			"school": 2
+			"name": "\uc7a5\ud0dc\uc6c5",
+			"school": 2,
 			"year": "07"
 		}
 	},
@@ -813,8 +813,8 @@
 		"pk": 91,
 		"model": "main.Player",
 		"fields": {
-			"name": u"최종민"
-			"school": 2
+			"name": "\ucd5c\uc885\ubbfc",
+			"school": 2,
 			"year": "12"
 		}
 	},
@@ -822,8 +822,8 @@
 		"pk": 92,
 		"model": "main.Player",
 		"fields": {
-			"name": u"박평수"
-			"school": 2
+			"name": "\ubc15\ud3c9\uc218",
+			"school": 2,
 			"year": "12"
 		}
 	},
@@ -831,8 +831,8 @@
 		"pk": 93,
 		"model": "main.Player",
 		"fields": {
-			"name": u"성민성"
-			"school": 2
+			"name": "\uc131\ubbfc\uc131",
+			"school": 2,
 			"year": "12"
 		}
 	},
@@ -840,8 +840,8 @@
 		"pk": 94,
 		"model": "main.Player",
 		"fields": {
-			"name": u"박기은"
-			"school": 2
+			"name": "\ubc15\uae30\uc740",
+			"school": 2,
 			"year": "11"
 		}
 	},
@@ -849,8 +849,8 @@
 		"pk": 95,
 		"model": "main.Player",
 		"fields": {
-			"name": u"박진석"
-			"school": 2
+			"name": "\ubc15\uc9c4\uc11d",
+			"school": 2,
 			"year": "11"
 		}
 	},
@@ -858,8 +858,8 @@
 		"pk": 96,
 		"model": "main.Player",
 		"fields": {
-			"name": u"여상훈"
-			"school": 2
+			"name": "\uc5ec\uc0c1\ud6c8",
+			"school": 2,
 			"year": "10"
 		}
 	},
@@ -867,8 +867,8 @@
 		"pk": 97,
 		"model": "main.Player",
 		"fields": {
-			"name": u"이광무"
-			"school": 2
+			"name": "\uc774\uad11\ubb34",
+			"school": 2,
 			"year": "10"
 		}
 	},
@@ -876,8 +876,8 @@
 		"pk": 98,
 		"model": "main.Player",
 		"fields": {
-			"name": u"임도완"
-			"school": 2
+			"name": "\uc784\ub3c4\uc644",
+			"school": 2,
 			"year": "13"
 		}
 	},
@@ -885,8 +885,8 @@
 		"pk": 99,
 		"model": "main.Player",
 		"fields": {
-			"name": u"최동준"
-			"school": 2
+			"name": "\ucd5c\ub3d9\uc900",
+			"school": 2,
 			"year": "13"
 		}
 	},
@@ -894,8 +894,8 @@
 		"pk": 100,
 		"model": "main.Player",
 		"fields": {
-			"name": u"정원준"
-			"school": 2
+			"name": "\uc815\uc6d0\uc900",
+			"school": 2,
 			"year": "13"
 		}
 	},
@@ -903,8 +903,8 @@
 		"pk": 101,
 		"model": "main.Player",
 		"fields": {
-			"name": u"박민성"
-			"school": 2
+			"name": "\ubc15\ubbfc\uc131",
+			"school": 2,
 			"year": "13"
 		}
 	},
@@ -912,8 +912,8 @@
 		"pk": 102,
 		"model": "main.Player",
 		"fields": {
-			"name": u"오윤이"
-			"school": 2
+			"name": "\uc624\uc724\uc774",
+			"school": 2,
 			"year": "13"
 		}
 	},
@@ -921,8 +921,8 @@
 		"pk": 103,
 		"model": "main.Player",
 		"fields": {
-			"name": u"박준수"
-			"school": 2
+			"name": "\ubc15\uc900\uc218",
+			"school": 2,
 			"year": "13"
 		}
 	},
@@ -930,8 +930,8 @@
 		"pk": 104,
 		"model": "main.Player",
 		"fields": {
-			"name": u"조성하"
-			"school": 2
+			"name": "\uc870\uc131\ud558",
+			"school": 2,
 			"year": "11"
 		}
 	},
@@ -939,8 +939,8 @@
 		"pk": 105,
 		"model": "main.Player",
 		"fields": {
-			"name": u"김경록"
-			"school": 2
+			"name": "\uae40\uacbd\ub85d",
+			"school": 2,
 			"year": "09"
 		}
 	}
