@@ -21,6 +21,7 @@ body{
 	height:100%;
 	background:#e4e4e4;
 	overflow:auto;
+        border-bottom:6px solid #bababa;
 }
 #wrapper{
 	width:960px;
@@ -201,4 +202,10 @@ aside #total-score section.process p{
 
 aside #option{
 	margin-top:16px;
+}
+
+/* CONTENT */
+
+#content{
+	padding-bottom:40px;
 }
