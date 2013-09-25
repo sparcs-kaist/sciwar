@@ -1,0 +1,59 @@
+/* block right */
+.video-item
+{
+    background-color: #FFFFFF;
+    padding: 5px;
+    width: 660px;
+}
+
+.video-event-info
+{
+    height: 18px;
+}
+
+.video-title
+{
+    color: #303030;
+}
+
+.video-event
+{
+    color: #A0A0A0;
+    float: left;
+}
+
+.video-time
+{
+    color: #C8C8C8;
+    float: right;
+}
+
+.video-link
+{
+    color: #3366FF;
+}
+
+/* block leftdown */
+#video-lister
+{
+    background-color: #FFFFFF;
+    padding: 10px;
+}
+
+.lister-selector
+{
+   margin-top: 10px; 
+}
+
+.title
+{
+    
+}
+
+.criterion
+{
+    background-color: #E8E8E8;
+    margin-bottom: 5px;
+    padding: 10px;
+    color: #808080;
+}
