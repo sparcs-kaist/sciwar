@@ -5,12 +5,12 @@
 		"fields": {
 			"name":"HACKING CONTEST",
 			"winner":3,
-			"start_time":"2013-09-26 23:00:00",
-			"end_time":"2013-09-27 01:00:00",
+			"start_time":"2013-09-26 22:00:00",
+			"end_time":"2013-09-27 10:00:00",
 			"building":"E11, Creative Learning Building",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0,
+			"score":100,
 			"is_competition":1,
 			"description":""
 		}
@@ -31,26 +31,9 @@
 			"description":""
 
 		}
-	},
+	},	
 	{
 		"pk": 3,
-		"model": "main.Event",
-		"fields": {
-			"name":"PROF. SOCCER",
-			"winner":3,
-			"start_time":"2013-09-27 15:30:00",
-			"end_time":"2013-09-27 16:30:00",
-			"building":"Front of N3, Main Playground",
-			"kaist_score":0,
-			"postech_score":0,
-			"score":0,
-			"is_competition":1,
-			"description":""
-
-		}
-	},
-	{
-		"pk": 4,
 		"model": "main.Event",
 		"fields": {
 			"name":"BASKETBALL",
@@ -60,14 +43,14 @@
 			"building":"N3, Sports Complex",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0,
+			"score":100,
 			"is_competition":1,
 			"description":""
 
 		}
 	},
 	{
-		"pk": 5,
+		"pk": 4,
 		"model": "main.Event",
 		"fields": {
 			"name":"ARTIFICIAL INTELLIGENCE",
@@ -77,14 +60,14 @@
 			"building":"N3, Sports Complex",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0,
+			"score":100,
 			"is_competition":1,
 			"description":""
 
 		}
 	},
 	{
-		"pk": 6,
+		"pk": 5,
 		"model": "main.Event",
 		"fields": {
 			"name":"LEAGUE OF LEGENDS",
@@ -94,14 +77,14 @@
 			"building":"N3, Sports Complex",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0,
+			"score":100,
 			"is_competition":1,
 			"description":""
 
 		}
 	},
 	{
-		"pk": 7,
+		"pk": 6,
 		"model": "main.Event",
 		"fields": {
 			"name":"BEER PARTY",
@@ -118,7 +101,7 @@
 		}
 	},
 	{
-		"pk":8,
+		"pk":7,
 		"model":"main.Event",
 		"fields": {
 			"name":"BASEBALL",
@@ -128,14 +111,14 @@
 			"building":"Front of N3, Main Playground",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0,
+			"score":100,
 			"is_competition":1,
 			"description":""
 
 		}
 	},
 	{
-		"pk":9,
+		"pk":8,
 		"model":"main.Event",
 		"fields": {
 			"name":"SCIENCE QUIZ CONTEST",
@@ -145,14 +128,14 @@
 			"building":"N3, Sports Complex",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0,
+			"score":100,
 			"is_competition":1,
 			"description":""
 
 		}
 	},
 	{
-		"pk":10,
+		"pk":9,
 		"model":"main.Event",
 		"fields": {
 			"name":"SOCCER",
@@ -162,14 +145,14 @@
 			"building":"E17, Stadium",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0,
+			"score":100,
 			"is_competition":1,
 			"description":""
 
 		}
 	},
 	{
-		"pk":11,
+		"pk":10,
 		"model":"main.Event",
 		"fields": {
 			"name":"CLOSING CEREMONY",

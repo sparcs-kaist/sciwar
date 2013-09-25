@@ -26,11 +26,12 @@ def main_page(request):
     for event in todays:
         today_events[event.name] = event.start_time
 
-
+    current_time = datetime.now()
     return render(request, 'index.html', {
         "state":_get_state(), "today_events":today_events,
         "current_event":current_event,
-        "other_events":other_events})
+        "other_events":other_events,
+        "current_time":current_time})
 
 def info_page(request):
     return render(request, 'info.html', {"state":_get_state()})

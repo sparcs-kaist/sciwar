@@ -3,6 +3,8 @@
     background-color: #FFFFFF;
     padding: 10px;
     width: 640px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .day-text
@@ -16,12 +18,13 @@
 {
     background-color: #F5F5F5;
     margin-top: 5px;
-    padding: 10px; 
+    padding: 10px;
+    padding-bottom:20px; 
 }
 
 .event-detail
 {
-    height: 18px;
+    height: 24px;
 }
 
 .event-time
@@ -56,6 +59,7 @@
 .day-detail
 {
     float:left;
+    height:24px;
     color:#bdbdbd; 
 }
 
