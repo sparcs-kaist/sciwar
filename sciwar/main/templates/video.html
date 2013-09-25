@@ -2,6 +2,16 @@
 {% block style %}
 <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/video.css">
 {% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{STATIC_URL}}js/video.js"></script>
+{% endblock %}
+
+{% block initialize %}
+VideoList.initialize();
+SortList.initialize();	
+{% endblock %}
+
 {% block video %}sel{% endblock %}
 {% block right %}
 <div class="video-item">
@@ -34,7 +44,7 @@
 		<div class="title">
 			SORT BY
 		</div>
-		<div class="criterion">
+		<div class="criterion" onclick="SortList.reverseOrder()">
 			DATE
 		</div>
 	</div>
@@ -42,30 +52,33 @@
 		<div class="title">
 			EVENTS
 		</div>
-		<div class="criterion">
+		<div class="criterion" onclick="SortList.updateVideo('all')">
 			ALL
 		</div>
 		<!-- EVENT LIST COMES HERE -->
-		<div class="criterion">
+		<div class="criterion" onclick="SortList.updateVideo('SOCCER')">
 			SOCCER
 		</div>
-		<div class="criterion">
+		<div class="criterion" onclick="SortList.updateVideo('BASKETBALL')">
 			BASKETBALL
 		</div>
-		<div class="criterion">
+		<div class="criterion" onclick="SortList.updateVideo('BASEBALL')">
 			BASEBALL
 		</div>
-		<div class="criterion">
-			HACKING
+		<div class="criterion" onclick="SortList.updateVideo('PROF. SOCCER')">
+			PROF. SOCCER
 		</div>
-		<div class="criterion">
+		<div class="criterion" onclick="SortList.updateVideo('SCIENCE QUIZ CONTEST')">
 			SCIENCE QUIZ
 		</div>
-		<div class="criterion">
+		<div class="criterion" onclick="SortList.updateVideo('LEAGUE OF LEGENDS')">
 			LEAGUE OF LEGENDS
 		</div>
-		<div class="criterion">
+		<div class="criterion" onclick="SortList.updateVideo('ARTIFICIAL INTELLIGENCE')">
 			A.I.
+		</div>
+		<div class="criterion" onclick="SortList.updateVideo('etc')">
+			ETC
 		</div>
 	</div>
 </div>

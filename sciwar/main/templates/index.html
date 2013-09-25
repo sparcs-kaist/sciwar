@@ -8,13 +8,13 @@
     <section class="today-schedule">
         <h2>TODAY</h2>
         <ul class="list">
-			{% for event_title, event_time in events.items %}
-			<li{% if current_event_name == event_title %} class="now"{% endif %}>
-				<h4>{{ event_title }}</h4>
-				<p>{{ event_time|time:"H:i" }}</p>
+            {% for event_title, event_time in events.items %}
+            <li{% if current_event_name == event_title %} class="now"{% endif %}>
+                <h4>{{ event_title }}</h4>
+                <p>{{ event_time|time:"H:i" }}</p>
             </li>
-			{% endfor %}
-			<!--
+            {% endfor %}
+            <!--
             <li class="now">
                 <h4>Prof. Soccer</h4>
                 <p>12:00</p>
@@ -31,7 +31,7 @@
                 <h4>LoL</h4>
                 <p>20:00</p>
             </li>
-			-->
+            -->
         </ul>
     </section>
 {% endblock %}
@@ -45,14 +45,13 @@
         <section class="kaist-score">
             <h4>KAIST</h4>
             <p>2</p>
-            <button class="flip">hide</button>
         </section>
         <section class="postech-score">
             <h4>POSTECH</h4>
             <p>365</p>
-            <button class="flip">hide</button>
         </section>
         <section class="map">
+            <button class="flip">hide</button>
             <h4>Front of N3, Main Playground</h4>
             <p>
                 <span class="map-pin">here</span>
@@ -60,7 +59,8 @@
             </p>
         </section>
         <section class="players">
-        <h4></h4>
+            <button class="flip">hide</button>
+            <h4>Players Information</h4>
         </section>
     </article>
     <ul class="event-list">

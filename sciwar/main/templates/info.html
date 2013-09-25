@@ -5,19 +5,14 @@
 
 {% block script %}
 <script type="text/javascript" src="{{STATIC_URL}}js/info.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		InformationList.initialize();
-		SortList.initialize();	
-	});
-</script>
+{% endblock %}
+
+{% block initialize %}
+InformationList.initialize();
+SortList.initialize();
 {% endblock %}
 
 {% block info %}sel{% endblock %}
-{% block right %}
-<div id="right-side">
-</div>
-{% endblock %}
 {% block leftdown %}
 <div class="info-show">
 	<div class="info-standard">

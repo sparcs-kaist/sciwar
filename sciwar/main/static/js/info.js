@@ -29,11 +29,11 @@ var SortList = {
 var InformationList = {
 	initialize:function()
 	{
-		this.right = $('#right-side');
+		this.content = $('#content');
 	},
 	showInfo:function(obj)
 	{
-		InformationList.right.empty();
+		InformationList.content.empty();
 		$.each(obj, function(index, item){
 			var info = $('<div>', {'class': 'info-field'});
 		
@@ -44,7 +44,7 @@ var InformationList = {
 			$('<div>', {'class': 'info-title'}).text(item.title).appendTo(info);
 			$('<div>', {'class': 'info-date'}).text(item.date).appendTo(info);
 			$('<div>', {'class': 'info-article'}).text(item.article).appendTo(info);
-			info.prependTo(InformationList.right);
+			info.prependTo(InformationList.content);
 		});
 	},
 };
