@@ -66,6 +66,9 @@ header #logo{
 	margin-top:23px;
 	display:inline-block;
 }
+header #logo.sel{
+        background:transparent url("/media/res/img_home.png") 49px bottom no-repeat;
+}
 header #logo a#nav-home{
 	margin-top:-1px;
 	font-size:24px;
