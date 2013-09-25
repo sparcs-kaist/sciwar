@@ -14,8 +14,10 @@ def main_page(request):
             start_time__lte = datetime.now()).filter(\
                     end_time__gte = datetime.now())
 
+    other_events = Event.objects.all().order_by('start_time')
     if current_event:
         current_event = current_event[0]
+        other_events.exclude(name = current_event.name)
     else:
         current_event = []
 
@@ -23,8 +25,6 @@ def main_page(request):
     for event in todays:
         today_events[event.name] = event.start_time
 
-    other_events = Event.objects.all().order_by('start_time')
-    other_events.exclude(name = current_event.name)
 
     return render(request, 'index.html', {
         "state":_get_state(), "today_events":today_events,

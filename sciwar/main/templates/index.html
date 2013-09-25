@@ -56,7 +56,7 @@
         <li class="hacking">
             <h2>{{ event.name }}</h2>
             <span class="info">
-                <p class="time">{{ event.start_time|time:"H:i" }} - {{ event.start_time|time:"H:i" }}</p>
+                <p class="time">{{ event.start_time|time:"H:i" }} - {{ event.end_time|time:"H:i" }}</p>
                 <p class="map">{{ event.building }}</p>
             </span>
             {% if event.is_competition %}
