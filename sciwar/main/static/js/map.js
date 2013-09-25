@@ -42,4 +42,7 @@ var map = {
 			sports_complex_click();
 		});
 	}
-}	
+	
+};
+
+
