@@ -23,7 +23,7 @@
     <article class="live">
         <span class="status">Live</span>
         <span class="time">{{ current_event.start_time|time:"H:i" }} - {{ current_event.start_time|time:"H:i" }}</span>
-        <h2 class="event">{{ current_event.name }}</h2>
+        <h2 class="event"><a href="#">{{ current_event.name }}</a></h2>
         <p class="comment">{{ current_event.description }}</p>
         {% if current_event.is_competition %}
         <section class="kaist-score">
@@ -36,16 +36,15 @@
         </section>
         {% endif %}
         <section class="map">
-            <button class="flip">hide</button>
+            <button class="flip-hide">hide</button>
             <h4>{{ current_event.building }}</h4>
             <p>
-                <span class="map-pin">here</span>
-                <img class="map-image" src="{{MEDIA_URL}}res/asdf.png">
+                <img class="map-image" src="{{MEDIA_URL}}res/map_{{ current_event.building }}.png">
             </p>
         </section>
         {% if current_event.is_competition %}
         <section class="players">
-            <button class="flip">hide</button>
+            <button class="flip-show">hide</button>
             <h4>Players Information</h4>
         </section>
         {% endif %}
