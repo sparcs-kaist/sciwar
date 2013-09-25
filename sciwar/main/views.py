@@ -3,34 +3,39 @@ from django.shortcuts import render
 from django.db import models
 from main.models import *
 from django.utils import simplejson as json
-import time
+import time 
 from datetime import datetime, timedelta
 
 def main_page(request):
-    today_events = Event.objects.filter(
+    todays = Event.objects.filter(
             start_time__day = datetime.today().day + 0)\
-    .order_by('start_time')
+                    .order_by('start_time')
     current_event = Event.objects.filter(
             start_time__lte = datetime.now()).filter(\
                     end_time__gte = datetime.now())
 
     if current_event:
-        current_event_name = current_event[0].name
+        current_event = current_event[0]
     else:
-        current_event_name = ""
+        current_event = []
 
-    events = {}
-    for event in today_events:
-        events[event.name] = event.start_time
+    today_events = {}
+    for event in todays:
+        today_events[event.name] = event.start_time
+
+    other_events = Event.objects.all().order_by('start_time')
+    other_events.exclude(name = current_event.name)
+
     return render(request, 'index.html', {
-        "state":_get_state(), "events":events,
-        "current_event_name":current_event_name})
+        "state":_get_state(), "today_events":today_events,
+        "current_event":current_event,
+        "other_events":other_events})
 
 def info_page(request):
     return render(request, 'info.html', {"state":_get_state()})
 
 def schedule_page(request):
-    return render(request, 'schedule.html', {"state":_get_state()})
+    return render(request, 'schedule.html', {"state":_get_state(), "events":_get_schedule()})
 
 def map_page(request):
     return render(request, 'map.html', {"state":_get_state()})
@@ -49,11 +54,41 @@ def update_information(request):
                 'title': info.title,
                 'article': info.content,
                 'classify': info.get_category_display(),
-                'date': info.time.strftime("%y.%m.%d")
+                'date': info.time.strftime("20%y. %m. %d")
                 }
         if info.category == 1 and avail_notice:
             contents.append(item)
         if info.category == 2 and avail_info:
+            contents.append(item)
+    return HttpResponse(json.dumps({
+        'contents': contents}, ensure_ascii=False, indent=4))
+
+def update_video(request):
+    classify = request.GET.get('name','all')
+    sort_order = int(request.GET.get('order', 0))
+
+    event_set = []
+    if classify == "etc":
+        event_set.append("HACKING CONTEST")
+        event_set.append("OPENING CONTEST")
+        event_set.append("BEER PARTY")
+        event_set.append("CLOSING CEREMONY")
+    elif classify != "all":
+        event_set.append(classify)
+    
+    contents = []
+    if sort_order == 1:
+        videos = Video.objects.all().order_by('time')
+    else:
+        videos = Video.objects.all().order_by('-time')
+    for video in videos:
+        if classify=="all" or video.event.name in event_set:
+            item = {
+                'title': video.name,
+                'event': video.event.name,
+                'link': video.link,
+                'time': video.time.strftime("20%y. %m. %d %H:%M")
+                }
             contents.append(item)
     return HttpResponse(json.dumps({
         'contents': contents}, ensure_ascii=False, indent=4))
@@ -76,3 +111,26 @@ def _get_state():
             state["DONE"] -= 1
     
     return state
+
+def _get_schedule():
+    Month = [0,"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
+    events = []
+    events_list = Event.objects.all()
+    exist_date = []
+    for event in events_list:
+        print event.start_time
+        if not event.start_time.date() in exist_date:
+            exist_date.append(event.start_time.date())
+    for date in exist_date:
+        events_per_day = []
+        for event in events_list:
+            if event.start_time.date() == date:
+                info = {}
+                info["name"]= event.name
+                info["start_time"] = "%02d"%event.start_time.hour+":"+"%02d"%event.start_time.minute
+                info["end_time"] = "%02d"%event.end_time.hour+":"+"%02d"%event.end_time.minute
+                info["location"] = event.building
+                events_per_day.append(info)
+        events.append({"date":Month[date.month]+" "+str(date.day), "events":events_per_day})
+    return events
+

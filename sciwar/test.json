@@ -10,7 +10,9 @@
 			"building":"E11, Creative Learning Building",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0
+			"score":0,
+			"is_competition":1,
+			"description":""
 		}
 	},
 	{
@@ -24,7 +26,10 @@
 			"building":"N3, Sports Complex",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0
+			"score":0,
+			"is_competition":0,
+			"description":""
+
 		}
 	},
 	{
@@ -38,7 +43,10 @@
 			"building":"Front of N3, Main Playground",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0
+			"score":0,
+			"is_competition":1,
+			"description":""
+
 		}
 	},
 	{
@@ -52,7 +60,10 @@
 			"building":"N3, Sports Complex",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0
+			"score":0,
+			"is_competition":1,
+			"description":""
+
 		}
 	},
 	{
@@ -66,7 +77,10 @@
 			"building":"N3, Sports Complex",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0
+			"score":0,
+			"is_competition":1,
+			"description":""
+
 		}
 	},
 	{
@@ -80,7 +94,10 @@
 			"building":"N3, Sports Complex",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0
+			"score":0,
+			"is_competition":1,
+			"description":""
+
 		}
 	},
 	{
@@ -94,7 +111,10 @@
 			"building":"E14, Field front of the main admin building",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0
+			"score":0,
+			"is_competition":0,
+			"description":""
+
 		}
 	},
 	{
@@ -108,7 +128,10 @@
 			"building":"Front of N3, Main Playground",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0
+			"score":0,
+			"is_competition":1,
+			"description":""
+
 		}
 	},
 	{
@@ -122,7 +145,10 @@
 			"building":"N3, Sports Complex",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0
+			"score":0,
+			"is_competition":1,
+			"description":""
+
 		}
 	},
 	{
@@ -136,7 +162,10 @@
 			"building":"E17, Stadium",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0
+			"score":0,
+			"is_competition":1,
+			"description":""
+
 		}
 	},
 	{
@@ -150,7 +179,10 @@
 			"building":"N3, Sports Complex",
 			"kaist_score":0,
 			"postech_score":0,
-			"score":0
+			"score":0,
+			"is_competition":0,
+			"description":""
+
 		}
 	}
 ]

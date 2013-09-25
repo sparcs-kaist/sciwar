@@ -4,54 +4,45 @@
 {% endblock %}
 {% block schedule %}sel{% endblock %}
 {% block right %}
-<div class="day-field">
-    <div class="day-text">
-        <!-- FONT COLOR MAY CHANGE -->
-        SEP 26
-    </div>
-    <div class="event-field">
-        <div class="event-name">
-            FESTIVAL EVE
-        </div>
-        <div class="event-detail">
-            <div class="event-time">
-                <!-- CLOCK IMAGE COMES HERE -->
-                13:00 - 15:00
-            </div>
-            <div class="event-location">
-                <!-- LOCATION IMAGE COMES HERE -->
-                N3, Sports Complex
-            </div>
-        </div>
-    </div>
-</div>
+
+{% for date in events %}
+	<div class="day-field">
+		<div class="day-text">
+			{{ date.date }}
+		</div>
+		{% for event in date.events %}
+			<div class="event-field">
+				<div class="event-name">
+					{{event.name}}
+				</div>
+				<div class="event-detail">
+					<div class="event-time">
+						<!-- CLOCK IMAGE COMES HERE -->
+						{{event.start_time}} - {{event.end_time}}
+					</div>
+					<div class="event-location">
+						<!-- LOCATION IMAGE COMES HERE -->
+						{{event.location}}
+					</div>	
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endfor %}
+
 {% endblock %}
 {% block leftdown %}
 <div class="day-show">
+	{% for date in events %}
 	<div class="day-click">
 		<div class="day-detail">
-			SEP 26
+			{{ date.date }}
 		</div>
 		<div class="day-click-img">
 			>
 		</div>
 	</div>
-	<div class="day-click">
-		<div class="day-detail">
-			SEP 27
-		</div>
-		<div class="day-click-img">
-			>
-		</div>
-	</div>
-	<div class="day-click">
-		<div class="day-detail">
-			SEP 28
-		</div>
-		<div class="day-click-img">
-			>
-		</div>
-	</div>
+	{% endfor %}
 
 </div>
 {% endblock %}

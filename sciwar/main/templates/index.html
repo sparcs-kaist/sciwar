@@ -8,82 +8,64 @@
     <section class="today-schedule">
         <h2>TODAY</h2>
         <ul class="list">
-            {% for event_title, event_time in events.items %}
-            <li{% if current_event_name == event_title %} class="now"{% endif %}>
+            {% for event_title, event_time in today_events.items %}
+            <li{% if current_event.name == event_title %} class="now"{% endif %}>
                 <h4>{{ event_title }}</h4>
                 <p>{{ event_time|time:"H:i" }}</p>
             </li>
             {% endfor %}
-            <!--
-            <li class="now">
-                <h4>Prof. Soccer</h4>
-                <p>12:00</p>
-            </li>
-            <li>
-                <h4>Basketball</h4>
-                <p>15:30</p>
-            </li>
-            <li>
-                <h4>A.I.</h4>
-                <p>17:15</p>
-            </li>
-            <li>
-                <h4>LoL</h4>
-                <p>20:00</p>
-            </li>
-            -->
         </ul>
     </section>
 {% endblock %}
 
 {% block right %}
+    {% if current_event %}
     <article class="live">
         <span class="status">Live</span>
-        <span class="time">12:00 - 15:15</span>
-        <h2 class="event"><a href="#">Prof. Soccer</a></h2>
-        <p class="comment">Prof.Soccer is the contest with professors at KAIST and POSTECH. And they do soccer game, then play with students.</p>
+        <span class="time">{{ current_event.start_time|time:"H:i" }} - {{ current_event.start_time|time:"H:i" }}</span>
+        <h2 class="event">{{ current_event.name }}</h2>
+        <p class="comment">{{ current_event.description }}</p>
+        {% if current_event.is_competition %}
         <section class="kaist-score">
             <h4>KAIST</h4>
-            <p>2</p>
+            <p>{{ current_event.kaist_score }}</p>
         </section>
         <section class="postech-score">
             <h4>POSTECH</h4>
-            <p>365</p>
+            <p>{{ current_event.postech_score }}</p>
         </section>
+        {% endif %}
         <section class="map">
-            <button class="flip hide">hide</button>
-            <h4>Front of N3, Main Playground</h4>
+            <button class="flip">hide</button>
+            <h4>{{ current_event.building }}</h4>
             <p>
-                <img class="map-image" src="{{MEDIA_URL}}res/map_sports_complex.png">
+                <span class="map-pin">here</span>
+                <img class="map-image" src="{{MEDIA_URL}}res/asdf.png">
             </p>
         </section>
+        {% if current_event.is_competition %}
         <section class="players">
-            <button class="flip show">hide</button>
+            <button class="flip">hide</button>
             <h4>Players Information</h4>
         </section>
+        {% endif %}
     </article>
+    {% endif %}
     <ul class="event-list">
-        <li>
-            <h2>Hacking Contest</h2>
+        {% for event in other_events %}
+        <li class="hacking">
+            <h2>{{ event.name }}</h2>
             <span class="info">
-                <p class="time">13:00 - 15:00</p>
-                <p class="map">N3, Sports Complex</p>
+                <p class="time">{{ event.start_time|time:"H:i" }} - {{ event.start_time|time:"H:i" }}</p>
+                <p class="map">{{ event.building }}</p>
             </span>
+            {% if event.is_competition %}
             <span class="score">
-                <p class="kaist">2</p>
-                <p class="postech">32</p>
+                <p class="kaist">{{ event.kaist_score }}</p>
+                <p class="postech">{{ event.postech_score }}</p>
             </span>
+            {% endif %}
         </li>
-        <li>
-            <h2>Basketball</h2>
-            <span class="info">
-                <p class="time">14:00 - 17:00</p>
-                <p class="map">N3, Sports Complex</p>
-            </span>
-            <span class="score">
-                <p class="kaist">132</p>
-                <p class="postech">96</p>
-            </span>
-        </li>
+        {% endfor %}
     </ul>
 {% endblock %}
