@@ -46,6 +46,31 @@ var SortList = {
 			}
 		});
 	},
+	color:function(mode,id)
+	{
+		var i;
+		var criL=$(".criterion");
+		if(mode=="order") {
+			for(i=0;;i++) {
+				if(criL[i]==null) break;
+				if(i==id) {
+					$(criL[i]).css("background","#ebebeb");
+				} else {
+					$(criL[i]).css("background","#f5f5f5");
+				}
+			}
+		} else {
+			id++;
+			for(i=0;;i++) {
+				if(criL[i]==null) break;
+				if(i==id) {
+					$(criL[i]).css("background","#ebebeb");
+				} else {
+					$(criL[i]).css("background","#f5f5f5");
+				}
+			}
+		}
+	}
 };
 
 var VideoList = {
