@@ -15,10 +15,12 @@
         {% block style %}{% endblock %}
         <!-- SCRIPTS -->
         <script type="text/javascript" src="{{STATIC_URL}}js/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="{{STATIC_URL}}js/layout.js"></script>
         {% block script %}{% endblock %}
         <!-- SCRIPT INITIALIZATION -->
         <script type="text/javascript">
             $(document).ready(function(){
+                Creators.initialize();
                 {% block initialize %}{% endblock %}
             });
         </script>
@@ -61,12 +63,40 @@
                     <!-- ASIDE OPTION CONTENT -->
                     {% block leftdown %}{% endblock %}
                 </div>
+                <!-- GOD OF THIS SITE -->
+                <div id="creators">
+                    <h2>POWERED BY <em>SPARCS</em></h2>
+                    <p class="time">2^6 consecutive hours</p>
+                    <p class="map">N10, Branch Library</p>
+                    <div class="developers">
+                        <span>Developers</span>
+                        <button class="flip-show">hide</button>
+                        <ul class="list">
+                            <li><a href="http://fb.com/heretor92">Jong-hyuk, Jung</a></li>
+                            <li><a href="http://fb.com/boolgom">Kyum-in, Sim</a></li>
+                            <li>Seok-ju, Hong</li>
+                            <li>Tae-hyun, Lee</li>
+                            <li>Doo-hyun, Kim</li>
+                            <li>Chang-won, Lee</li>
+                            <li>Jae-eui, Ma</li>
+                            <li><a href="http://rodumani.kr">Chang-je, Jeong</a></li>
+                        </ul>
+                    </div>
+                    <div class="designers">
+                        <span>Designers</span>
+                        <button class="flip-show">hide</button>
+                        <ul class="list">
+                            <li><a href="https://www.facebook.com/heretor92">Jong-Hyuk, Jung</a></li>
+                            <li>Ji-hyang, Bak</li>
+                            <li>Dong-jae, Lee</li>
+                        </ul>
+                    </div>
+                </div>
             </aside>
             <!-- CONTENT -->
             <div id="content">
                 <!-- CONTENT CONTENT -->
                 {% block right %}{% endblock %}
-                <!-- GOD OF THIS SITE -->
             </div>
         </div>
     </body>

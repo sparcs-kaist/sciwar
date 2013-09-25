@@ -22,7 +22,7 @@
     {% if current_event %}
     <article class="live">
         <span class="status">Live</span>
-        <span class="time">{{ current_event.start_time|time:"H:i" }} - {{ current_event.start_time|time:"H:i" }}</span>
+        <span class="time">{{ current_event.start_time|time:"H:i" }} - {{ current_event.end_time|time:"H:i" }}</span>
         <h2 class="event"><a href="#">{{ current_event.name }}</a></h2>
         <p class="comment">{{ current_event.description }}</p>
         {% if current_event.is_competition %}
