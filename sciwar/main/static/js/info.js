@@ -2,9 +2,9 @@ var SortList = {
 	initialize:function()
 	{
 		this.classify = $('.info-click');
-		this.updateInfo("all");
+		this.updateInfo("all", 0);
 	},
-	updateInfo:function(name)
+	updateInfo:function(name, id)
 	{
 		var notice = false;
 		var information = false;
@@ -18,6 +18,8 @@ var SortList = {
 			data: {'notice': notice, 'information': information},
 			dataType: 'json',
 			success: $.proxy(function(resObj) {
+				$('.info-click-img-active').toggleClass("info-click-img-active info-click-img")
+				$($('.info-click-img')[id]).toggleClass("info-click-img info-click-img-active")
 				InformationList.showInfo(resObj.contents);
 			}, this),
 			error: function(xhr) {

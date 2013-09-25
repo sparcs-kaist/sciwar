@@ -64,6 +64,7 @@
     text-overflow: ellipsis;
     text-transform: uppercase;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .info-detail
@@ -75,10 +76,23 @@
     font-size:20px;
 }
 
+.info-click-img-active
+{
+    float:right;
+    margin-right:5px;
+    background: transparent url("/media/res/img_active.png") top left no-repeat;
+    width: 15px;
+    height: 12px;
+    margin-top:14px;
+}
 .info-click-img
 {
     float:right;
-    margin-right:10px;
+    margin-right:5px;
+    background: transparent url("/media/res/img_inactive.png") top left no-repeat;
+    width: 15px;
+    height: 12px;
+    margin-top:14px;
 }
 
 .info-information span {
