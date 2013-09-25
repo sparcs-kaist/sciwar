@@ -53,8 +53,12 @@
 /* block leftdown */
 #video-lister
 {
-    background-color: #FFFFFF;
-    padding: 10px;
+    background-color: #ffffff;
+    padding-top: 12px;
+    padding-bottom:20px;
+    padding-left:12px;
+    
+
 }
 
 .lister-selector
@@ -64,15 +68,30 @@
 
 .title
 {
-    
+    font-family:"Roboto Condensed", sans-serif;
+    font-size:24px;
+    font-weight:400;
+    color:#737374;
 }
 
 .criterion
 {
-    background-color: #E8E8E8;
-    margin-bottom: 5px;
-    padding: 10px;
-    color: #808080;
+    width: 243px;
+    margin-top:5px;
+    padding-left: 10px;
+    background-color: #f5f5f5;
+    height: 40px;
+    line-height: 40px;
+    text-align:left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    border-radius: 3px;
+    font-family: "Roboto", serif;
+    float:left;
+    font-weight: 300;
+    color:#a1a0a0; 
+    font-size:20px;
 }
 
 .video-click-img
