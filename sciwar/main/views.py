@@ -56,7 +56,7 @@ def update_information(request):
                 'title': info.title,
                 'article': info.content,
                 'classify': info.get_category_display(),
-                'date': info.time.strftime("20%y. %m. %d")
+                'date': info.time.strftime("20%y. %m. %d.")
                 }
         if info.category == 1 and avail_notice:
             contents.append(item)
@@ -72,7 +72,7 @@ def update_video(request):
     event_set = []
     if classify == "etc":
         event_set.append("HACKING CONTEST")
-        event_set.append("OPENING CONTEST")
+        event_set.append("OPENING CEREMONY")
         event_set.append("BEER PARTY")
         event_set.append("CLOSING CEREMONY")
     elif classify != "all":
@@ -89,7 +89,7 @@ def update_video(request):
                 'title': video.name,
                 'event': video.event.name,
                 'link': video.link,
-                'time': video.time.strftime("20%y. %m. %d %H:%M")
+                'time': video.time.strftime("20%y. %m. %d. %H:%M")
                 }
             contents.append(item)
     return HttpResponse(json.dumps({
@@ -103,14 +103,14 @@ def _get_state():
     state["KAIST"] = 0
     state["POSTECH"] = 0
     state["ALL"] = len(events_list)
-    state["DONE"] = state["ALL"]
+    state["DONE"] = 0
     for event in events_list:
         if event.winner == 1:
             state["KAIST"] += event.score
         elif event.winner == 2:
             state["POSTECH"] += event.score
-        else:
-            state["DONE"] -= 1
+        if event.end_time < datetime.now():
+            state["DONE"] += 1
     
     return state
 

@@ -14,7 +14,7 @@ a{
 	text-decoration:none;
 }
 html{
-	overflow:auto;
+	overflow-y:scroll;
 }
 body{
 	width:100%;
@@ -65,6 +65,10 @@ header #logo{
 	height:24px;
 	margin-top:23px;
 	display:inline-block;
+        padding-bottom:23px;
+}
+header #logo.sel{
+        background:transparent url("/media/res/img_home.png") 131px bottom no-repeat;
 }
 header #logo a#nav-home{
 	margin-top:-1px;
