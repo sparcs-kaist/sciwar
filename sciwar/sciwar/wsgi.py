@@ -14,8 +14,14 @@ framework.
 
 """
 import os
+import sys
+import site
 
+sys.path.append('/var/www/sciwar/sciwar')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "sciwar.settings")
+
+site.addsitedir('/home/sciwar/sciwar/env/lib/python2.7/site-packages')
+
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION
