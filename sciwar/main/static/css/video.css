@@ -2,37 +2,52 @@
 .video-item
 {
     background-color: #FFFFFF;
-    padding: 5px;
-    margin-bottom: 20px;
-    width: 660px;
+    padding: 20px 16px;
+    margin-bottom: 16px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
 }
 
 .video-event-info
 {
-    height: 18px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .video-title
 {
-    color: #303030;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    vertical-align: middle;
+    color: #525455;
+    display: inline-block;
 }
 
 .video-event
 {
-    color: #A0A0A0;
+    font-family: "Roboto", serif;
+    font-size: 24px;
+    line-height: 24px;
+    color: #9FA5A5;
+    display: inline-block;
     float: left;
 }
 
 .video-time
 {
-    color: #C8C8C8;
+    font-family: "Roboto Light", serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: #BDBDBD;
+    display: inline-block;
     float: right;
-    margin-right: 10px;
 }
 
-.video-link
+.video-area
 {
-    color: #3366FF;
+    text-align: center;
 }
 
 /* block leftdown */
