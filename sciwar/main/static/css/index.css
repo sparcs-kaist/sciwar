@@ -246,6 +246,9 @@
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 }
+#content .event-list .event-item h2{
+	margin-top:-5px;
+}
 #content .event-list .event-item h2 a{
 	font-family:"Roboto Condensed", sans-serif;
 	font-size:24px;

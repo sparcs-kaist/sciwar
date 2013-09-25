@@ -26,11 +26,12 @@ def main_page(request):
     for event in todays:
         today_events[event.name] = event.start_time
 
-
+    current_time = datetime.now()
     return render(request, 'index.html', {
         "state":_get_state(), "today_events":today_events,
         "current_event":current_event,
-        "other_events":other_events})
+        "other_events":other_events,
+        "current_time":current_time})
 
 def info_page(request):
     return render(request, 'info.html', {"state":_get_state()})
@@ -116,10 +117,9 @@ def _get_state():
 def _get_schedule():
     Month = [0,"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
     events = []
-    events_list = Event.objects.all()
+    events_list = sorted(Event.objects.all(), key=lambda k: k.start_time)
     exist_date = []
     for event in events_list:
-        print event.start_time
         if not event.start_time.date() in exist_date:
             exist_date.append(event.start_time.date())
     for date in exist_date:
