@@ -1,0 +1,157 @@
+[	
+	{
+		"pk": 1,
+		"model": "main.Event",
+		"fields": {
+			"name":"HACKING CONTEST",
+			"winner":3,
+			"start_time":"2013-09-26 23:00:00",
+			"end_time":"2013-09-27 01:00:00",
+			"building":"E11, Creative Learning Building",
+			"kaist_score":0,
+			"postech_score":0,
+			"score":0
+		}
+	},
+	{
+		"pk": 2,
+		"model": "main.Event",
+		"fields": {
+			"name":"OPENING CEREMONY",
+			"winner":3,
+			"start_time":"2013-09-27 13:00:00",
+			"end_time":"2013-09-27 15:30:00",
+			"building":"N3, Sports Complex",
+			"kaist_score":0,
+			"postech_score":0,
+			"score":0
+		}
+	},
+	{
+		"pk": 3,
+		"model": "main.Event",
+		"fields": {
+			"name":"PROF. SOCCER",
+			"winner":3,
+			"start_time":"2013-09-27 15:30:00",
+			"end_time":"2013-09-27 16:30:00",
+			"building":"Front of N3, Main Playground",
+			"kaist_score":0,
+			"postech_score":0,
+			"score":0
+		}
+	},
+	{
+		"pk": 4,
+		"model": "main.Event",
+		"fields": {
+			"name":"BASKETBALL",
+			"winner":3,
+			"start_time":"2013-09-27 16:30:00",
+			"end_time":"2013-09-27 18:30:00",
+			"building":"N3, Sports Complex",
+			"kaist_score":0,
+			"postech_score":0,
+			"score":0
+		}
+	},
+	{
+		"pk": 5,
+		"model": "main.Event",
+		"fields": {
+			"name":"ARTIFICIAL INTELLIGENCE",
+			"winner":3,
+			"start_time":"2013-09-27 19:30:00",
+			"end_time":"2013-09-27 20:30:00",
+			"building":"N3, Sports Complex",
+			"kaist_score":0,
+			"postech_score":0,
+			"score":0
+		}
+	},
+	{
+		"pk": 6,
+		"model": "main.Event",
+		"fields": {
+			"name":"LEAGUE OF LEGENDS",
+			"winner":3,
+			"start_time":"2013-09-27 20:30:00",
+			"end_time":"2013-09-27 22:30:00",
+			"building":"N3, Sports Complex",
+			"kaist_score":0,
+			"postech_score":0,
+			"score":0
+		}
+	},
+	{
+		"pk": 7,
+		"model": "main.Event",
+		"fields": {
+			"name":"BEER PARTY",
+			"winner":3,
+			"start_time":"2013-09-27 22:30:00",
+			"end_time":"2013-09-28 00:00:00",
+			"building":"E14, Field front of the main admin building",
+			"kaist_score":0,
+			"postech_score":0,
+			"score":0
+		}
+	},
+	{
+		"pk":8,
+		"model":"main.Event",
+		"fields": {
+			"name":"BASEBALL",
+			"winner":3,
+			"start_time":"2013-09-28 10:30:00",
+			"end_time":"2013-09-28 12:00:00",
+			"building":"Front of N3, Main Playground",
+			"kaist_score":0,
+			"postech_score":0,
+			"score":0
+		}
+	},
+	{
+		"pk":9,
+		"model":"main.Event",
+		"fields": {
+			"name":"SCIENCE QUIZ CONTEST",
+			"winner":3,
+			"start_time":"2013-09-28 13:30:00",
+			"end_time":"2013-09-28 15:30:00",
+			"building":"N3, Sports Complex",
+			"kaist_score":0,
+			"postech_score":0,
+			"score":0
+		}
+	},
+	{
+		"pk":10,
+		"model":"main.Event",
+		"fields": {
+			"name":"SOCCER",
+			"winner":3,
+			"start_time":"2013-09-28 15:30:00",
+			"end_time":"2013-09-28 17:30:00",
+			"building":"E17, Stadium",
+			"kaist_score":0,
+			"postech_score":0,
+			"score":0
+		}
+	},
+	{
+		"pk":11,
+		"model":"main.Event",
+		"fields": {
+			"name":"CLOSING CEREMONY",
+			"winner":3,
+			"start_time":"2013-09-28 18:30:00",
+			"end_time":"2013-09-28 21:00:00",
+			"building":"N3, Sports Complex",
+			"kaist_score":0,
+			"postech_score":0,
+			"score":0
+		}
+	}
+]
+

@@ -1,2 +1,51 @@
 {% extends 'layout.html' %}
+{% block style %}
+<link rel="stylesheet" type="text/css" media="screen" href="{{STATIC_URL}}css/info.css">
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{STATIC_URL}}js/info.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		InformationList.initialize();
+		SortList.initialize();	
+	});
+</script>
+{% endblock %}
+
 {% block info %}sel{% endblock %}
+{% block right %}
+<div id="right-side">
+</div>
+{% endblock %}
+{% block leftdown %}
+<div class="info-show">
+	<div class="info-standard">
+		SORT BY
+	</div>
+	<div id="all" class="info-click">
+		<div class="info-detail">
+			ALL
+		</div>
+		<div class="info-click-img">
+			>
+		</div>
+	</div>
+	<div id="notice" class="info-click">
+		<div class="info-detail">
+			NOTICE
+		</div>
+		<div class="info-click-img">
+			>
+		</div>
+	</div>
+	<div id="information" class="info-click">
+		<div class="info-detail">
+			INFORMATION
+		</div>
+		<div class="info-click-img">
+			>
+		</div>
+	</div>
+</div>
+{% endblock %}

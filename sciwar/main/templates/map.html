@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block style %}
+<link rel="stylesheet" type="text/css" media="screen" href="{{STATIC_URL}}css/map.css">
+{% endblock %}
+{% block right %}
+<div class="map-field">
+	<div class="map-title">
+		KAIST CAMPUS MAP
+	</div>
+	<div class="map-image">
+		<!-- CAMPUS MAP IMAGE -->
+		<div class="map-marker" id="map-marker-main_field">
+			<img src="{{MEDIA_URL}}res/icon_nav_map_sel.png">
+		</div>
+		<div class="map-marker" id="map-marker-sports_complex">
+			<img src="{{MEDIA_URL}}res/icon_nav_map_sel.png">
+		</div>
+		<div class="map-marker" id="map-marker-sub_field">
+			<img src="{{MEDIA_URL}}res/icon_nav_map_sel.png">
+		</div>
+		<!-- ZOOM BUTTON -->
+		<div id="map-button">
+			button
+		</div>
+	</div>
+</div>
+<div class="map-field">
+	<div class="map-title">
+		ZOOMED MAP
+	</div>
+	<div class="map-image">
+		<!-- ZOOMED MAP IMAGE -->
+		HERE COMES ZOOMED MAP
+	</div>
+</div>
+{% endblock %}
+{% block leftdown %}
+<div id="event-list-pane">
+	<div id="event-list-title">
+		EVENTS
+	</div>
+	<div id="event-item-pane">
+		<div class="event-item">
+			<!-- ADD EVENTS HERE -->
+			SOCCER
+		</div>
+		<div class="event-item">
+			BASKETBALL
+		</div>
+	</div>
+</div>
+
+{% endblock %}

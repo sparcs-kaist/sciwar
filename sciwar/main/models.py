@@ -10,7 +10,7 @@ SCHOOLS = (
 
 NOTIFY = (
         (1, u'NOTICE'),
-        (2, u'INFOMATION'),
+        (2, u'INFO'),
 )
 
 class Player(models.Model):
@@ -36,7 +36,7 @@ class Video(models.Model):
     time = models.DateTimeField()
     event = models.ForeignKey(Event, db_index=True) # 경기 끝난 후 올라가는 영상들
 
-class Infor(models.Model):
+class Info(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField(blank=True)
     category = models.SmallIntegerField(choices=NOTIFY)
@@ -51,10 +51,10 @@ class VideoAdmin(admin.ModelAdmin):
 class EventAdmin(admin.ModelAdmin):
     list_display = ('name', 'winner', 'score', 'start_time', 'end_time', 'building', 'kaist_score', 'postech_score')
 
-class InforAdmin(admin.ModelAdmin):
+class InfoAdmin(admin.ModelAdmin):
     list_display = ('title', 'content', 'category', 'time')
 
 admin.site.register(Player, PlayerAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Event, EventAdmin)
-admin.site.register(Infor, InforAdmin)
+admin.site.register(Info, InfoAdmin)
