@@ -3,6 +3,7 @@
 {
     background-color: #FFFFFF;
     padding: 5px;
+    margin-bottom: 20px;
     width: 660px;
 }
 
@@ -26,6 +27,7 @@
 {
     color: #C8C8C8;
     float: right;
+    margin-right: 10px;
 }
 
 .video-link
@@ -56,4 +58,10 @@
     margin-bottom: 5px;
     padding: 10px;
     color: #808080;
+}
+
+.video-click-img
+{
+    float: right;
+    margin-right: 10px;
 }
