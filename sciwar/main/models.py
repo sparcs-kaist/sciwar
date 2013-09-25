@@ -10,7 +10,7 @@ SCHOOLS = (
 
 NOTIFY = (
         (1, u'NOTICE'),
-        (2, u'INFOMATION'),
+        (2, u'INFO'),
 )
 
 class Player(models.Model):
