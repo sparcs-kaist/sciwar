@@ -61,13 +61,11 @@ var VideoList = {
 			video_event_info.appendTo(video_info);
 			video_info.appendTo(video);
 
+			var new_link = "http://www.youtube.com/v/" + item.link.split("v=")[1];
+			console.log(new_link);
 			var video_area = $('<div>', {'class': 'video-area'});
-			$('<iframe>', {'width': '420px', 'height': '345px', 'src': "http://www.youtube.com/embed/CM-3W_QXan8"}).appendTo(video_area);
+			$('<embed>', {'width': '420px', 'height': '345px', 'type': 'application/x-shockwave-flash', 'src': new_link}).appendTo(video_area);
 			video_area.appendTo(video);
-
-			var video_link = $('<div>', {'class': 'video-link'});
-			$('<a>', {'href': item.link}).text(item.link).appendTo(video_link);
-			video_link.appendTo(video);
 
 			video.appendTo(VideoList.content);
 		});
