@@ -11,8 +11,9 @@ def main_page(request):
             start_time__day = datetime.today().day + 0)\
     .order_by('start_time')
     current_event = Event.objects.filter(
-            start_time__lte = datetime.now()).filter(
-                    end_time__gte = datetime.now)
+            start_time__lte = datetime.now()).filter(\
+                    end_time__gte = datetime.now())
+
     if current_event:
         current_event_name = current_event[0].name
     else:
