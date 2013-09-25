@@ -21,6 +21,7 @@ class Player(models.Model):
 class Event(models.Model):
     name = models.CharField(max_length=100,db_index=True)
     winner = models.SmallIntegerField(choices=SCHOOLS)
+    is_competition = models.BooleanField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
     building = models.CharField(max_length=50)
@@ -29,6 +30,7 @@ class Event(models.Model):
     score = models.SmallIntegerField()
     kaist_players = models.ManyToManyField(Player, related_name='KAIST', blank=True, db_index=True)
     postech_players = models.ManyToManyField(Player, related_name='POSTECH', blank=True, db_index=True)
+    description = models.CharField(max_length=1000, blank=True)
 
 class Video(models.Model):
     link = models.CharField(max_length=300,db_index=True)
