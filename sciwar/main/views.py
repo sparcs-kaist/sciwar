@@ -7,7 +7,7 @@ import time
 from datetime import datetime, timedelta
 
 def main_page(request):
-    todays = Event.objects.filter(
+    today_events = Event.objects.filter(
             start_time__day = datetime.today().day + 0)\
             .order_by('start_time')
 
@@ -21,10 +21,6 @@ def main_page(request):
         other_events.exclude(name = current_event.name)
     else:
         current_event = []
-
-    today_events = {}
-    for event in todays:
-        today_events[event.name] = event.start_time
 
     current_time = datetime.now()
     return render(request, 'index.html', {
@@ -103,14 +99,14 @@ def _get_state():
     state["KAIST"] = 0
     state["POSTECH"] = 0
     state["ALL"] = len(events_list)
-    state["DONE"] = state["ALL"]
+    state["DONE"] = 0
     for event in events_list:
         if event.winner == 1:
             state["KAIST"] += event.score
         elif event.winner == 2:
             state["POSTECH"] += event.score
-        else:
-            state["DONE"] -= 1
+        if event.end_time < datetime.now():
+            state["DONE"] += 1
     
     return state
 
