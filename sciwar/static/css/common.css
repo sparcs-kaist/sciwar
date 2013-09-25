@@ -13,10 +13,14 @@ script, title, style{
 a{
 	text-decoration:none;
 }
+html{
+	overflow:auto;
+}
 body{
 	width:100%;
 	height:100%;
 	background:#e4e4e4;
+	overflow:auto;
 }
 #wrapper{
 	width:960px;
