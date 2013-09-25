@@ -25,7 +25,7 @@ var DayList={
 				$(daydetail[i]).css("background","url('/media/res/img_inactive.png') right 50% no-repeat");
 			}
 		}
-		if(num!=-1)
+		if(num!=-1&&type!=0)
 		{
 			var str='#frag'+(num);
 			$(document.body).animate({
