@@ -9,10 +9,11 @@ from datetime import datetime, timedelta
 def main_page(request):
     todays = Event.objects.filter(
             start_time__day = datetime.today().day + 0)\
-                    .order_by('start_time')
+            .order_by('start_time')
+
     current_event = Event.objects.filter(
             start_time__lte = datetime.now()).filter(\
-                    end_time__gte = datetime.now())
+            end_time__gte = datetime.now())
 
     other_events = Event.objects.all().order_by('start_time')
     if current_event:
