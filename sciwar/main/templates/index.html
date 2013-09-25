@@ -10,10 +10,10 @@
     <section class="today-schedule">
         <h2>TODAY</h2>
         <ul class="list">
-            {% for event_title, event_time in today_events.items %}
-            <li{% if current_event.name == event_title %} class="now"{% endif %}>
-                <h4>{{ event_title }}</h4>
-                <p>{{ event_time|time:"H:i" }}</p>
+            {% for event in today_events %}
+            <li{% if event.name == event_title %} class="now"{% endif %}>
+                <h4>{{ event.name }}</h4>
+                <p>{{ event.start_time|time:"H:i" }}</p>
             </li>
             {% endfor %}
         </ul>

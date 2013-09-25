@@ -2,22 +2,33 @@
 {% block style %}
 <link rel="stylesheet" type="text/css" media="screen" href="{{STATIC_URL}}css/map.css">
 {% endblock %}
+{% block script %}
+<script type="text/javascript" src="{{STATIC_URL}}js/map.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		map.initialize();
+	});
+</script>
+{% endblock %}
 {% block map %}sel{% endblock %}
 {% block right %}
 <div class="map-field">
 	<div class="map-title">
 		KAIST CAMPUS MAP
 	</div>
-	<div class="map-image">
+	<div class="map-image map-image-full">
 		<!-- CAMPUS MAP IMAGE -->
 		<div class="map-marker" id="map-marker-main_field">
-			<img src="{{MEDIA_URL}}res/icon_nav_map_sel.png">
+			<img class="map-marker-red" id="map-marker-main_field-red" src="{{MEDIA_URL}}res/marker_red.png">
+			<img class="map-marker-blue" id="map-marker-main_field-blue" src="{{MEDIA_URL}}res/marker.png">
 		</div>
 		<div class="map-marker" id="map-marker-sports_complex">
-			<img src="{{MEDIA_URL}}res/icon_nav_map_sel.png">
+			<img class="map-marker-red" id="map-marker-sports_complex-red" src="{{MEDIA_URL}}res/marker_red.png">
+			<img class="map-marker-blue" id="map-marker-sports_complex-blue" src="{{MEDIA_URL}}res/marker.png">
 		</div>
 		<div class="map-marker" id="map-marker-sub_field">
-			<img src="{{MEDIA_URL}}res/icon_nav_map_sel.png">
+			<img class="map-marker-red" id="map-marker-sub_field-red" src="{{MEDIA_URL}}res/marker_red.png">
+			<img class="map-marker-blue" id="map-marker-sub_field-blue" src="{{MEDIA_URL}}res/marker.png">
 		</div>
 		<!-- ZOOM BUTTON -->
 		<div id="map-button">
@@ -41,12 +52,15 @@
 		EVENTS
 	</div>
 	<div id="event-item-pane">
-		<div class="event-item">
+		<div class="event-item" id="event-soccer">
 			<!-- ADD EVENTS HERE -->
 			SOCCER
 		</div>
-		<div class="event-item">
+		<div class="event-item" id="event-baseball">
 			BASKETBALL
+		</div>
+		<div class="event-item" id="event-science_quiz">
+			SCIENCE QUIZ CONTEST
 		</div>
 	</div>
 </div>

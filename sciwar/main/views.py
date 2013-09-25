@@ -7,7 +7,7 @@ import time
 from datetime import datetime, timedelta
 
 def main_page(request):
-    todays = Event.objects.filter(
+    today_events = Event.objects.filter(
             start_time__day = datetime.today().day + 0)\
             .order_by('start_time')
 
@@ -21,10 +21,6 @@ def main_page(request):
         other_events.exclude(name = current_event.name)
     else:
         current_event = []
-
-    today_events = {}
-    for event in todays:
-        today_events[event.name] = event.start_time
 
     current_time = datetime.now()
     return render(request, 'index.html', {
