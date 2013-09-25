@@ -19,7 +19,7 @@
         <!-- SCRIPT INITIALIZATION -->
         <script type="text/javascript">
             $(document).ready(function(){
-                    {% block initialize %}{% endblock %}
+                {% block initialize %}{% endblock %}
             });
         </script>
     </head>
@@ -53,7 +53,7 @@
                     </section>
                     <section class="process">
                         <h2>PROCESS</h2>
-                        <p>{{ state.DONE }}/{{ state.ALL }}COMPLETED</p>
+                        <p>{{ state.DONE }}/{{ state.ALL }} COMPLETED</p>
                     </section>
                 </div>
                 <!-- ASIDE OPTION -->
