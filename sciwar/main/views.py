@@ -3,9 +3,32 @@ from django.shortcuts import render
 from django.db import models
 from main.models import *
 from django.utils import simplejson as json
+import time 
+from datetime import datetime, timedelta
 
 def main_page(request):
-    return render(request, 'index.html', {"state":_get_state()})
+    todays = Event.objects.filter(
+            start_time__day = datetime.today().day + 0)\
+                    .order_by('start_time')
+    current_event = Event.objects.filter(
+            start_time__lte = datetime.now()).filter(
+                    end_time__gte = datetime.now)
+    if current_event:
+        current_event = current_event[0]
+    else:
+        current_event = []
+
+    today_events = {}
+    for event in todays:
+        today_events[event.name] = event.start_time
+
+    other_events = Event.objects.all().order_by('start_time')
+    other_events.exclude(name = current_event.name)
+
+    return render(request, 'index.html', {
+        "state":_get_state(), "today_events":today_events,
+        "current_event":current_event,
+        "other_events":other_events})
 
 def info_page(request):
     return render(request, 'info.html', {"state":_get_state()})
