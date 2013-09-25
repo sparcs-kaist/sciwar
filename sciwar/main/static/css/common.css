@@ -14,7 +14,7 @@ a{
 	text-decoration:none;
 }
 html{
-	overflow:auto;
+	overflow-y:scroll;
 }
 body{
 	width:100%;
