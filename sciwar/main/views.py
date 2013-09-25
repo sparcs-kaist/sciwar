@@ -8,7 +8,7 @@ from datetime import datetime, timedelta
 
 def main_page(request):
     today_events = Event.objects.filter(
-            start_time__day = datetime.today().day + 1)\
+            start_time__day = datetime.today().day + 0)\
             .order_by('start_time')
 
     current_event = Event.objects.filter(
