@@ -97,5 +97,23 @@
 .video-click-img
 {
     float: right;
+    margin-right: 5px;
+    background: transparent url("/media/res/img_inactive.png") top left no-repeat;
+    width: 15px;
+    height: 12px;
+    margin-top: 14px;
+}
+.video-click-order
+{
+    float: right;
     margin-right: 10px;
+}
+.video-click-img-active
+{
+    float: right;
+    margin-right: 5px;
+    background: transparent url("/media/res/img_active.png") top left no-repeat;
+    width: 15px;
+    height: 12px;
+    margin-top: 14px;
 }

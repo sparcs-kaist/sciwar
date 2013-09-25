@@ -9,9 +9,9 @@ var SortList = {
 	{
 		this.ordering = 1 - this.ordering;
 		if(this.ordering == 1)
-			$($('.video-click-img')[0]).text("D");
+			$($('.video-click-order')[0]).text("D");
 		else
-			$($('.video-click-img')[0]).text("U");
+			$($('.video-click-order')[0]).text("U");
 		$.ajax({
 			type: 'GET',
 			url: '/video/update/',
@@ -19,13 +19,15 @@ var SortList = {
 			dataType: 'json',
 			success: $.proxy(function(resObj) {
 				/* TODO: change arrow pointer */
+			//	$('.video-click-img-active').toggleClass("video-click-img-active video-click-img");
+			//	$($('.video-click-img')[id]).toggleClass("video-click-img video-click-img-active");
 				VideoList.showVideo(resObj.contents);
 			}, this),
 			error: function(xhr) {
 			}
 		});
 	},
-	updateVideo:function(name)
+	updateVideo:function(name,id)
 	{
 		this.name = name
 		$.ajax({
@@ -35,6 +37,9 @@ var SortList = {
 			dataType: 'json',
 			success: $.proxy(function(resObj) {
 				/* TODO: change arrow pointer */
+				$('.video-click-img-active').toggleClass("video-click-img-active video-click-img");
+				$($('.video-click-img')[id]).toggleClass("video-click-img video-click-img-active");
+
 				VideoList.showVideo(resObj.contents);
 			}, this),
 			error: function(xhr) {
