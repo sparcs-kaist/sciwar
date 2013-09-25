@@ -127,8 +127,8 @@ def _get_schedule():
             if event.start_time.date() == date:
                 info = {}
                 info["name"]= event.name
-                info["start_time"] = "%02d"%event.start_time.hour+":"+"%02d"%event.start_time.minute
-                info["end_time"] = "%02d"%event.end_time.hour+":"+"%02d"%event.end_time.minute
+                info["start_time"] = event.start_time
+                info["end_time"] = event.end_time
                 info["location"] = event.building
                 events_per_day.append(info)
         events.append({"date":Month[date.month]+" "+str(date.day), "events":events_per_day})

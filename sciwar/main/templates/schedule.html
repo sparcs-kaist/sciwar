@@ -18,7 +18,7 @@
 				<div class="event-detail">
 					<div class="event-time">
 						<!-- CLOCK IMAGE COMES HERE -->
-						{{event.start_time}} - {{event.end_time}}
+						{{event.start_time|time:"H:i"}} - {{event.end_time|time:"H:i"}}
 					</div>
 					<div class="event-location">
 						<!-- LOCATION IMAGE COMES HERE -->
