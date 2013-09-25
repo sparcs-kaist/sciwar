@@ -6,6 +6,7 @@
 	-moz-border-radius:2px;
 	-webkit-border-radius:2px;
 	background:#fff;
+	padding-bottom:14px;
 }
 #option section.today-schedule h2{
 	font-family:"Roboto Condensed", sans-serif;
@@ -19,7 +20,7 @@
 #option section.today-schedule .list li{
 	width:220px;
 	height:40px;
-	background:#f5f5f5;
+	background:#f5f5f5 url("/media/res/img_ball_nor.png") 12px 50% no-repeat;
 	border-radius:3px;
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
@@ -43,3 +44,24 @@
 	color:#ed462f;
 	float:right;
 }
+#option section.today-schedule .list li.now{
+	background:#f5f5f5 url("/media/res/img_ball_sel.png") 12px 50% no-repeat;
+}
+
+/* CONTENT */
+
+#content article.live{
+	padding:20px 16px;
+	border-radius:2px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	background:#fff;
+}
+#content article.live .status{
+	font-size:0;
+	background:transparent url("/media/res/img_live.png") left top no-repeat;
+	width:43px;
+	height:24px;
+	float:left;
+}
+
