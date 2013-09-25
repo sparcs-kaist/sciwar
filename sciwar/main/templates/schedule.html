@@ -9,6 +9,8 @@
 
 {% block initialize %}
 DayList.initialize();
+DayList.color({{today_date}});
+DayList.update({{today_date}});
 {% endblock %}
 
 {% block right %}
