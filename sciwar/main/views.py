@@ -41,6 +41,7 @@ def update_information(request):
 
 def update_video(request):
     classify = request.GET.get('name','all')
+    sort_order = int(request.GET.get('order', 0))
 
     event_set = []
     if classify == "etc":
@@ -52,7 +53,10 @@ def update_video(request):
         event_set.append(classify)
     
     contents = []
-    videos = Video.objects.all()
+    if sort_order == 1:
+        videos = Video.objects.all().order_by('time')
+    else:
+        videos = Video.objects.all().order_by('-time')
     for video in videos:
         if classify=="all" or video.event.name in event_set:
             item = {

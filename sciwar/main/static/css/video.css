@@ -59,3 +59,9 @@
     padding: 10px;
     color: #808080;
 }
+
+.video-click-img
+{
+    float: right;
+    margin-right: 10px;
+}

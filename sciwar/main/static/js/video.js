@@ -1,17 +1,36 @@
 var SortList = {
 	initialize:function()
 	{
-		this.updateVideo("all");
+		this.name="all";
+		this.ordering = 0;
+		this.updateVideo();
 	},
 	reverseOrder:function()
 	{
-	},
-	updateVideo:function(name)
-	{
+		this.ordering = 1 - this.ordering;
+		if(this.ordering == 1)
+			$($('.video-click-img')[0]).text("D");
+		else
+			$($('.video-click-img')[0]).text("U");
 		$.ajax({
 			type: 'GET',
 			url: '/video/update/',
-			data: {'name':name},
+			data: {'name':this.name, 'order':this.ordering},
+			dataType: 'json',
+			success: $.proxy(function(resObj) {
+				VideoList.showVideo(resObj.contents);
+			}, this),
+			error: function(xhr) {
+			}
+		});
+	},
+	updateVideo:function(name)
+	{
+		this.name = name
+		$.ajax({
+			type: 'GET',
+			url: '/video/update/',
+			data: {'name':name, 'order':this.ordering},
 			dataType: 'json',
 			success: $.proxy(function(resObj) {
 				VideoList.showVideo(resObj.contents);
@@ -50,7 +69,7 @@ var VideoList = {
 			$('<a>', {'href': item.link}).text(item.link).appendTo(video_link);
 			video_link.appendTo(video);
 
-			video.prependTo(VideoList.content);
+			video.appendTo(VideoList.content);
 		});
 	},
 };
