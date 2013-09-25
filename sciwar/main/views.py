@@ -34,7 +34,7 @@ def info_page(request):
     return render(request, 'info.html', {"state":_get_state()})
 
 def schedule_page(request):
-    return render(request, 'schedule.html', {"state":_get_state()})
+    return render(request, 'schedule.html', {"state":_get_state(), "events":_get_schedule()})
 
 def map_page(request):
     return render(request, 'map.html', {"state":_get_state()})
@@ -110,3 +110,26 @@ def _get_state():
             state["DONE"] -= 1
     
     return state
+
+def _get_schedule():
+    Month = [0,"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
+    events = []
+    events_list = Event.objects.all()
+    exist_date = []
+    for event in events_list:
+        print event.start_time
+        if not event.start_time.date() in exist_date:
+            exist_date.append(event.start_time.date())
+    for date in exist_date:
+        events_per_day = []
+        for event in events_list:
+            if event.start_time.date() == date:
+                info = {}
+                info["name"]= event.name
+                info["start_time"] = "%02d"%event.start_time.hour+":"+"%02d"%event.start_time.minute
+                info["end_time"] = "%02d"%event.end_time.hour+":"+"%02d"%event.end_time.minute
+                info["location"] = event.building
+                events_per_day.append(info)
+        events.append({"date":Month[date.month]+" "+str(date.day), "events":events_per_day})
+    return events
+
