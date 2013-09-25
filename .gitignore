@@ -11,3 +11,4 @@ lib64
 *.pyc
 *.swp
 settings_local.py
+*.db
