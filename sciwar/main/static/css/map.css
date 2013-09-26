@@ -28,6 +28,7 @@
 
 .map-image-zoomed{
     background:#fff url('/media/res/map_main_field.png') 0 0 no-repeat;
+    height:260px;
 }
 
 .map-marker
