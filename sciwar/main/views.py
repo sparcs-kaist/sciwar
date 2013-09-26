@@ -39,7 +39,6 @@ def schedule_page(request):
     events = _get_schedule()
     num = 0
     for index,event in enumerate(events):
-        print event["date"],date
         if event["date"] == date:
             num=index+1
 
