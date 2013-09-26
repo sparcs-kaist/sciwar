@@ -52,12 +52,13 @@
     float: left;
     padding-left:34px;
     height:24px;
+    width:140px;
     background: url("/media/res/icon_event_time.png") left top no-repeat;
 }
 
 .event-location
 {
-    margin-left: 180px;
+    margin-left: 175px;
     padding-left: 34px;
     height:24px;
     background: url("/media/res/icon_event_map.png") left top no-repeat;
@@ -92,4 +93,9 @@
     font-size:20px;
     font-weight:300;
     color:#a1a0a0; 
+}
+
+.day-click:hover
+{
+    background-color:#ebebeb;
 }

@@ -95,6 +95,11 @@
     cursor:pointer;
 }
 
+.criterion:hover
+{
+    background-color: #ebebeb; 
+}
+
 .video-click-img
 {
     float: right;
@@ -107,7 +112,11 @@
 .video-click-order
 {
     float: right;
+    width:15px;
+    height: 12px;
+    margin-top: 14px;
     margin-right: 10px;
+    background: transparent url("/media/res/img_down.png") right no-repeat;
 }
 .video-click-img-active
 {

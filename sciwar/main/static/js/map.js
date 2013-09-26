@@ -115,7 +115,6 @@ var map = {
 			map.update(9);
 		});
 		map.update(0);
-		map.color(0);
 	},
 	update:function(num)
 	{
@@ -135,24 +134,6 @@ var map = {
 			}	
 		}
 	},
-	color:function(num)
-	{
-		var i;
-		var tab = $('.event-item');
-		num--;
-		for(i=0;;i++)
-		{
-			if(tab[i]==null) break;
-			if(i==num)
-			{
-				$(tab[i]).css("background","#ebebeb");
-			}
-			else
-			{
-				$(tab[i]).css("background","#F5F5F5");
-			}
-		}
-	}
 };
 
 

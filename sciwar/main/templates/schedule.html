@@ -9,7 +9,6 @@
 
 {% block initialize %}
 DayList.initialize();
-DayList.color({{today_date}});
 DayList.update({{today_date}},0);
 {% endblock %}
 
@@ -48,7 +47,7 @@ DayList.update({{today_date}},0);
 {% block leftdown %}
 <div class="day-show">
 	{% for date in events %}
-	<div class="day-click" onmouseover="DayList.color({{forloop.counter}})" onclick="DayList.update({{forloop.counter}},1)">
+	<div class="day-click" onclick="DayList.update({{forloop.counter}},1)">
 		<div class="day-detail">
 			{{ date.date }}
 		</div>

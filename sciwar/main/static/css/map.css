@@ -131,3 +131,8 @@
     font-size:20px;
     cursor:pointer;
 }
+
+.event-item:hover
+{
+    background-color: #ebebeb;
+}

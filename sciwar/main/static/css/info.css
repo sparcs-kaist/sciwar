@@ -67,6 +67,11 @@
     cursor: pointer;
 }
 
+.info-click:hover
+{
+    background-color: #ebebeb;
+}
+
 .info-detail
 {
     font-family: "Roboto", "Nanum Gothic", serif;

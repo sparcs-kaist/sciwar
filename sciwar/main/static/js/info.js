@@ -42,11 +42,11 @@ var InformationList = {
 
 			if (item.classify=="INFO"){
 				var classify = $('<div>', {'class': 'info-information'});
-				$('<span>').text("INFO").appendTo(classify);
+				$('<span>').appendTo(classify);
 			}
 			else{
 				var classify = $('<div>', {'class': 'info-notice'});
-				$('<span>').text("NOTICE").appendTo(classify);
+				$('<span>').appendTo(classify);
 			}
 			classify.appendTo(info);
 			$('<div>', {'class': 'info-title'}).text(item.title).appendTo(info);

@@ -1,8 +1,6 @@
 var DayList={
 	initialize:function()
 	{
-		this.update(0);
-		this.color(0);
 	},
 	update:function(num,type)
 	{
@@ -33,23 +31,5 @@ var DayList={
 			}, 500);
 		}
 	},
-	color:function(num)
-	{
-		num--;
-		var click = $('.day-click');
-		var text = $('.day-detail');
-		var i;
-		for(i=0;;i++)
-		{
-			if(click[i]==null) break;
-			if(i==num)
-			{
-				$(click[i]).css("background","#ebebeb");
-			}
-			else
-			{
-				$(click[i]).css("background","#F5F5F5");
-			}
-		}
-	}
+
 };

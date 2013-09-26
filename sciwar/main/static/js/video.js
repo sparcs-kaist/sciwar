@@ -3,15 +3,11 @@ var SortList = {
 	{
 		this.name="all";
 		this.ordering = 0;
-		this.updateVideo();
+		this.updateVideo("all",0);
 	},
 	reverseOrder:function()
 	{
 		this.ordering = 1 - this.ordering;
-		if(this.ordering == 1)
-			$($('.video-click-order')[0]).text("D");
-		else
-			$($('.video-click-order')[0]).text("U");
 		$.ajax({
 			type: 'GET',
 			url: '/video/update/',
@@ -21,6 +17,10 @@ var SortList = {
 				/* TODO: change arrow pointer */
 			//	$('.video-click-img-active').toggleClass("video-click-img-active video-click-img");
 			//	$($('.video-click-img')[id]).toggleClass("video-click-img video-click-img-active");
+				if(this.ordering == 1)
+					$('.video-click-order').css("background","url('/media/res/img_up.png') right 50% no-repeat");
+				else
+					$('.video-click-order').css("background","url('/media/res/img_down.png') right 50% no-repeat");
 				VideoList.showVideo(resObj.contents);
 			}, this),
 			error: function(xhr) {
@@ -46,31 +46,6 @@ var SortList = {
 			}
 		});
 	},
-	color:function(mode,id)
-	{
-		var i;
-		var criL=$(".criterion");
-		if(mode=="order") {
-			for(i=0;;i++) {
-				if(criL[i]==null) break;
-				if(i==id) {
-					$(criL[i]).css("background","#ebebeb");
-				} else {
-					$(criL[i]).css("background","#f5f5f5");
-				}
-			}
-		} else {
-			id++;
-			for(i=0;;i++) {
-				if(criL[i]==null) break;
-				if(i==id) {
-					$(criL[i]).css("background","#ebebeb");
-				} else {
-					$(criL[i]).css("background","#f5f5f5");
-				}
-			}
-		}
-	}
 };
 
 var VideoList = {
