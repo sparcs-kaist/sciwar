@@ -12,3 +12,5 @@ lib64
 *.swp
 settings_local.py
 *.db
+sciwar/static
+
