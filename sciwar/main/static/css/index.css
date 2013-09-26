@@ -303,11 +303,14 @@
 	padding-right:18px;
 	background:transparent  url("/media/res/img_anchor.png") right 50% no-repeat;
 }
-#content .event-list .event-item h2 a{
+#content .event-list .event-item h2 a:hover{
 	color:#199ea7;
 }
 #content .event-list .event-item.finished h2 a{
 	color:#b5b6b6;
+}
+#content .event-list .event-item.finished h2 a:hover{
+	color:#199ea7;
 }
 #content .event-list .event-item .info{
 	float:left;
