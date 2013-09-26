@@ -6,6 +6,8 @@ var Creators = {
         this.designers = $("#creators>.designers>.list");
 		this.btn_players = $(".live>.players>button");
 		this.players = $(".live>.players>.players-table");	
+		this.btn_map = $(".live>.map>button");
+		this.map = $(".live>.map>p");
 
         this.registerHandlers();
     },
@@ -34,6 +36,15 @@ var Creators = {
                 $(this).removeClass("flip-hide").addClass("flip-show");
             }else{
                 $(Creators.players).slideToggle('slow');
+                $(this).removeClass("flip-show").addClass("flip-hide");
+            }
+        });
+        $(this.btn_map).click(function(){
+            if($(this).hasClass("flip-hide")){
+                $(Creators.map).slideToggle('slow');
+                $(this).removeClass("flip-hide").addClass("flip-show");
+            }else{
+                $(Creators.map).slideToggle('slow');
                 $(this).removeClass("flip-show").addClass("flip-hide");
             }
         });
