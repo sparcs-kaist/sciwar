@@ -34,7 +34,7 @@
         <span class="status">Live</span>
         <span class="time">{{ current_event.start_time|time:"H:i" }} - {{ current_event.end_time|time:"H:i" }}</span>
         <h2 class="event"><a href="#event-list-{{current_event.name}}">{{ current_event.name }}</a></h2>
-        <p class="comment">{{ current_event.description }}</p>
+        <p class="comment" {% if current_event.description == "" %}style="display:none"{% endif %}>{{ current_event.description }}</p>
         {% if current_event.is_competition %}
         <section class="kaist-score">
             <h4>KAIST</h4>

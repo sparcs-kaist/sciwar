@@ -10,19 +10,19 @@ var Info = {
 	registerHandlers:function(){
         $(this.btn_m).click(function(){
             if($(this).hasClass("flip-hide")){
-                $(Info.map).hide('fast');
+                $(Info.map).slideUp('fast');
                 $(this).removeClass("flip-hide").addClass("flip-show");
             }else{
-                $(Info.map).show('fast');
+                $(Info.map).slideDown('fast');
                 $(this).removeClass("flip-show").addClass("flip-hide");
             }
         });
         $(this.btn_p).click(function(){
             if($(this).hasClass("flip-hide")){
-                $(Info.players).hide('fast');
+                $(Info.players).slideUp('fast');
                 $(this).removeClass("flip-hide").addClass("flip-show");
             }else{
-                $(Info.players).show('fast');
+                $(Info.players).slideDown('fast');
                 $(this).removeClass("flip-show").addClass("flip-hide");
             }
         });

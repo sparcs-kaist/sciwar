@@ -198,7 +198,7 @@
 	clear:both;
 }
 #content article.live .map{
-	padding-top:32px;
+	padding-top:20px;
 	clear:both;
 	width:100%;
 }
@@ -213,7 +213,7 @@
 	line-height:24px;
 }
 #content article.live .map p{
-	padding-top:16px;
+	padding:12px 0;
 	clear:both;
 }
 #content article.live .map img{
@@ -223,7 +223,7 @@
 	border:0;
 }
 #content article.live .players{
-	padding-top:30px;
+	padding-top:6px;
 	clear:both;
 	width:100%;
 }
@@ -238,11 +238,9 @@
 	line-height:24px;
 }
 #content article.live .players-list{
-	padding-top:16px;
+	padding:12px 0;
     display:none;
     width:100%;
-}
-#content article.live .players-list>li{
 }
 #content article.live .players-list>li p{
 	float:left;
