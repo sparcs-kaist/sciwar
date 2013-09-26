@@ -18,7 +18,7 @@ def main_page(request):
     other_events = Event.objects.all().order_by('start_time')
     if current_event:
         current_event = current_event[0]
-        other_events.exclude(name = current_event.name)
+        other_events = other_events.exclude(id = current_event.id)
     else:
         current_event = []
 
