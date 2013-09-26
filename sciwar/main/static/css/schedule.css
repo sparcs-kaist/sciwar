@@ -14,8 +14,10 @@
 {
     font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
     font-size:28px;
+	line-height:28px;
     margin-bottom: 20px;
     color:#6f7274;
+	margin-top:-1px;
 }
 
 .event-field
@@ -23,18 +25,24 @@
     width:616px;
     background-color: #F5F5F5;
     margin-bottom: 6px;
-    padding-left:12px;
-    padding-top:14px;
-    padding-bottom:20px;
+	padding:20px 12px;
     border-radius:2px; 
 }
-
-.event-name
+.event-name{
+	display:inline-block;
+}
+.event-name a
 {
     font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
     font-size:24px;
+	line-height:24px;
     font-weight:400;
     color:#525455;
+	background:transparent url("/media/res/img_anchor.png") right 50% no-repeat;
+	padding-right:18px;
+}
+.event-name a:hover{
+	color:#199ea7;
 }
 
 .event-detail

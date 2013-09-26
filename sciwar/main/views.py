@@ -160,6 +160,7 @@ def _get_schedule():
         for event in events_list:
             if event.start_time.date() == date:
                 info = {}
+                info["id"] = event.id
                 info["name"]= event.name
                 info["start_time"] = event.start_time
                 info["end_time"] = event.end_time

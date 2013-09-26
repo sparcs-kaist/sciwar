@@ -16,42 +16,42 @@ DayList.update({{today_date}},0);
 
 <a name="frag0" id="frag0"></a>
 {% for date in events %}
-	{% with n=forloop.counter|stringformat:"s" %}
-	{% with frag="frag"|add:n %}
-	<div class="day-field">
-		<div class="day-text">
-			{{ date.date }}
-		</div>
-		{% for event in date.events %}
-			<div class="event-field">
-				<div class="event-name">
-					{{event.name}}
-				</div>
-				<div class="event-detail">
-					<div class="event-time">
-						{{event.start_time|time:"H:i"}} - {{event.end_time|time:"H:i"}}
-					</div>
-					<div class="event-location">
-						{{event.location}}
-					</div>	
-				</div>
-			</div>
-		{% endfor %}
-	</div>
-	<a name={{frag}} id={{frag}}></a>
-	{% endwith %}
-	{% endwith %}
+    {% with n=forloop.counter|stringformat:"s" %}
+    {% with frag="frag"|add:n %}
+    <div class="day-field">
+        <div class="day-text">
+            {{ date.date }}
+        </div>
+        {% for event in date.events %}
+            <div class="event-field">
+                <div class="event-name">
+                    <a href="/events/{{event.id}}/">{{event.name}}</a>
+                </div>
+                <div class="event-detail">
+                    <div class="event-time">
+                        {{event.start_time|time:"H:i"}} - {{event.end_time|time:"H:i"}}
+                    </div>
+                    <div class="event-location">
+                        {{event.location}}
+                    </div>    
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <a name={{frag}} id={{frag}}></a>
+    {% endwith %}
+    {% endwith %}
 {% endfor %}
 
 {% endblock %}
 {% block leftdown %}
 <div class="day-show">
-	{% for date in events %}
-	<div class="day-click" onclick="DayList.update({{forloop.counter}},1)">
-		<div class="day-detail">
-			{{ date.date }}
-		</div>
-	</div>
-	{% endfor %}
+    {% for date in events %}
+    <div class="day-click" onclick="DayList.update({{forloop.counter}},1)">
+        <div class="day-detail">
+            {{ date.date }}
+        </div>
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}

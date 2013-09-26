@@ -15,13 +15,15 @@ a{
 	text-decoration:none;
 }
 html{
+        display:inline;
+        overflow-x:auto;
 	overflow-y:scroll;
 }
 body{
+        display:inline;
 	width:100%;
 	height:100%;
 	background:#e4e4e4;
-	overflow:auto;
         padding-bottom:40px;
 }
 #wrapper{
