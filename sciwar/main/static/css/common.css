@@ -87,6 +87,7 @@ header #logo span{
 	width:56px;
 	height:24px;
 	background:transparent url("/media/res/img_onair.png") top left no-repeat;
+        float:left;
 }
 header #nav{
 	float:right;
@@ -233,7 +234,7 @@ header #nav a.sel{
 	display:inline-block;
 }
 #aside #creators h2 em{
-        display:inline-block;
+        display:inline;
 }
 #aside #creators h2 em a{
 	color:#ed462f;
@@ -241,7 +242,7 @@ header #nav a.sel{
 	font-size:24px;
 	font-weight:400;
 	font-style:normal;
-	display:inline-block;
+	display:inline;
 }
 #aside #creators h2 em a:hover{
         color:#eda32f;

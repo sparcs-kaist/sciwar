@@ -138,6 +138,7 @@
 	line-height:130px;
 	font-weight:700;
 	color:#f0a922;
+        float:left;
 }
 #content article.live .postech-score{
 	float:right;
@@ -171,6 +172,7 @@
 	line-height:130px;
 	font-weight:700;
 	color:#f0a922;
+        float:right;
 }
 #content article.live section button{
 	font-size:0;
