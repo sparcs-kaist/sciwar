@@ -2,9 +2,9 @@ var SortList = {
 	initialize:function()
 	{
 		this.classify = $('.info-click');
-		this.updateInfo("all");
+		this.updateInfo("all", 0);
 	},
-	updateInfo:function(name)
+	updateInfo:function(name, id)
 	{
 		var notice = false;
 		var information = false;
@@ -18,6 +18,9 @@ var SortList = {
 			data: {'notice': notice, 'information': information},
 			dataType: 'json',
 			success: $.proxy(function(resObj) {
+				/* active: blue arrow */
+				$('.info-click-img-active').toggleClass("info-click-img-active info-click-img")
+				$($('.info-click-img')[id]).toggleClass("info-click-img info-click-img-active")
 				InformationList.showInfo(resObj.contents);
 			}, this),
 			error: function(xhr) {
@@ -36,10 +39,15 @@ var InformationList = {
 		InformationList.content.empty();
 		$.each(obj, function(index, item){
 			var info = $('<div>', {'class': 'info-field'});
-		
-			var classify = $('<div>', {'class': 'info-classify'}).text(item.classify);
-			if (item.classify=="INFO")
-				classify.css({"color":"#ffe400"});
+
+			if (item.classify=="INFO"){
+				var classify = $('<div>', {'class': 'info-information'});
+				$('<span>').text("INFO").appendTo(classify);
+			}
+			else{
+				var classify = $('<div>', {'class': 'info-notice'});
+				$('<span>').text("NOTICE").appendTo(classify);
+			}
 			classify.appendTo(info);
 			$('<div>', {'class': 'info-title'}).text(item.title).appendTo(info);
 			$('<div>', {'class': 'info-date'}).text(item.date).appendTo(info);

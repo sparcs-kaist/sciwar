@@ -16,6 +16,7 @@ NOTIFY = (
 class Player(models.Model):
     name = models.CharField(max_length=100,db_index=True)
     school = models.SmallIntegerField(choices=SCHOOLS)
+    year = models.CharField(max_length=10)
 
 
 class Event(models.Model):

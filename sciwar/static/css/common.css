@@ -65,6 +65,10 @@ header #logo{
 	height:24px;
 	margin-top:23px;
 	display:inline-block;
+        padding-bottom:23px;
+}
+header #logo.sel{
+        background:transparent url("/media/res/img_home.png") 49px bottom no-repeat;
 }
 header #logo a#nav-home{
 	margin-top:-1px;

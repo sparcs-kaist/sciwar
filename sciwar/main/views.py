@@ -7,7 +7,7 @@ import time
 from datetime import datetime, timedelta
 
 def main_page(request):
-    todays = Event.objects.filter(
+    today_events = Event.objects.filter(
             start_time__day = datetime.today().day + 0)\
             .order_by('start_time')
 
@@ -22,27 +22,35 @@ def main_page(request):
     else:
         current_event = []
 
-    today_events = {}
-    for event in todays:
-        today_events[event.name] = event.start_time
-
-
+    current_time = datetime.now()
     return render(request, 'index.html', {
         "state":_get_state(), "today_events":today_events,
         "current_event":current_event,
-        "other_events":other_events})
+        "other_events":other_events,
+        "current_time":current_time})
 
 def info_page(request):
     return render(request, 'info.html', {"state":_get_state()})
 
 def schedule_page(request):
-    return render(request, 'schedule.html', {"state":_get_state(), "events":_get_schedule()})
+    Month = [0,"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
+    current_time = datetime.now()
+    date = Month[current_time.month]+" "+str(current_time.day)
+    events = _get_schedule()
+    num = 0
+    for index,event in enumerate(events):
+        print event["date"],date
+        if event["date"] == date:
+            num=index+1
+
+    return render(request, 'schedule.html', {"state":_get_state(), "events":_get_schedule(), "today_date":num})
 
 def map_page(request):
     return render(request, 'map.html', {"state":_get_state()})
 
 def video_page(request):
     return render(request, 'video.html', {"state":_get_state()})
+
 
 def update_information(request):
     avail_notice = True if request.GET.get('notice', False) == "true" else False
@@ -55,7 +63,7 @@ def update_information(request):
                 'title': info.title,
                 'article': info.content,
                 'classify': info.get_category_display(),
-                'date': info.time.strftime("20%y. %m. %d")
+                'date': info.time.strftime("20%y. %m. %d.")
                 }
         if info.category == 1 and avail_notice:
             contents.append(item)
@@ -64,6 +72,7 @@ def update_information(request):
     return HttpResponse(json.dumps({
         'contents': contents}, ensure_ascii=False, indent=4))
 
+
 def update_video(request):
     classify = request.GET.get('name','all')
     sort_order = int(request.GET.get('order', 0))
@@ -71,7 +80,7 @@ def update_video(request):
     event_set = []
     if classify == "etc":
         event_set.append("HACKING CONTEST")
-        event_set.append("OPENING CONTEST")
+        event_set.append("OPENING CEREMONY")
         event_set.append("BEER PARTY")
         event_set.append("CLOSING CEREMONY")
     elif classify != "all":
@@ -88,7 +97,7 @@ def update_video(request):
                 'title': video.name,
                 'event': video.event.name,
                 'link': video.link,
-                'time': video.time.strftime("20%y. %m. %d %H:%M")
+                'time': video.time.strftime("20%y. %m. %d. %H:%M")
                 }
             contents.append(item)
     return HttpResponse(json.dumps({
@@ -102,24 +111,23 @@ def _get_state():
     state["KAIST"] = 0
     state["POSTECH"] = 0
     state["ALL"] = len(events_list)
-    state["DONE"] = state["ALL"]
+    state["DONE"] = 0
     for event in events_list:
         if event.winner == 1:
             state["KAIST"] += event.score
         elif event.winner == 2:
             state["POSTECH"] += event.score
-        else:
-            state["DONE"] -= 1
+        if event.end_time < datetime.now():
+            state["DONE"] += 1
     
     return state
 
 def _get_schedule():
     Month = [0,"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
     events = []
-    events_list = Event.objects.all()
+    events_list = sorted(Event.objects.all(), key=lambda k: k.start_time)
     exist_date = []
     for event in events_list:
-        print event.start_time
         if not event.start_time.date() in exist_date:
             exist_date.append(event.start_time.date())
     for date in exist_date:
