@@ -25,7 +25,7 @@
     <article class="live">
         <span class="status">Live</span>
 		<span class="time">{{ current_event.start_time|time:"H:i" }} - {{ current_event.end_time|time:"H:i" }}</span>
-        <h2 class="event"><a href="#">{{ current_event.name }}</a></h2>
+		<h2 class="event"><a href="#event-list-{{current_event.name}}">{{ current_event.name }}</a></h2>
         <p class="comment">{{ current_event.description }}</p>
         {% if current_event.is_competition %}
         <section class="kaist-score">
@@ -69,8 +69,8 @@
     {% endif %}
     <ul class="event-list">
         {% for event in other_events %}
-        <li class="event-item{% if event.end_time < current_time %} finished{% endif %}">
-            <h2><a href="#">{{ event.name }}</a></h2>
+		<li id="event-list-{{ event.name }}" class="event-item{% if event.end_time < current_time %} finished{% endif %}">
+			<h2><a href="#event-list-{{event.name}}">{{ event.name }}</a></h2>
             <span class="info">
 				<p class="time">{{ event.start_time|date:"[ b j ]"|upper }}&nbsp;&nbsp;{{ event.start_time|time:"H:i" }} - {{ event.end_time|time:"H:i" }}</p>
                 <p class="map">{{ event.building }}</p>
