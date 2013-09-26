@@ -25,18 +25,17 @@ def main_page(request):
     players = []
     kaist_players = current_event.kaist_players.all()
     postech_players = current_event.postech_players.all()
-    for i in range(len(kaist_players)):
-        if i < len(postech_players):
-            players.append([kaist_players[i],postech_players[i]])
-        else :
-            players.append([kaist_players[i],postech_players[i]])
 
     current_time = datetime.now()
     return render(request, 'index.html', {
-        "state":_get_state(), "today_events":today_events,
-        "current_event":current_event,
-        "other_events":other_events,
-        "current_time":current_time,"players":players})
+        "state":_get_state(),\
+        "today_events":today_events,\
+        "current_event":current_event,\
+        "other_events":other_events,\
+        "current_time":current_time,\
+        "kaist_players":kaist_players,\
+        "postech_players":postech_players,\
+    })
 
 def info_page(request):
     return render(request, 'info.html', {"state":_get_state()})

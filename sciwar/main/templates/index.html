@@ -4,6 +4,14 @@
     <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/index.css">
 {% endblock %}
 
+{% block script %}
+    <script type="text/javascript" src="{{STATIC_URL}}js/index.js"></script>
+{% endblock %}
+
+{% block initialize %}
+    Info.initialize();
+{% endblock %}
+
 {% block home %}sel{% endblock %}
 
 {% block leftdown %}
@@ -24,8 +32,8 @@
     {% if current_event %}
     <article class="live">
         <span class="status">Live</span>
-		<span class="time">{{ current_event.start_time|time:"H:i" }} - {{ current_event.end_time|time:"H:i" }}</span>
-		<h2 class="event"><a href="#event-list-{{current_event.name}}">{{ current_event.name }}</a></h2>
+        <span class="time">{{ current_event.start_time|time:"H:i" }} - {{ current_event.end_time|time:"H:i" }}</span>
+        <h2 class="event"><a href="#event-list-{{current_event.name}}">{{ current_event.name }}</a></h2>
         <p class="comment">{{ current_event.description }}</p>
         {% if current_event.is_competition %}
         <section class="kaist-score">
@@ -47,32 +55,35 @@
         {% if current_event.is_competition %}
         <section class="players">
             <button class="flip-show">hide</button>
-			<h4>Players Information</h4>
-			<div class="players-table">
-				<div class="players-table-header">
-					<div class="players-table-th">KAIST</div>
-					<div class="players-table-th">POSTECH</div>
-				</div>
-				<div class="playsers-table-body">
-					{% for player in players %}
-					<div class="players-table-tr">
-						{% for p in player %}
-						<div class="players-table-td">{{ p.name }}</div>
-						{% endfor %}
-					</div>
-					{% endfor %}
-				</div>
-			</div>
+            <h4>Players Information</h4>
+            <ul class="players-list">
+                <li class="kaist">
+                    <p>KAIST</p>
+                    <ul>
+                        {% for player in kaist_players %}
+                        <li class="player">{{player.name}} ({{player.year}})</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="postech">
+                    <p>POSTECH</p>
+                    <ul>
+                        {% for player in postech_players %}
+                        <li class="player">{{player.name}} ({{player.year}})</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
         </section>
         {% endif %}
     </article>
     {% endif %}
     <ul class="event-list">
         {% for event in other_events %}
-		<li id="event-list-{{ event.name }}" class="event-item{% if event.end_time < current_time %} finished{% endif %}">
-			<h2><a href="#event-list-{{event.name}}">{{ event.name }}</a></h2>
+        <li id="event-list-{{ event.name }}" class="event-item{% if event.end_time < current_time %} finished{% endif %}">
+            <h2><a href="#event-list-{{event.name}}">{{ event.name }}</a></h2>
             <span class="info">
-				<p class="time">{{ event.start_time|date:"[ b j ]"|upper }}&nbsp;&nbsp;{{ event.start_time|time:"H:i" }} - {{ event.end_time|time:"H:i" }}</p>
+                <p class="time">{{ event.start_time|date:"[ b j ]"|upper }}&nbsp;&nbsp;{{ event.start_time|time:"H:i" }} - {{ event.end_time|time:"H:i" }}</p>
                 <p class="map">{{ event.building }}</p>
             </span>
             {% if event.is_competition %}
