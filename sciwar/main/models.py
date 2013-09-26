@@ -17,7 +17,8 @@ class Player(models.Model):
     name = models.CharField(max_length=100,db_index=True)
     school = models.SmallIntegerField(choices=SCHOOLS)
     year = models.CharField(max_length=10)
-
+    def __unicode__(self):
+        return u'%s'%self.name
 
 class Event(models.Model):
     name = models.CharField(max_length=100,db_index=True)
