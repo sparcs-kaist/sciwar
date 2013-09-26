@@ -1,0 +1,238 @@
+/* CONTENT - event_detail */
+
+#content article.event_detail{
+	padding:20px 16px;
+	border-radius:2px;
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	background:#fff;
+	margin-bottom:16px;
+}
+#content article.event_detail .go-back{
+	font-size:20px;
+	font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
+	font-weight:300;
+	text-transform:uppercase;
+	color:#616161;
+	line-height:20px;
+	padding-left:18px;
+	background:transparent url("/media/res/img_goback.png") left 50% no-repeat;
+	border:none;
+	cursor:pointer;
+	display:inline-block;
+}
+#content article.event_detail .event{
+	padding-top:20px;
+    margin-top:-4px;
+	clear:both;
+	font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
+	font-size:36px;
+	line-height:36px;
+	color:#525455;
+	font-weight:400;
+	text-transform:uppercase;
+}
+#content article.event_detail .status{
+	font-size:0;
+	width:43px;
+	height:24px;
+	background:transparent url("/media/res/img_live.png") left top no-repeat;
+	display:inline-block;
+	float:right;
+}
+#content article.event_detail .comment{
+	font-family:"Roboto", "Nanum Gothic", sans-serif;
+	font-size:20px;
+	line-height:24px;
+	color:#727272;
+	font-weight:300;
+	padding-top:20px;
+	clear:both;
+}
+#content article.event_detail section h4{
+	font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
+}
+#content article.event_detail .kaist-score{
+	float:left;
+	margin-top:20px;
+	padding-right:26px;
+	background:transparent url("/media/res/img_vs.png") right 50% no-repeat;
+}
+#content article.event_detail .kaist-score h4{
+	width:154px;
+	height:64px;
+	text-align:center;
+	background:#f2f2f2;
+	border-radius:3px 0 0 3px;
+	-moz-border-radius:3px 0 0 3px;
+	-webkit-border-radius:3px 0 0 3px;
+	box-shadow:inset -8px 0 0 #ebebeb;
+	-moz-box-shadow:inset -8px 0 0 #ebebeb;
+	-webkit-box-shadow:inset -8px 0 0 #ebebeb;
+	float:left;
+	font-size:24px;
+	line-height:62px;
+	color:#00777f;
+	font-weight:400;
+	margin-top:38px;
+}
+#content article.event_detail .kaist-score p{
+	width:140px;
+	height:140px;
+	text-align:center;
+	border-radius:3px;
+	background:#f5f5f5;
+	font-size:64px;
+	line-height:130px;
+	font-weight:700;
+	color:#f0a922;
+        float:left;
+}
+#content article.event_detail .postech-score{
+	float:right;
+	margin-top:20px;
+}
+#content article.event_detail .postech-score h4{
+	width:154px;
+	height:64px;
+	text-align:center;
+	background:#f2f2f2;
+	border-radius:0 3px 3px 0;
+	-moz-border-radius:0 3px 3px 0;
+	-webkit-border-radius:0 3px 3px 0;
+	box-shadow:inset 8px 0 0 #ebebeb;
+	-moz-box-shadow:inset 8px 0 0 #ebebeb;
+	-webkit-box-shadow:inset 8px 0 0 #ebebeb;
+	font-size:24px;
+	line-height:62px;
+	color:#f05a46;
+	font-weight:400;
+	float:right;
+	margin-top:38px;
+}
+#content article.event_detail .postech-score p{
+	width:140px;
+	height:140px;
+	text-align:center;
+	border-radius:3px;
+	background:#f5f5f5;
+	font-size:64px;
+	line-height:130px;
+	font-weight:700;
+	color:#f0a922;
+        float:right;
+}
+#content article.event_detail section button{
+	font-size:0;
+	width:24px;
+	height:24px;
+	border:none;
+	float:right;
+	cursor:pointer;
+}
+#content article.event_detail section button.flip-hide{
+	background:transparent url("/media/res/btn_hide_nor.png") left top no-repeat;
+}
+#content article.event_detail section button.flip-show{
+	background:transparent url("/media/res/btn_show_nor.png") left top no-repeat;
+}
+#content article.event_detail section button.flip-hide:hover{
+	background:transparent url("/media/res/btn_hide_sel.png") left top no-repeat;
+}
+#content article.event_detail section button.flip-show:hover{
+	background:transparent url("/media/res/btn_show_sel.png") left top no-repeat;
+}
+#content article.event_detail .time{
+	padding-top:20px;
+	clear:both;
+}
+#content article.event_detail .time h4{
+	padding-left:32px;
+	font-family:"Roboto", "Nanum Gothic", sans-serif;
+	font-size:18px;
+	font-weight:300;
+	color:#696b6c;
+	line-height:24px;
+	background:transparent url("/media/res/icon_event_time.png") left top no-repeat;
+}
+#content article.event_detail .map{
+	padding-top:6px;
+	width:100%;
+}
+#content article.event_detail .map h4{
+	float:left;
+	padding-left:32px;
+	background:transparent url("/media/res/icon_event_map.png") left top no-repeat;
+	font-family:"Roboto", "Nanum Gothic", sans-serif;
+	font-size:18px;
+	font-weight:300;
+	color:#696b6c;
+	line-height:24px;
+}
+#content article.event_detail .map p{
+	padding:12px 0;
+	clear:both;
+}
+#content article.event_detail .map img{
+	width:100%;
+	height:280px;
+	border-radius:3px;
+	border:0;
+}
+#content article.event_detail .players{
+	padding-top:6px;
+	clear:both;
+	width:100%;
+}
+#content article.event_detail .players h4{
+	float:left;
+	padding-left:32px;
+	background:transparent url("/media/res/icon_event_players.png") left top no-repeat;
+	font-family:"Roboto", "Nanum Gothic", sans-serif;
+	font-size:18px;
+	font-weight:300;
+	color:#696b6c;
+	line-height:24px;
+}
+#content article.event_detail .players-list{
+	padding:12px 0;
+    display:none;
+    width:100%;
+}
+#content article.event_detail .players-list>li p{
+	float:left;
+	margin-right:6px;
+	font-family:"Roboto", "Nanum Gothic", sans-serif;
+	font-size:20px;
+	font-weight:400;
+	display:inline-block;
+	padding:0 10px;
+	line-height:32px;
+	border-radius:3px;
+	background:#f5f5f5;
+}
+#content article.event_detail .players-list>li.kaist p{
+	color:#00777f;
+}
+#content article.event_detail .players-list>li.postech p{
+	color:#f06857;
+}
+#content article.event_detail .players-list>li.postech{
+	padding-top:6px;
+}
+#content article.event_detail .players-list .player{
+	font-family:"Roboto", "Nanum Gothic", sans-serif;
+	font-size:16px;
+	font-weight:300;
+	display:inline-block;
+	padding:0 10px;
+	margin-right:6px;
+	margin-bottom:6px;
+	float:left;
+	line-height:32px;
+	color:#a1a0a0;
+	border-radius:3px;
+	background:#f5f5f5;
+}
+
+

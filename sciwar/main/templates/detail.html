@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/detail.css">
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript" src="{{STATIC_URL}}js/detail.js"></script>
+{% endblock %}
+
+{% block initialize %}
+    Info.initialize();
+{% endblock %}
+
+{% block right %}
+    <article class="event_detail">
+        <button class="go-back">go back</button>
+        {% if is_live %}<span class="status">Live</span>{% endif %}
+        <h2 class="event">{{ event.name }}</h2>
+        <p class="comment" {% if event.description == "" %}style="display:none"{% endif %}>{{ event.description }}</p>
+        {% if event.is_competition %}
+        <section class="kaist-score">
+            <h4>KAIST</h4>
+            <p>{{ event.kaist_score }}</p>
+        </section>
+        <section class="postech-score">
+            <h4>POSTECH</h4>
+            <p>{{ event.postech_score }}</p>
+        </section>
+        {% endif %}
+        <section class="time">
+            <h4>{{ event.start_time|date:"[ b j ]"|upper }} {{ event.start_time|time:"H:i" }} - {{ event.end_time|time:"H:i" }}</h4>
+        </section>
+        <section class="map">
+            <button class="flip-hide">hide</button>
+            <h4>{{ event.building }}</h4>
+            <p>
+                <img class="map-image" src="{{MEDIA_URL}}res/map_{{ event.building }}.png">
+            </p>
+        </section>
+        {% if event.is_competition %}
+        <section class="players">
+            <button class="flip-show">hide</button>
+            <h4>Players Information</h4>
+            <ul class="players-list">
+                <li class="kaist">
+                    <p>KAIST</p>
+                    <ul>
+                        {% for player in kaist_players %}
+                        <li class="player">{{player.name}} ({{player.year}})</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="postech">
+                    <p>POSTECH</p>
+                    <ul>
+                        {% for player in postech_players %}
+                        <li class="player">{{player.name}} ({{player.year}})</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        {% endif %}
+    </article>
+{% endblock %}

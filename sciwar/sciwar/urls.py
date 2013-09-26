@@ -17,6 +17,9 @@ urlpatterns = patterns('',
         url(ur'^info/update/$', 'main.views.update_information'),
         url(ur'^video/update/$', 'main.views.update_video'),
 
+        # For detailed pages
+        url(ur'^events/(?P<event_id>\d+)/$', 'main.views.detail_page'),
+
         # For media files to be uploaded
         url(ur'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 

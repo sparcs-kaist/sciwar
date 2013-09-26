@@ -110,6 +110,24 @@ def update_video(request):
     return HttpResponse(json.dumps({
         'contents': contents}, ensure_ascii=False, indent=4))
 
+def detail_page(request, event_id):
+    event = Event.objects.get(id = event_id)
+    kaist_players = event.kaist_players.all()
+    postech_players = event.postech_players.all()
+
+    if event.start_time <= datetime.now() and event.end_time >= datetime.now():
+        is_live = True
+    else:
+        is_live = False
+
+    return render(request, 'detail.html', {
+        "state":_get_state(),\
+        "is_live":is_live,\
+        "event":event,\
+        "kaist_players":kaist_players,\
+        "postech_players":postech_players,\
+    })
+
 # private function
 def _get_state():
     state = {}
