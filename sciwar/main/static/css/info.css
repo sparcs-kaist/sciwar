@@ -10,7 +10,7 @@
 
 .info-title
 {
-    font-family:"Roboto Condensed", sans-serif;
+    font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
     font-size:36px;
     margin-top:5px;
     color: #525455;
@@ -18,7 +18,7 @@
 
 .info-date
 {
-    font-family:"Roboto",sans-serif;
+    font-family:"Roboto", "Nanum Gothic",sans-serif;
     font-size:18px;
     color:#a1a0a0;
     font-weight:300;
@@ -27,7 +27,7 @@
 
 .info-article
 {
-    font-family:"Roboto",sans-serif;
+    font-family:"Roboto", "Nanum Gothic",sans-serif;
     font-size:20px;
     font-weight:300;
     color:#737374;
@@ -44,7 +44,7 @@
 
 .info-standard
 {
-    font-family:"Roboto Condensed", sans-serif;
+    font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
     font-size:24px;
     font-weight:400;
     color:#737374;
@@ -64,21 +64,35 @@
     text-overflow: ellipsis;
     text-transform: uppercase;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .info-detail
 {
-    font-family: "Roboto", serif;
+    font-family: "Roboto", "Nanum Gothic", serif;
     float:left;
     font-weight: 300;
     color:#a1a0a0; 
     font-size:20px;
 }
 
+.info-click-img-active
+{
+    float:right;
+    margin-right:5px;
+    background: transparent url("/media/res/img_active.png") top left no-repeat;
+    width: 15px;
+    height: 12px;
+    margin-top:14px;
+}
 .info-click-img
 {
     float:right;
-    margin-right:10px;
+    margin-right:5px;
+    background: transparent url("/media/res/img_inactive.png") top left no-repeat;
+    width: 15px;
+    height: 12px;
+    margin-top:14px;
 }
 
 .info-information span {

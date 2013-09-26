@@ -33,13 +33,24 @@ def info_page(request):
     return render(request, 'info.html', {"state":_get_state()})
 
 def schedule_page(request):
-    return render(request, 'schedule.html', {"state":_get_state(), "events":_get_schedule()})
+    Month = [0,"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
+    current_time = datetime.now()
+    date = Month[current_time.month]+" "+str(current_time.day)
+    events = _get_schedule()
+    num = 0
+    for index,event in enumerate(events):
+        print event["date"],date
+        if event["date"] == date:
+            num=index+1
+
+    return render(request, 'schedule.html', {"state":_get_state(), "events":_get_schedule(), "today_date":num})
 
 def map_page(request):
     return render(request, 'map.html', {"state":_get_state()})
 
 def video_page(request):
     return render(request, 'video.html', {"state":_get_state()})
+
 
 def update_information(request):
     avail_notice = True if request.GET.get('notice', False) == "true" else False
@@ -60,6 +71,7 @@ def update_information(request):
             contents.append(item)
     return HttpResponse(json.dumps({
         'contents': contents}, ensure_ascii=False, indent=4))
+
 
 def update_video(request):
     classify = request.GET.get('name','all')

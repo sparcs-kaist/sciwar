@@ -29,18 +29,19 @@
 		<div class="map-marker" id="map-marker-sub_field">
 			<img class="map-marker-red" id="map-marker-sub_field-red" src="{{MEDIA_URL}}res/marker_red.png">
 			<img class="map-marker-blue" id="map-marker-sub_field-blue" src="{{MEDIA_URL}}res/marker.png">
-		</div>
-		<!-- ZOOM BUTTON -->
-		<div id="map-button">
-			button
+                </div>
+		<div class="map-marker" id="map-marker-main_building">
+			<img class="map-marker-red" id="map-marker-main_building-red" src="{{MEDIA_URL}}res/marker_red.png">
+			<img class="map-marker-blue" id="map-marker-main_building-blue" src="{{MEDIA_URL}}res/marker.png">
 		</div>
 	</div>
 </div>
-<div class="map-field map-field-zoomed">
-	<div class="map-title">
+<div class="map-field">
+	<div class="map-title" id="zoom-title">
 		ZOOMED MAP
 	</div>
-	<div class="map-image map-image-zoomed">
+	<div class="map-image map-image-zoomed" >
+		<!-- ZOOMED MAP IMAGE -->
 	</div>
 </div>
 {% endblock %}
@@ -49,17 +50,63 @@
 	<div id="event-list-title">
 		EVENTS
 	</div>
-	<div id="event-item-pane">
-		<div class="event-item" id="event-soccer">
-			<!-- ADD EVENTS HERE -->
-			SOCCER
-		</div>
-		<div class="event-item" id="event-baseball">
+        <div id="event-item-pane">
+                    <!-- ADD EVENTS HERE -->
+		<div class="event-item" id="event-opening_ceremony" onmouseover="map.color(1)">
+                        OPENING CEREMONY
+                        <div class="map-click-img">
+                        </div>
+                </div>
+                <div class="event-item" id="event-beer_party" onmouseover="map.color(2)">
+			BEER PARTY
+                        <div class="map-click-img">
+                        </div>
+                       
+                </div>
+
+                <div class="event-item" id="event-soccer" onmouseover="map.color(3)">
+			SOCCER 
+                        <div class="map-click-img">
+                        </div>                   
+                </div>
+		<div class="event-item" id="event-basketball" onmouseover="map.color(4)">
 			BASKETBALL
-		</div>
-		<div class="event-item" id="event-science_quiz">
-			SCIENCE QUIZ CONTEST
-		</div>
+ 
+                        <div class="map-click-img">
+                        </div>                   
+                </div>
+		<div class="event-item" id="event-baseball" onmouseover="map.color(5)">
+			BASEBALL
+ 
+                        <div class="map-click-img">
+                        </div>                   
+                </div>
+                <div class="event-item" id="event-science_quiz" onmouseover="map.color(6)">
+			SCIENCE QUIZ
+ 
+                        <div class="map-click-img">
+                        </div>                   
+                </div>
+                <div class="event-item" id="event-league_of_legends" onmouseover="map.color(7)">
+			LEAGUE OF LEGENDS
+ 
+                        <div class="map-click-img">
+                        </div>                   
+                </div>
+                <div class="event-item" id="event-ai" onmouseover="map.color(8)">
+			A.I.
+ 
+                        <div class="map-click-img" >
+                        </div>                   
+                </div>
+                <div class="event-item" id="event-closing_ceremony" onmouseover="map.color(9)">
+			CLOSING CEREMONY
+ 
+                        <div class="map-click-img">
+                        </div>                   
+                </div>
+
+
 	</div>
 </div>
 

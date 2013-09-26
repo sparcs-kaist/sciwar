@@ -12,10 +12,10 @@
 
 .day-text
 {
-    font-family:"Roboto Condensed", sans-serif;
+    font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
     font-size:28px;
     margin-bottom: 20px;
-    color:#ed462f;
+    color:#6f7274;
 }
 
 .event-field
@@ -31,7 +31,7 @@
 
 .event-name
 {
-    font-family:"Roboto Condensed", sans-serif;
+    font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
     font-size:24px;
     font-weight:400;
     color:#525455;
@@ -40,7 +40,7 @@
 .event-detail
 {
     margin-top:12px;
-    font-family:"Roboto Condensed", sans-serif;
+    font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
     font-size:18px;
     font-weight:300;
     color:#676c6d;
@@ -81,15 +81,15 @@
     line-height:40px;
     text-align:left;
     border-radius:2px;
+    cursor:pointer;
 }
 
 .day-detail
 {
     float:left;
     width:228px;
-    font-family:"Roboto",sans-serif;
+    font-family:"Roboto", "Nanum Gothic",sans-serif;
     font-size:20px;
     font-weight:300;
     color:#a1a0a0; 
-    background: url("/media/res/img_anchor.png") right 50% no-repeat;
 }

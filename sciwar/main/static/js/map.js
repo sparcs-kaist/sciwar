@@ -47,21 +47,112 @@ var map = {
 			);
 			blink();
 		};
-
+		var main_building_click = function(){
+			marker_blue=$('#map-marker-main_building-blue');
+			marker_red=$('#map-marker-main_building-red');
+			$('.map-image-zoomed').animate(
+					{opacity: 0}, 
+					mapchangetime, 
+					function() {
+						$(this).css('background-image','url(\'/media/res/map_front_of_library.png\')').animate({opacity: 1});
+					}
+			);
+			blink();
+		};
+		$('#event-opening_ceremony').click(function(){
+			marker_blue.hide();
+			marker_red.show();
+			sports_complex_click();
+			map.update(1);
+		});	
+		$('#event-beer_party').click(function(){
+			marker_blue.hide();
+			marker_red.show();
+			main_building_click();
+			map.update(2);
+		});	
 		$('#event-soccer').click(function(){
 			marker_blue.hide();
 			marker_red.show();
 			main_field_click();
+			map.update(3);
 		});	
-		$('#event-baseball').click(function() {
-			marker_blue.hide();
-			marker_red.show();
-			sub_field_click();
-		});
-		$('#event-science_quiz').click(function() {
+		$('#event-basketball').click(function(){
 			marker_blue.hide();
 			marker_red.show();
 			sports_complex_click();
+			map.update(4);
+		});	
+        $('#event-baseball').click(function(){ 
+			marker_blue.hide();
+			marker_red.show();
+			sub_field_click();
+			map.update(5);
 		});
+		$('#event-science_quiz').click(function(){
+			marker_blue.hide();
+			marker_red.show();
+			sports_complex_click();
+			map.update(6);
+		});	
+		$('#event-league_of_legends').click(function(){
+			marker_blue.hide();
+			marker_red.show();
+			sports_complex_click();
+			map.update(7);
+		});	
+
+		$('#event-ai').click(function(){
+			marker_blue.hide();
+			marker_red.show();
+			sports_complex_click();
+			map.update(8);
+		});	
+		$('#event-closing_ceremony').click(function(){
+			marker_blue.hide();
+			marker_red.show();
+			sports_complex_click();
+			map.update(9);
+		});
+		map.update(0);
+		map.color(0);
+	},
+	update:function(num)
+	{
+		var i;
+		var img = $('.map-click-img');
+		num--;
+		for(i=0;;i++)
+		{
+			if(img[i]==null) break;
+			if(i==num)
+			{
+				$(img[i]).css("background", 'url("/media/res/img_active.png") top left no-repeat');
+			}
+			else
+			{
+				$(img[i]).css("background", 'url("/media/res/img_inactive.png") top left no-repeat');	
+			}	
+		}
+	},
+	color:function(num)
+	{
+		var i;
+		var tab = $('.event-item');
+		num--;
+		for(i=0;;i++)
+		{
+			if(tab[i]==null) break;
+			if(i==num)
+			{
+				$(tab[i]).css("background","#ebebeb");
+			}
+			else
+			{
+				$(tab[i]).css("background","#F5F5F5");
+			}
+		}
 	}
-}	
+};
+
+
