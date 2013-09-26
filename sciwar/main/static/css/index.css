@@ -235,7 +235,37 @@
 	color:#696b6c;
 	line-height:24px;
 }
-
+.players-table{
+    display:none;
+    width:100%;
+}
+.players-table-header{
+    width:100%;
+    text-align:center;
+}
+.players-table-th{
+    float:left;
+    width:50%;
+    font-family:"Roboto", "Nanum Gothic", sans-serif;
+    font-size:23px;
+    font-weight:bold;
+    margin-bottom:5px;
+    margin-top:10px;
+}
+.players-table-body{
+    width:100%;
+}
+.players-table-tr{
+    width:100%;
+    text-align:center;
+    font-family:"Roboto", "Nanum Gothic", sans-serif;
+    font-size:17px;
+    margin-top:5px;
+}
+.players-table-td{
+    float:left;
+    width:50%;
+}
 /* CONTENT - LIST */
 
 #content .event-list .event-item{

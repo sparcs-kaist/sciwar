@@ -47,7 +47,22 @@
         {% if current_event.is_competition %}
         <section class="players">
             <button class="flip-show">hide</button>
-            <h4>Players Information</h4>
+			<h4>Players Information</h4>
+			<div class="players-table">
+				<div class="players-table-header">
+					<div class="players-table-th">KAIST</div>
+					<div class="players-table-th">POSTECH</div>
+				</div>
+				<div class="playsers-table-body">
+					{% for player in players %}
+					<div class="players-table-tr">
+						{% for p in player %}
+						<div class="players-table-td">{{ p.name }}</div>
+						{% endfor %}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
         </section>
         {% endif %}
     </article>
