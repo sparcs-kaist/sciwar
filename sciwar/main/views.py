@@ -30,7 +30,9 @@ def main_page(request):
     if(current_event != None and current_event.is_competition):
         kaist_players = current_event.kaist_players.all()
         postech_players = current_event.postech_players.all()
-    recent_comments = CheerMessage.objects.filter(event = current_event.id).order_by('-time')[:5]
+
+    if current_event != None:
+        recent_comments = CheerMessage.objects.filter(event = current_event.id).order_by('-time')[:5]
 
     current_time = datetime.now()
     return render(request, 'index.html', {
