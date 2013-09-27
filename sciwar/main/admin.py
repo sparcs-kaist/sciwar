@@ -16,7 +16,11 @@ class EventAdmin(admin.ModelAdmin):
 class InfoAdmin(admin.ModelAdmin):
     list_display = ('title', 'content', 'category', 'time')
 
+class CheerMessageAdmin(admin.ModelAdmin):
+    list_display = ('school','time','event','content')
+
 admin.site.register(Player, PlayerAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Info, InfoAdmin)
+admin.site.register(CheerMessage, CheerMessageAdmin)

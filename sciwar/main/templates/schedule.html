@@ -25,7 +25,7 @@ DayList.update({{today_date}},0);
         {% for event in date.events %}
             <div class="event-field">
                 <div class="event-name">
-                    <a href="/events/{{event.id}}/">{{event.name}}</a>
+                    <a href="/events/{{event.id}}/?back=schedule">{{event.name}}</a>
                 </div>
                 <div class="event-detail">
                     <div class="event-time">

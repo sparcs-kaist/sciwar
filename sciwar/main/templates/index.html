@@ -2,6 +2,7 @@
 
 {% block style %}
     <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/index.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="{{STATIC_URL}}css/cheer.css">
 {% endblock %}
 
 {% block script %}
@@ -73,9 +74,21 @@
                         {% endfor %}
                     </ul>
                 </li>
-            </ul>
-        </section>
-        {% endif %}
+			</ul>
+		</section>
+		{% endif %}
+		<section class="cheer">
+		{% for cheer in recent_comments %}
+		<div class="cheer-msg">
+			<div class="cheer-team {{ cheer.get_school_display }}">
+				{{ cheer.get_school_display }}
+			</div>
+			<div class="cheer-content">
+				{{ cheer.content }}
+			</div>
+		</div>
+		{% endfor %}
+		</section>
     </article>
     {% endif %}
     <ul class="event-list">

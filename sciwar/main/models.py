@@ -58,7 +58,8 @@ class Info(models.Model):
 class CheerMessage(models.Model):
     content = models.CharField(max_length=140)
     school = models.SmallIntegerField(choices=SCHOOLS)
-    time = models.DateTimeField(auto_now_add=True)
+    time = models.DateTimeField(auto_now_add=True,db_index=True)
+    event = models.ForeignKey(Event,default=1, db_index=True)
 
     def __unicode__(self):
-        return u'<%s> %s' % (self.get_school_display())
+        return u'<%s> %s' % (self.get_school_display(),self.event.name)

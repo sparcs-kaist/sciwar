@@ -4,7 +4,6 @@ var Info = {
         this.btn_p = $(".event_detail>.players>button");
         this.map = $(".event_detail>.map>p");
         this.players = $(".event_detail>.players>.players-list");
-        this.goback = $(".event_detail>.go-back");
 
         this.registerHandlers();
     },
@@ -27,12 +26,5 @@ var Info = {
                 $(this).removeClass("flip-show").addClass("flip-hide");
             }
         });
-        $(this.goback).click(function(){
-            if(parent.history.back() != undefined){
-                parent.history.back();
-            }else{
-                window.close();
-            }
-        });            
     },
 };

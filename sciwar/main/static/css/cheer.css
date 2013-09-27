@@ -66,3 +66,13 @@
     border-radius: 2px;
 }
 .page-links a { display: inline; }
+.page-changer{
+    float:right;
+}
+.page-changer a {
+    text-decoration:none;
+    color:#000;
+}
+.page-changer-prev {
+    margin-right:10px;
+}

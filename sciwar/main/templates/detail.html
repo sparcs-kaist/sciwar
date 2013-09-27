@@ -2,6 +2,7 @@
 
 {% block style %}
     <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/detail.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="{{STATIC_URL}}css/cheer.css">
 {% endblock %}
 
 {% block script %}
@@ -14,7 +15,7 @@
 
 {% block right %}
     <article class="event_detail">
-        <button class="go-back">go back</button>
+		<a href="/{{back}}" class="go-back">go back</a>
         {% if is_live %}<span class="status">Live</span>{% endif %}
         <h2 class="event">{{ event.name }}</h2>
         <p class="comment" {% if event.description == "" %}style="display:none"{% endif %}>{{ event.description }}</p>
@@ -61,6 +62,50 @@
                 </li>
             </ul>
         </section>
-        {% endif %}
-    </article>
+		{% endif %}
+	</article>
+	<article id="cheer">
+		<div class="cheer-container">
+			<p class="cheer-title">응원의 메세지</p>
+			<form class="cheer-form" method="post" action="/cheer/add/">
+				{% csrf_token %}
+				<select id="school" name="school">
+					<option value="3" selected="selected">NONE</option>
+					<option value="1">KAIST</option>
+					<option value="2">POSTECH</option>
+				</select>
+
+				<input class="content" maxlength="140" name="content" type="text">
+				<input type="hidden" name="event" value="{{ event.id }}" />
+				<input class="btn" type="submit" value="+" />
+			</form>
+			{% for cheer in comments %}
+			<div class="cheer-msg">
+				<div class="cheer-team {{ cheer.get_school_display }}">
+					{{ cheer.get_school_display }}
+				</div>
+				<div class="cheer-content">
+					{{ cheer.content }}
+				</div>
+			</div>
+			{% endfor %}
+			<div class="pagination">
+				<span class="step-links">
+					<span class="current" style="float:left">
+						Page {{ comments.number }} of {{ comments.paginator.num_pages }}.
+					</span>
+					<div class="page-changer">
+					{% if comments.has_next %}
+						<a href="?page={{ comments.next_page_number }}#cheer">next</a>
+					{% endif %}
+					</div>
+					<div class="page-changer page-changer-prev">
+					{% if comments.has_previous %}
+						<a href="?page={{ comments.previous_page_number }}#cheer">previous</a>
+					{% endif %}
+					</div>
+				</span>
+			</div>
+		</div>
+	</article>
 {% endblock %}

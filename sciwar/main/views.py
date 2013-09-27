@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView
@@ -7,6 +7,7 @@ from main.models import *
 from django.utils import simplejson as json
 import time 
 from datetime import datetime, timedelta
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 def main_page(request):
     today_events = Event.objects.filter(
@@ -29,6 +30,7 @@ def main_page(request):
     if(current_event != None and current_event.is_competition):
         kaist_players = current_event.kaist_players.all()
         postech_players = current_event.postech_players.all()
+    recent_comments = CheerMessage.objects.filter(event = current_event.id).order_by('-time')[:5]
 
     current_time = datetime.now()
     return render(request, 'index.html', {
@@ -39,6 +41,7 @@ def main_page(request):
         "current_time":current_time,\
         "kaist_players":kaist_players,\
         "postech_players":postech_players,\
+        "recent_comments":recent_comments,\
     })
 
 def info_page(request):
@@ -124,12 +127,27 @@ def detail_page(request, event_id):
     else:
         is_live = False
 
+    page = request.GET.get('page',1)
+    comments_list = CheerMessage.objects.filter(event = event_id).order_by('-time')
+    paginator = Paginator(comments_list, 10)
+
+    try:
+        comments = paginator.page(page)
+    except PageNotAnInteger:
+        comments = paginator.page(1)
+    except EmptyPage:
+        contacts = paginator.page(paginator.num_pages)
+
+    back=request.GET.get('back','')
+
     return render(request, 'detail.html', {
         "state":_get_state(),\
         "is_live":is_live,\
         "event":event,\
         "kaist_players":kaist_players,\
         "postech_players":postech_players,\
+        "comments":comments,\
+        "back":back,\
     })
 
 # private function
@@ -173,10 +191,20 @@ def _get_schedule():
         events.append({"date":Month[date.month]+" "+str(date.day), "events":events_per_day})
     return events
 
-class CheerCreate(CreateView):
-    model = CheerMessage
-    success_url = '/cheer/'
-    template_name = 'cheer_form.html'
+def CheerCreate(request):
+    school = request.POST.get('school')
+    content = request.POST.get('content')
+    event_id = request.POST.get('event')
+
+    try :
+        event = Event.objects.get(id=event_id)
+    except Exception,e:
+        return HttpResponseRedirect('/events/%s/'%event)
+
+    cheer = CheerMessage(content=content,event=event,school=school)
+    cheer.save()
+
+    return HttpResponseRedirect('/events/%s/#cheer'%event_id)
 
 class CheerList(ListView):
     model = CheerMessage
