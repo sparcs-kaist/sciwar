@@ -28,8 +28,8 @@ def main_page(request):
     kaist_players = []
     postech_players = []
     if(current_event != None and current_event.is_competition):
-        kaist_players = current_event.kaist_players.all()
-        postech_players = current_event.postech_players.all()
+        kaist_players = current_event.kaist_players.all().order_by('year')
+        postech_players = current_event.postech_players.all().order_by('year')
 
     recent_comments = []
     if current_event != None:
