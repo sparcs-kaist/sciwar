@@ -31,6 +31,7 @@ def main_page(request):
         kaist_players = current_event.kaist_players.all()
         postech_players = current_event.postech_players.all()
 
+    recent_comments = []
     if current_event != None:
         recent_comments = CheerMessage.objects.filter(event = current_event.id).order_by('-time')[:5]
 
