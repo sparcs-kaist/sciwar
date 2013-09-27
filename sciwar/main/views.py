@@ -43,8 +43,12 @@ def main_page(request):
         "other_events":other_events,\
         "current_time":current_time,\
     })
-    if request.COOKIES.get('sciwar_live_token','') == '':
-        response.set_cookie('sciwar_live_token',_get_user_key())
+    token = request.COOKIES.get('sciwar_live_token','')
+    if token == '':
+        response.set_cookie('sciwar_live_token',_get_user_key(),expires=datetime.now() + timedelta(3,0))
+    else :
+        response.set_cookie('sciwar_live_token',token,expires=datetime.now() + timedelta(3,0))
+
     return response
 
 def info_page(request):
