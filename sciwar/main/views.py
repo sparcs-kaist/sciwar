@@ -204,11 +204,12 @@ def CheerCreate(request):
     except Exception,e:
         event = None
   
-    if event != None and school in ['KAIST','POSTECH','NONE']:
+    if event != None and school in ['KAIST','POSTECH','NONE'] and content.strip() != '':
         cheer = CheerMessage(content=content,event=event,school=school)
         cheer.save()
-
-    return HttpResponseRedirect('/events/%s/#cheer'%event_id)
+        return HttpResponseRedirect('/events/%s/#cheer'%event_id)
+    else :
+        return HttpResponse('<script>alert("Invalid comment");history.go(-1);</script>')
 
 class CheerList(ListView):
     model = CheerMessage
