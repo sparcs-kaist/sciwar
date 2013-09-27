@@ -19,27 +19,29 @@ def main_page(request):
             end_time__gte = datetime.now())
 
     other_events = Event.objects.all().order_by('start_time')
+    
+    current_info = []
 
-    kaist_players = []
-    postech_players = []
-    if(current_events and current_events[0].is_competition):
-        kaist_players = current_events[0].kaist_players.all().order_by('year')
-        postech_players = current_events[0].postech_players.all().order_by('year')
+    for event in current_events:
+        kaist_players = []
+        postech_players = []
+        recent_comments = []
+        if(event and event.is_competition):
+            kaist_players = event.kaist_players.all().order_by('year')
+            postech_players = event.postech_players.all().order_by('year')
+        if event:
+            recent_comments = CheerMessage.objects.filter(event = event.id).order_by('-time')[:5]
+        current_info.append([event,kaist_players,postech_players,recent_comments])
 
-    recent_comments = []
-    if current_events != None:
-        recent_comments = CheerMessage.objects.filter(event = current_events[0].id).order_by('-time')[:5]
 
     current_time = datetime.now()
     return render(request, 'index.html', {
         "state":_get_state(),\
         "today_events":today_events,\
-        "current_events":current_events,\
+        "live":current_events,\
+        "current_info":current_info,\
         "other_events":other_events,\
         "current_time":current_time,\
-        "kaist_players":kaist_players,\
-        "postech_players":postech_players,\
-        "recent_comments":recent_comments,\
     })
 
 def info_page(request):
