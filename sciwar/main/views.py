@@ -20,11 +20,13 @@ def main_page(request):
         current_event = current_event[0]
         other_events = other_events.exclude(id = current_event.id)
     else:
-        current_event = []
+        current_event = None
 
-    players = []
-    kaist_players = current_event.kaist_players.all()
-    postech_players = current_event.postech_players.all()
+    kaist_players = []
+    postech_players = []
+    if(current_event != None and current_event.is_competition):
+        kaist_players = current_event.kaist_players.all()
+        postech_players = current_event.postech_players.all()
 
     current_time = datetime.now()
     return render(request, 'index.html', {
