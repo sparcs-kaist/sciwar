@@ -19,8 +19,12 @@ class InfoAdmin(admin.ModelAdmin):
 class CheerMessageAdmin(admin.ModelAdmin):
     list_display = ('school','time','event','content')
 
+class LiveUserAdmin(admin.ModelAdmin):
+    list_display = ('token','last_access')
+
 admin.site.register(Player, PlayerAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Info, InfoAdmin)
 admin.site.register(CheerMessage, CheerMessageAdmin)
+admin.site.register(LiveUser, LiveUserAdmin)

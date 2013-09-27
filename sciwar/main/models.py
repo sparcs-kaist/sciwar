@@ -63,3 +63,10 @@ class CheerMessage(models.Model):
 
     def __unicode__(self):
         return u'<%s> %s' % (self.get_school_display(),self.event.name)
+
+class LiveUser(models.Model):
+    token = models.CharField(max_length=100,unique=True)
+    last_access = models.DateTimeField(auto_now=True)
+
+    def __unicode__(self):
+        return u'<%s> %s'%(self.token,self.last_access)

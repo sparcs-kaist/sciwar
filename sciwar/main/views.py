@@ -8,6 +8,7 @@ from django.utils import simplejson as json
 import time 
 from datetime import datetime, timedelta
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from sciwar.settings import site_domain
 
 def main_page(request):
     today_events = Event.objects.filter(
@@ -35,7 +36,7 @@ def main_page(request):
 
 
     current_time = datetime.now()
-    return render(request, 'index.html', {
+    response = render(request, 'index.html', {
         "state":_get_state(),\
         "today_events":today_events,\
         "live":current_events,\
@@ -43,6 +44,9 @@ def main_page(request):
         "other_events":other_events,\
         "current_time":current_time,\
     })
+    if request.COOKIES.get('sciwar_live_token','') == '':
+        response.set_cookie('sciwar_live_token',_get_user_key())
+    return response
 
 def info_page(request):
     return render(request, 'info.html', {"state":_get_state()})
@@ -166,7 +170,7 @@ def _get_state():
             state["POSTECH"] += event.score
         if event.end_time < datetime.now():
             state["DONE"] += 1
-    
+    state["live"] = _count_active 
     return state
 
 def _get_schedule():
@@ -218,3 +222,47 @@ class CheerList(ListView):
         context = super(CheerList, self).get_context_data(**kwargs)
         context['state'] = _get_state()
         return context
+
+
+def heartbeat(request):
+    token = request.COOKIES.get('sciwar_live_token','')
+    response = HttpResponse("OK")
+    if token == '':
+        response.set_cookie('sciwar_live_token',_get_user_key())
+        return response
+    else :
+        if _set_active(token):
+            return response
+        else :
+            response.set_cookie('sciwar_live_token',_get_user_key())
+            return response
+
+def _count_active():
+    now = datetime.now()
+    live = LiveUser.objects.filter( last_access__gte = now - timedelta(0,1*60))
+    unlive = LiveUser.objects.filter( last_access__lt = now - timedelta(0,1*60))
+    return len(live)
+
+def _set_active(token):
+    try :
+        user = LiveUser.objects.get(token=token)
+        user.save()
+        return True
+    except :
+        return False
+
+def _get_user_key():
+    import string
+    import random
+    
+    size = 10
+    chars = string.ascii_uppercase + string.digits
+    new_id = ''.join(random.choice(chars) for x in range(size))
+    while len(LiveUser.objects.filter( token = new_id )) != 0:
+        new_id = ''.join(random.choice(chars) for x in range(size))
+    try :
+        user = LiveUser(token=new_id)
+        user.save()
+        return new_id
+    except Exception,e:
+        return None

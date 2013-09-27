@@ -309,6 +309,9 @@ header #nav a.sel{
 	line-height:32px;
 	font-weight:300;
 }
+#aside #creators .activeuser {
+    background:url("/media/res/icon_event_players.png") left top no-repeat;
+}
 #aside #creators .list a:hover{
 	color:#ed462f;
 }

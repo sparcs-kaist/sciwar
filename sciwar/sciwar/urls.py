@@ -1,7 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.contrib import admin
-from main.views import  CheerList
 
 admin.autodiscover()
 
@@ -30,4 +29,6 @@ urlpatterns = patterns('',
 
         # Cheer message
         url(r'^cheer/add/$', 'main.views.CheerCreate'),
+        # Hearbeat
+        url(r'^heartbeat/$','main.views.heartbeat'),
 )
