@@ -8,7 +8,6 @@ from django.utils import simplejson as json
 import time 
 from datetime import datetime, timedelta
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-from sciwar.settings import site_domain
 
 def main_page(request):
     today_events = Event.objects.filter(
