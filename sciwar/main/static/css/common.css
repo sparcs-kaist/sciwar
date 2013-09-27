@@ -51,6 +51,7 @@ body{
 
 header{
 	width:100%;
+        min-width:960px;
 	height:70px;
 	background:#1b2023;
 }
