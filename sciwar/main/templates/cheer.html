@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block style %}
+<link rel="stylesheet" type="text/css" media="screen" href="{{STATIC_URL}}css/cheer.css">
+{% endblock %}
+
+{% block right %}
+<div class="cheer-container">
+    <p class="cheer-title">응원의 메세지</p>
+    <form class="cheer-form" method="post" action="/cheer/add/">
+        {% csrf_token %}
+        <select id="school" name="school">
+            <option value="3" selected="selected">NONE</option>
+            <option value="1">KAIST</option>
+            <option value="2">POSTECH</option>
+        </select>
+
+        <input class="content" maxlength="140" name="content" type="text">
+        <input class="btn" type="submit" value="+" />
+    </form>
+    {% for cheer in object_list %}
+    <div class="cheer-msg">
+        <div class="cheer-team {{ cheer.get_school_display }}">
+            {{ cheer.get_school_display }}
+        </div>
+        <div class="cheer-content">
+            {{ cheer.content }}
+        </div>
+    </div>
+    {% endfor %}
+
+    {% if object_list and is_paginated %}
+    <div class="pagination">
+        <span class="page-links">
+            {% if page_obj.has_previous %}
+                <a href="/cheer/?page={{ page_obj.previous_page_number }}">Prev </a>
+            {% endif %}
+            {% if page_obj.has_next %}
+                <a href="/cheer/?page={{ page_obj.next_page_number }}">Next</a>
+            {% endif %}
+        </span>
+    </div>
+    {% endif %}
+
+
+</div>
+{% endblock %}

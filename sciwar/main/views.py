@@ -1,5 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views.generic import ListView
+from django.views.generic.edit import CreateView
 from django.db import models
 from main.models import *
 from django.utils import simplejson as json
@@ -171,3 +173,18 @@ def _get_schedule():
         events.append({"date":Month[date.month]+" "+str(date.day), "events":events_per_day})
     return events
 
+class CheerCreate(CreateView):
+    model = CheerMessage
+    success_url = '/cheer/'
+    template_name = 'cheer_form.html'
+
+class CheerList(ListView):
+    model = CheerMessage
+    template_name = 'cheer.html'
+    queryset = CheerMessage.objects.order_by('-pk')
+    paginate_by = 10
+
+    def get_context_data(self, **kwargs):
+        context = super(CheerList, self).get_context_data(**kwargs)
+        context['state'] = _get_state()
+        return context

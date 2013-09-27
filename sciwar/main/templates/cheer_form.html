@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block style %}
+<link rel="stylesheet" type="text/css" media="screen" href="{{STATIC_URL}}css/cheer.css">
+{% endblock %}
+
+{% block right %}
+<form method="post" action="">
+    {{ form }}
+    {% csrf_token %}
+    <input type="submit" value="등록하기" />
+</form>
+{% endblock %}

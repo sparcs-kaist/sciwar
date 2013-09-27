@@ -1,0 +1,68 @@
+.cheer-container
+{
+    background-color: #FFFFFF;
+    padding-left:16px;
+    padding-right:16px;
+    width: 628px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    padding-top:20px;
+    border-radius:2px;
+}
+
+.cheer-title
+{
+    font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
+    font-size:28px;
+    line-height:28px;
+    margin-bottom: 20px;
+    color:#6f7274;
+    margin-top:-1px;
+}
+
+.cheer-msg
+{
+    width:616px;
+    background-color: #F5F5F5;
+    margin-bottom: 6px;
+    padding:20px 12px;
+    border-radius:2px; 
+}
+
+.cheer-team{
+    display:inline-block;
+    font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
+    font-size:24px;
+    line-height:24px;
+    font-weight:400;
+    color:#525455;
+    padding-right:18px;
+    float:right;
+}
+
+.cheer-team.KAIST{ color:#00777f } 
+.cheer-team.POSTECH{ color:#f05a46 }
+.cheer-content
+{
+    font-family:"Roboto Condensed", "Nanum Gothic", sans-serif;
+    line-height:24px;
+    font-size:20px;
+    font-weight:300;
+    color:#676c6d;
+    height: 24px;
+}
+.cheer-form * { display: inline; }
+.cheer-form { border-bottom: 2px solid #ccc; padding: 10px 0; margin-bottom: 10px; }
+.cheer-form #school { border: 0; height: 24px; }
+.cheer-form .content { width: 500px; border: 0; background-color: #e4e4e4; height: 24px; }
+.cheer-form .btn {
+    width: 24px;
+    height: 24px;
+    background-color: #e4e4e4;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    border: 0;
+    border-radius: 2px;
+}
+.page-links a { display: inline; }

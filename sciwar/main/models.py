@@ -54,3 +54,11 @@ class Info(models.Model):
 
     def __unicode__(self):
         return u'%s : %s' % (self.get_category_display(),self.title)
+
+class CheerMessage(models.Model):
+    content = models.CharField(max_length=140)
+    school = models.SmallIntegerField(choices=SCHOOLS)
+    time = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return u'<%s> %s' % (self.get_school_display())

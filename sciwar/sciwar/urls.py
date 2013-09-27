@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.conf import settings
 from django.contrib import admin
+from main.views import CheerCreate, CheerList
+
 admin.autodiscover()
 
 # Uncomment the next two lines to enable the admin:
@@ -25,4 +27,8 @@ urlpatterns = patterns('',
 
         # Admin page
         url(r'^admin/', include(admin.site.urls)),
+
+        # Cheer message
+        url(r'^cheer/add/$', CheerCreate.as_view(), name='cheer_create'),
+        url(r'^cheer/$', CheerList.as_view(), name='cheer_list'),
 )
