@@ -200,9 +200,10 @@ def CheerCreate(request):
         event = Event.objects.get(id=event_id)
     except Exception,e:
         return HttpResponseRedirect('/events/%s/'%event)
-
-    cheer = CheerMessage(content=content,event=event,school=school)
-    cheer.save()
+   
+    if event != None:
+        cheer = CheerMessage(content=content,event=event,school=school)
+        cheer.save()
 
     return HttpResponseRedirect('/events/%s/#cheer'%event_id)
 
