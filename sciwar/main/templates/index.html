@@ -20,7 +20,7 @@
         <h2>TODAY</h2>
         <ul class="list">
             {% for event in today_events %}
-            <li{% if event.name == current_event.name %} class="now"{% endif %}>
+            <li{% if event.name == current_events.first.name %} class="now"{% endif %}>
                 <h4>{{ event.name }}</h4>
                 <p>{{ event.start_time|time:"H:i" }}</p>
             </li>
@@ -30,30 +30,30 @@
 {% endblock %}
 
 {% block right %}
-    {% if current_event %}
+	{% for event in current_events %}
     <article class="live">
         <span class="status">Live</span>
-        <span class="time">{{ current_event.start_time|time:"H:i" }} - {{ current_event.end_time|time:"H:i" }}</span>
-        <h2 class="event"><a href="/events/{{ current_event.id }}">{{ current_event.name }}</a></h2>
-        <p class="comment" {% if current_event.description == "" %}style="display:none"{% endif %}>{{ current_event.description }}</p>
-        {% if current_event.is_competition %}
+        <span class="time">{{ event.start_time|time:"H:i" }} - {{ event.end_time|time:"H:i" }}</span>
+        <h2 class="event"><a href="/events/{{ event.id }}">{{ event.name }}</a></h2>
+        <p class="comment" {% if event.description == "" %}style="display:none"{% endif %}>{{ event.description }}</p>
+        {% if event.is_competition %}
         <section class="kaist-score">
             <h4>KAIST</h4>
-            <p>{{ current_event.kaist_score }}</p>
+            <p>{{ event.kaist_score }}</p>
         </section>
         <section class="postech-score">
             <h4>POSTECH</h4>
-            <p>{{ current_event.postech_score }}</p>
+            <p>{{ event.postech_score }}</p>
         </section>
         {% endif %}
         <section class="map">
             <button class="flip-hide">hide</button>
-            <h4>{{ current_event.building }}</h4>
+            <h4>{{ event.building }}</h4>
             <p>
-                <img class="map-image" src="{{MEDIA_URL}}res/map_{{ current_event.building }}.png">
+                <img class="map-image" src="{{MEDIA_URL}}res/map_{{ event.building }}.png">
             </p>
         </section>
-        {% if current_event.is_competition %}
+        {% if event.is_competition %}
         <section class="players">
             <button class="flip-show">hide</button>
             <h4>Players Information</h4>
@@ -90,7 +90,7 @@
 		{% endfor %}
 		</section>
     </article>
-    {% endif %}
+    {% endfor %}
     <ul class="event-list">
         {% for event in other_events %}
         <li id="event-list-{{ event.name }}" class="event-item{% if event.end_time < current_time %} finished{% endif %}">

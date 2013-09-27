@@ -14,32 +14,27 @@ def main_page(request):
             start_time__day = datetime.today().day + 0)\
             .order_by('start_time')
 
-    current_event = Event.objects.filter(
+    current_events = Event.objects.filter(
             start_time__lte = datetime.now()).filter(\
             end_time__gte = datetime.now())
 
     other_events = Event.objects.all().order_by('start_time')
-    if current_event:
-        current_event = current_event[0]
-        other_events = other_events.exclude(id = current_event.id)
-    else:
-        current_event = None
 
     kaist_players = []
     postech_players = []
-    if(current_event != None and current_event.is_competition):
-        kaist_players = current_event.kaist_players.all().order_by('year')
-        postech_players = current_event.postech_players.all().order_by('year')
+    if(current_events and current_events[0].is_competition):
+        kaist_players = current_events[0].kaist_players.all().order_by('year')
+        postech_players = current_events[0].postech_players.all().order_by('year')
 
     recent_comments = []
-    if current_event != None:
-        recent_comments = CheerMessage.objects.filter(event = current_event.id).order_by('-time')[:5]
+    if current_events != None:
+        recent_comments = CheerMessage.objects.filter(event = current_events[0].id).order_by('-time')[:5]
 
     current_time = datetime.now()
     return render(request, 'index.html', {
         "state":_get_state(),\
         "today_events":today_events,\
-        "current_event":current_event,\
+        "current_events":current_events,\
         "other_events":other_events,\
         "current_time":current_time,\
         "kaist_players":kaist_players,\
