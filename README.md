@@ -13,6 +13,8 @@ virtualenv --distribute env
 source env/bin/activate
 pip install -r requirements.txt
 python manage.py syncdb
+python manage.py loaddata test.json
+python manage.py loaddata player.json
 python manage.py loaddata player2.json
 python manage.py runserver
 ```
