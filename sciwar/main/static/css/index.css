@@ -26,6 +26,7 @@
 	-webkit-border-radius:3px;
 	margin:0px auto 6px auto;
 	padding-left:32px;
+    list-style-type: none;
 }
 #option section.today-schedule .list li h4{
 	font-family:"Roboto", "Nanum Gothic", sans-serif;
@@ -38,6 +39,17 @@
 	max-width:164px;
 	text-overflow:ellipsis;
 	white-space:nowrap;
+}
+#option section.today-schedule .list li a {
+    font-family: "Roboto", "Nanum Gothic", sans-serif;
+    font-size: 17px;
+    line-height: 39px;
+    font-weight: 300;
+    color: #a1a0a0;
+    text-transform: uppercase;
+    float: left;
+    max-width: 234px;
+    white-space: nowrap;
 }
 #option section.today-schedule .list li p{
 	font-family:"Roboto", "Nanum Gothic", sans-serif;
