@@ -13,4 +13,4 @@ lib64
 settings_local.py
 *.db
 sciwar/static
-
+env/
