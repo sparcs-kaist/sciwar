@@ -282,17 +282,29 @@ def _get_user_key():
 
 
 def board(request):
-    return render(request, 'board.html', {"state": _get_state()})
+    board_contents = BoardContent.objects.all().order_by('time')
+
+    contents = []
+    for content in board_contents:
+        item = {
+            'id': content.id,
+            'title': content.title,
+            'time': content.time
+        }
+        contents.append(content)
+    state = _get_state()
+    return render(request, 'board.html', {
+        "state": _get_state(),
+        "contents": contents})
 
 
 def board_write(request):
     if request.method == "GET":
-        board = BoardContent.objects.all()
         return render(request, 'board_write.html', {"state": _get_state()})
     if request.method == "POST":
         title = request.POST.get('title')
         content = request.POST.get('content')
 
-        board = BoardContent(title=title, content=content)
-        board.save()
+        board_content = BoardContent(title=title, content=content)
+        board_content.save()
         return render(request, 'board.html', {"state": _get_state()})

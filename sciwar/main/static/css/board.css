@@ -57,6 +57,15 @@
     margin-left: -15px;
 }
 
+.board-title {
+    font-family: "Roboto Condensed", "Nanum Gothic", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #525455;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
 .form-group {
     margin-bottom: 15px;
 }
@@ -105,15 +114,12 @@ thead {
     display: table-header-group;
 }
 
-th {
-    text-align: left;
-}
-
 tr {
     display: table-row;
 }
 
 td, th {
+    text-align: left;
     display: table-cell;
     padding: 0;
 }

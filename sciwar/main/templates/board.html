@@ -5,10 +5,17 @@
 {% endblock %}
 
 {% block script %}
+<script type="text/javascript" src="{{STATIC_URL}}js/jquery.timeago.js"></script>
+<script>
+    $(document).ready(function() {
+        $("abbr.timeago").timeago();
+    });
+</script>
 {% endblock %}
 
 {% block right %}
 <div class="board-container">
+    <p class="board-title">Apply for 2015 KAIST-POSTECH Science-War Supporters!</p>
     <a href="/board/write/" class="board-button right">Apply</a>
     <table class="board-table">
         <thead>
@@ -19,11 +26,15 @@
             </tr>
         </thead>
         <tbody>
+            {% for content in contents %}
             <tr>
-                <td>0</td>
-                <td>Test</td>
-                <td>N/A</td>
+                <td>{{ content.id }}</td>
+                <td>{{ content.title }}</td>
+                <td>
+                    <abbr class="timeago" title={{ content.time|date:"c" }}>{{ content.time }}</abbr>
+                </td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>
