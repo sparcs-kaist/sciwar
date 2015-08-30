@@ -31,4 +31,8 @@ urlpatterns = patterns('',
         url(r'^cheer/add/$', 'main.views.CheerCreate'),
         # Hearbeat
         url(r'^heartbeat/$','main.views.heartbeat'),
+
+        # Board page for supporters application
+        url(r'^board/$', 'main.views.board'),
+        url(r'^board/write/$', 'main.views.board_write'),
 )

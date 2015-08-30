@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" media="screen" href="{{STATIC_URL}}css/board.css">
+{% endblock %}
+
+{% block script %}
+{% endblock %}
+
+{% block right %}
+<div class="board-container">
+    <form class="board-form" method="post" action="/board/write/">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="control-label">Title</label>
+            <input type="text" name="title" class="form-control" id="form-title">
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Content</label>
+            <textarea name="content" class="form-control" id="form-content"></textarea>
+        </div>
+        <input class="board-button right form-button" type="submit" value="Apply" />
+    </form>
+</div>
+{% endblock %}

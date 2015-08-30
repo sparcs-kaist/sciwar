@@ -1,0 +1,135 @@
+.board-container
+{
+    background-color: #FFF;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 628px;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    padding-top: 20px;
+    border-radius: 2px;
+}
+
+.board-table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.board-table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+}
+
+.board-table>tbody>tr>td, .board-table>tbody>tr>th, .board-table>tfoot>tr>td, .board-table>tfoot>tr>th, .board-table>thead>tr>td, .board-table>thead>tr>th {
+    padding: 5px;
+}
+
+.board-button {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.board-button:hover {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
+
+.form-button {
+    margin-right: 24px;
+}
+
+.board-form, .form-group {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    display: block;
+    width: 476px;
+    height: 34px;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.085);
+    transition: border-color ease-in-out .15s, bax-shadow ease-in-out .15s;
+    margin-left: 15px;
+}
+
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+}
+
+.control-label {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: right;
+    width: 144px;
+    float: left;
+    margin-right: 15px;
+}
+
+.right {
+    float: right;
+}
+
+table {
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+thead {
+    display: table-header-group;
+}
+
+th {
+    text-align: left;
+}
+
+tr {
+    display: table-row;
+}
+
+td, th {
+    display: table-cell;
+    padding: 0;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+textarea {
+    overflow: auto;
+}
+
+textarea.form-control {
+    height: 340px;
+    padding: 6px;
+}

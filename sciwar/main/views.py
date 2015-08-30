@@ -5,7 +5,7 @@ from django.views.generic.edit import CreateView
 from django.db import models
 from main.models import *
 from django.utils import simplejson as json
-import time 
+import time
 from datetime import datetime, timedelta
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
@@ -19,7 +19,7 @@ def main_page(request):
             end_time__gte = datetime.now())
 
     other_events = Event.objects.all().order_by('start_time')
-    
+
     current_info = []
 
     for event in current_events:
@@ -51,8 +51,10 @@ def main_page(request):
 
     return response
 
+
 def info_page(request):
     return render(request, 'info.html', {"state":_get_state()})
+
 
 def schedule_page(request):
     Month = [0,"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
@@ -66,8 +68,10 @@ def schedule_page(request):
 
     return render(request, 'schedule.html', {"state":_get_state(), "events":_get_schedule(), "today_date":num})
 
+
 def map_page(request):
     return render(request, 'map.html', {"state":_get_state()})
+
 
 def video_page(request):
     return render(request, 'video.html', {"state":_get_state()})
@@ -106,7 +110,7 @@ def update_video(request):
         event_set.append("CLOSING CEREMONY")
     elif classify != "all":
         event_set.append(classify)
-    
+
     contents = []
     if sort_order == 1:
         videos = Video.objects.all().order_by('time')
@@ -123,6 +127,7 @@ def update_video(request):
             contents.append(item)
     return HttpResponse(json.dumps({
         'contents': contents}, ensure_ascii=False, indent=4))
+
 
 def detail_page(request, event_id):
     event = Event.objects.get(id = event_id)
@@ -157,6 +162,7 @@ def detail_page(request, event_id):
         "back":back,\
     })
 
+
 # private function
 def _get_state():
     state = {}
@@ -172,8 +178,9 @@ def _get_state():
         elif event.winner == 2:
             state["POSTECH"] += event.score
     state["DONE"] = len(Event.objects.filter(end_time__gte = datetime.now()))
-    state["live"] = _count_active 
+    state["live"] = _count_active
     return state
+
 
 def _get_schedule():
     Month = [0,"JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
@@ -197,6 +204,7 @@ def _get_schedule():
         events.append({"date":Month[date.month]+" "+str(date.day), "events":events_per_day})
     return events
 
+
 def CheerCreate(request):
     school = request.POST.get('school')
     content = request.POST.get('content')
@@ -206,13 +214,14 @@ def CheerCreate(request):
         event = Event.objects.get(id=event_id)
     except Exception,e:
         event = None
-  
+
     if event != None and school in ["1","2","3"] and content.strip() != '':
         cheer = CheerMessage(content=content,event=event,school=school)
         cheer.save()
         return HttpResponseRedirect('/events/%s/#cheer'%event_id)
     else :
         return HttpResponse('<script>alert("Invalid comment");history.go(-1);</script>')
+
 
 class CheerList(ListView):
     model = CheerMessage
@@ -245,6 +254,7 @@ def _count_active():
     unlive = LiveUser.objects.filter( last_access__lt = now - timedelta(0,1*60))
     return len(live)
 
+
 def _set_active(token):
     try :
         user = LiveUser.objects.get(token=token)
@@ -253,10 +263,11 @@ def _set_active(token):
     except :
         return False
 
+
 def _get_user_key():
     import string
     import random
-    
+
     size = 10
     chars = string.ascii_uppercase + string.digits
     new_id = ''.join(random.choice(chars) for x in range(size))
@@ -268,3 +279,20 @@ def _get_user_key():
         return new_id
     except Exception,e:
         return None
+
+
+def board(request):
+    return render(request, 'board.html', {"state": _get_state()})
+
+
+def board_write(request):
+    if request.method == "GET":
+        board = BoardContent.objects.all()
+        return render(request, 'board_write.html', {"state": _get_state()})
+    if request.method == "POST":
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+
+        board = BoardContent(title=title, content=content)
+        board.save()
+        return render(request, 'board.html', {"state": _get_state()})

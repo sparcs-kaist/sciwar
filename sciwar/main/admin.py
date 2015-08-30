@@ -1,6 +1,6 @@
 #-*-coding:utf-8-*-
 from django.contrib import admin
-from django.db import models 
+from django.db import models
 from main.models import *
 
 
@@ -22,9 +22,13 @@ class CheerMessageAdmin(admin.ModelAdmin):
 class LiveUserAdmin(admin.ModelAdmin):
     list_display = ('token','last_access')
 
+class BoardContentAdmin(admin.ModelAdmin):
+    list_display = ('title', 'content')
+
 admin.site.register(Player, PlayerAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Event, EventAdmin)
 admin.site.register(Info, InfoAdmin)
 admin.site.register(CheerMessage, CheerMessageAdmin)
 admin.site.register(LiveUser, LiveUserAdmin)
+admin.site.register(BoardContent, BoardContentAdmin)

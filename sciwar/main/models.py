@@ -70,3 +70,11 @@ class LiveUser(models.Model):
 
     def __unicode__(self):
         return u'<%s> %s'%(self.token,self.last_access)
+
+class BoardContent(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    time = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return u'%s : %s' % (self.title, self.content)
