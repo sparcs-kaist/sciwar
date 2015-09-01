@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block script %}
-<script type="text/javascript" href="{{STATIC_URL}}js/jquery.timeago.js"></script>
 {% endblock %}
 
 {% block right %}
@@ -14,11 +13,30 @@
         {% csrf_token %}
         <div class="form-group">
             <label class="control-label">Title</label>
-            <input type="text" name="title" class="form-control" id="form-title">
+            <input type="text" name="title" class="form-control" id="form-title" placeholder="게시글을 등록한 이후 열어볼 수 없으니 본인이 식별 가능한 제목을 입력해주세요.">
         </div>
         <div class="form-group">
             <label class="col-sm-2 control-label">Content</label>
-            <textarea name="content" class="form-control" id="form-content"></textarea>
+            <textarea name="content" class="form-control" id="form-content">
+1. 단체 이름 (개인 신청도 가능 / 단체를 만들어도 됩니다 ex) "희선이와 아이들")
+
+
+2. 참여자들 이름 (단체의 경우 대표자 지정)
+
+
+3. 참여자 학번
+
+
+4. 참여자 소속 학과
+
+
+5. 참여자 티셔츠 사이즈
+
+
+6. 참여자 연락처
+
+
+            </textarea>
         </div>
         <input class="board-button right form-button" type="submit" value="Apply" />
     </form>
