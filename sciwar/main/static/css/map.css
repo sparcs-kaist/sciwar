@@ -71,8 +71,13 @@
 }
 #map-marker-main_building
 {
-    left: 262px;
-    top: 295px;
+    left: 322px;
+    top: 283px;
+}
+#map-marker-outdoor_theater
+{
+    left: 136px;
+    top: 232px;
 }
 
 #map-button

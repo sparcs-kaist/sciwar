@@ -1,22 +1,18 @@
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView
-from django.db import models
 from main.models import *
 from django.utils import simplejson as json
-import time
 from datetime import datetime, timedelta
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
+
 def main_page(request):
-    today_events = Event.objects.filter(
-            start_time__day = datetime.today().day + 0)\
-            .order_by('start_time')
+    today_events = Event.objects.filter(start_time__day = datetime.today().day + 0).order_by('start_time')
 
     current_events = Event.objects.filter(
-            start_time__lte = datetime.now()).filter(\
-            end_time__gte = datetime.now())
+        start_time__lte = datetime.now()
+    ).filter(end_time__gte = datetime.now())
 
     other_events = Event.objects.all().order_by('start_time')
 
@@ -70,7 +66,16 @@ def schedule_page(request):
 
 
 def map_page(request):
-    return render(request, 'map.html', {"state":_get_state()})
+    event = Event.objects.all()
+    events = []
+    for e in event:
+        event_item = {
+            'name': e.name,
+            'id': e.name.lower().replace(' ', '_').replace('.', ''),
+            'building': e.building
+        }
+        events.append(event_item)
+    return render(request, 'map.html', {"state":_get_state(), "events": events})
 
 
 def video_page(request):
@@ -277,7 +282,7 @@ def _get_user_key():
         user = LiveUser(token=new_id)
         user.save()
         return new_id
-    except Exception,e:
+    except Exception, e:
         return None
 
 
