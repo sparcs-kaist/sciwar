@@ -54,5 +54,10 @@ var InformationList = {
 			$('<div>', {'class': 'info-article'}).text(item.article).appendTo(info);
 			info.prependTo(InformationList.content);
 		});
+        if (obj.length == 0) {
+            var info = $("<div>", {"class": "info-field"});
+            $("<div>", {"class": "info-article"}).text("아직 등록된 글이 없습니다.").appendTo(info);
+            info.prependTo(InformationList.content);
+        }
 	},
 };
