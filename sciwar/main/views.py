@@ -182,7 +182,7 @@ def _get_state():
             state["KAIST"] += event.score
         elif event.winner == 2:
             state["POSTECH"] += event.score
-    state["DONE"] = len(Event.objects.filter(end_time__gte = datetime.now()))
+    state["DONE"] = len(Event.objects.filter(end_time__lte = datetime.now()))
     state["live"] = _count_active
     return state
 
