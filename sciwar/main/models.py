@@ -16,7 +16,9 @@ NOTIFY = (
 class Player(models.Model):
     name = models.CharField(max_length=100,db_index=True)
     school = models.SmallIntegerField(choices=SCHOOLS)
-    year = models.CharField(max_length=10)
+    year = models.CharField(max_length=10, blank=True)
+    backnumber = models.IntegerField(null=True)
+    position = models.CharField(max_length=40, blank=True)
     def __unicode__(self):
         return u'%s'%self.name
 
