@@ -19,11 +19,11 @@
     <section class="today-schedule">
         <h2>TODAY</h2>
         <ul class="list">
-            <!--
+            
             <li class="now">
                 <a href="/board/">Apply for Supporters!</a>
             </li>
-            -->
+            
             {% for event in today_events %}
             <li{% if event in live %} class="now"{% endif %}>
                 <h4>{{ event.name }}</h4>
