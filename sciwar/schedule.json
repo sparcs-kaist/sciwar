@@ -5,9 +5,9 @@
         "fields": {
             "name":"HACKING CONTEST",
             "winner":3,
-            "start_time":"2015-09-17 21:00:00",
-            "end_time":"2015-09-18 09:00:00",
-            "building":"E11, Creative Learning Building",
+            "start_time":"2016-09-22 21:00:00",
+            "end_time":"2016-09-23 09:00:00",
+            "building":"",
             "kaist_score":0,
             "postech_score":0,
             "score":100,
@@ -19,32 +19,33 @@
         "pk": 2,
         "model": "main.Event",
         "fields": {
-            "name":"EVE FESTIVAL",
+            "name":"OPENING CEREMONY",
             "winner":3,
-            "start_time":"2015-09-17 19:00:00",
-            "end_time":"2015-09-17 20:00:00",
-            "building":"W9, Outdoor Theater",
+            "start_time":"2016-09-23 13:00:00",
+            "end_time":"2016-09-23 16:00:00",
+            "building":"Auditorium",
             "kaist_score":0,
             "postech_score":0,
             "score":0,
             "is_competition":0,
             "description":""
+
         }
-    },    
+    },
     {
         "pk": 3,
         "model": "main.Event",
         "fields": {
-            "name":"OPENING CEREMONY",
-            "winner":3,
-            "start_time":"2015-09-18 13:00:00",
-            "end_time":"2015-09-18 16:00:00",
-            "building":"W9, Outdoor Theater",
-            "kaist_score":0,
-            "postech_score":0,
-            "score":0,
-            "is_competition":0,
-            "description":""
+            "name": "FOOTBALL",
+            "winner": 3,
+            "start_time": "2016-09-23 16:00:00",
+            "end_time": "2016-09-23 18:00:00",
+            "building": "Main Stadium",
+            "kaist_score": 0,
+            "postech_score": 0,
+            "score": 100,
+            "is_competition": 1,
+            "description": ""
 
         }
     },
@@ -52,45 +53,11 @@
         "pk": 4,
         "model": "main.Event",
         "fields": {
-            "name":"BADMINTON",
-            "winner":3,
-            "start_time":"2015-09-18 16:00:00",
-            "end_time":"2015-09-18 17:00:00",
-            "building":"N3, Sports Complex",
-            "kaist_score":0,
-            "postech_score":0,
-            "score":0,
-            "is_competition":1,
-            "description":""
-
-        }
-    },
-    {
-        "pk": 5,
-        "model": "main.Event",
-        "fields": {
-            "name":"BASKETBALL",
-            "winner":3,
-            "start_time":"2015-09-18 17:00:00",
-            "end_time":"2015-09-18 19:00:00",
-            "building":"N3, Sports Complex",
-            "kaist_score":0,
-            "postech_score":0,
-            "score":100,
-            "is_competition":1,
-            "description":""
-
-        }
-    },
-    {
-        "pk": 6,
-        "model": "main.Event",
-        "fields": {
             "name": "SOCIALIZING EVENTS",
             "winner": 3,
-            "start_time": "2015-09-18 20:00:00",
-            "end_time": "2015-09-19 00:00:00",
-            "building": "W9, Outdoor Theater",
+            "start_time": "2016-09-23 19:00:00",
+            "end_time": "2016-09-24 00:30:00",
+            "building": "Main Stage",
             "kaist_score": 0,
             "postech_score": 0,
             "score": 0,
@@ -100,14 +67,48 @@
         }
     },
     {
-        "pk": 7,
+        "pk": 5,
         "model": "main.Event",
         "fields": {
             "name": "A.I.",
             "winner": 3,
-            "start_time": "2015-09-18 21:00:00",
-            "end_time": "2015-09-18 22:00:00",
-            "building": "W9, Outdoor Theater",
+            "start_time": "2016-09-23 19:00:00",
+            "end_time": "2016-09-24 00:30:00",
+            "building": "Main Stage",
+            "kaist_score": 0,
+            "postech_score": 0,
+            "score": 100,
+            "is_competition": 1,
+            "description": ""
+
+        }
+    },
+    {
+        "pk": 6,
+        "model": "main.Event",
+        "fields": {
+            "name": "League Of Legends",
+            "winner": 3,
+            "start_time": "2016-09-23 19:00:00",
+            "end_time": "2016-09-24 00:30:00",
+            "building": "Main Stage",
+            "kaist_score": 0,
+            "postech_score": 0,
+            "score": 100,
+            "is_competition": 1,
+            "description": ""
+            
+        }
+    },
+    {
+        "pk": 7,
+        "model": "main.Event",
+        "fields": {
+            "name": "BASEBALL",
+            "winner": 3,
+            "start_time": "2016-09-24 10:30:00",
+            "end_time": "2016-09-24 13:00:00",
+            "building": "Pocheol Middle School",
             "kaist_score": 0,
             "postech_score": 0,
             "score": 100,
@@ -120,96 +121,45 @@
         "pk": 8,
         "model": "main.Event",
         "fields": {
-            "name": "League Of Legends",
-            "winner": 3,
-            "start_time": "2015-09-18 22:00:00",
-            "end_time": "2015-09-19 00:00:00",
-            "building": "W9, Outdoor Theater",
-            "kaist_score": 0,
-            "postech_score": 0,
-            "score": 100,
-            "is_competition": 1,
-            "description": ""
-            
+            "name":"BASKETBALL",
+            "winner":3,
+            "start_time":"2016-09-24 13:30:00",
+            "end_time":"2016-09-24 15:30:00",
+            "building":"Gymnasium",
+            "kaist_score":0,
+            "postech_score":0,
+            "score":100,
+            "is_competition":1,
+            "description":""
+
         }
     },
     {
         "pk": 9,
         "model": "main.Event",
         "fields": {
-            "name": "CLUBS PERFORMANCES",
+            "name": "SCIENCE QUIZ",
             "winner": 3,
-            "start_time": "2015-09-19 00:00:00",
-            "end_time": "2015-09-19 02:00:00",
-            "building": "W9, Outdoor Theater",
+            "start_time": "2016-09-24 16:00:00",
+            "end_time": "2016-09-24 18:00:00",
+            "building": "Gymnasium",
             "kaist_score": 0,
             "postech_score": 0,
-            "score": 0,
-            "is_competition": 0,
+            "score": 100,
+            "is_competition": 1,
             "description": ""
-            
+
         }
     },
     {
         "pk": 10,
         "model": "main.Event",
         "fields": {
-            "name": "BASEBALL",
-            "winner": 3,
-            "start_time": "2015-09-19 10:30:00",
-            "end_time": "2015-09-19 12:00:00",
-            "building": "In Front of N3, Main Field",
-            "kaist_score": 0,
-            "postech_score": 0,
-            "score": 100,
-            "is_competition": 1,
-            "description": ""
-
-        }
-    },
-    {
-        "pk": 11,
-        "model": "main.Event",
-        "fields": {
-            "name": "SCIENCE QUIZ",
-            "winner": 3,
-            "start_time": "2015-09-19 13:30:00",
-            "end_time": "2015-09-19 15:30:00",
-            "building": "N3, Sports Complex",
-            "kaist_score": 0,
-            "postech_score": 0,
-            "score": 100,
-            "is_competition": 1,
-            "description": ""
-
-        }
-    },
-    {
-        "pk": 12,
-        "model": "main.Event",
-        "fields": {
-            "name": "FOOTBALL",
-            "winner": 3,
-            "start_time": "2015-09-19 15:30:00",
-            "end_time": "2015-09-19 17:30:00",
-            "building": "E17, Stadium",
-            "kaist_score": 0,
-            "postech_score": 0,
-            "score": 100,
-            "is_competition": 1,
-            "description": ""
-
-        }
-    },
-    {
-        "pk": 13,
-        "model": "main.Event",
-        "fields": {
             "name": "CLOSING CEREMONY",
             "winner": 3,
-            "start_time": "2015-09-19 18:30:30",
-            "end_time": "2015-09-19 21:00:00",
-            "building": "W9, Outdoor Theater",
+            "start_time": "2016-09-24 19:00:00",
+            "end_time": "2016-09-24 21:00:00",
+            "building": "Main Stage",
             "kaist_score": 0,
             "postech_score": 0,
             "score": 0,
