@@ -35,4 +35,8 @@ urlpatterns = patterns('',
         # Board page for supporters application
         url(r'^board/$', 'main.views.board'),
         url(r'^board/write/$', 'main.views.board_write'),
+
+        # Toto event page
+        url(r'^toto/$', 'main.views.toto'),
+        url(r'^toto/write/$', 'main.views.toto_write'),
 )

@@ -16,14 +16,18 @@
 {% block home %}sel{% endblock %}
 
 {% block leftdown %}
+	<!--<section class="apply today-schedule">
+		<h2>APPLY</h2>
+		<div>
+			<a href="/board/">Apply for <span style="color:#FF3F80;">Supporters!</span></a>
+		</div>
+		</section>-->
     <section class="today-schedule">
         <h2>TODAY</h2>
+		<div>
+			<a href="/board/">Apply for <span style="color:#FF3F80;">Supporters!</span></a>
+		</div>
         <ul class="list">
-            
-            <li class="now">
-                <a href="/board/">Apply for Supporters!</a>
-            </li>
-            
             {% for event in today_events %}
             <li{% if event in live %} class="now"{% endif %}>
                 <h4>{{ event.name }}</h4>
@@ -31,7 +35,16 @@
             </li>
             {% endfor %}
         </ul>
-    </section>
+	</section>
+	<section class="event today-schedule" style="margin-top:14px;">
+		<h2>EVENT</h2>
+		<ul class="list">
+			
+			<li class="toto now">
+				<a href="/toto/">TOTO EVENT!</a>
+			</li>
+		</ul>
+	</section>
 {% endblock %}
 
 {% block right %}

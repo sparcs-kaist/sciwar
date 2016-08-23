@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" media="screen" href="{{STATIC_URL}}css/board.css">
+<link rel="stylesheet" type="text/css" media="screen" href="{{STATIC_URL}}css/toto.css">
+{% endblock %}
+
+{% block script %}
+<script>
+	function get_winner1()
+	{
+		var x = Number(document.getElementsByName("score1_1")[0].value);
+		var y = Number(document.getElementsByName("score1_2")[0].value);
+		if (x > y) {
+			document.getElementsByName("winner1")[0].innerHTML = "KAIST";
+		} else if (y > x) {
+			document.getElementsByName("winner1")[0].innerHTML = "POSTECH";
+		} else {
+			document.getElementsByName("winner1")[0].innerHTML = "NONE";
+		}
+		show_formbutton();
+	}
+	function get_winner2()
+	{
+		var x = Number(document.getElementsByName("score2_1")[0].value);
+		var y = Number(document.getElementsByName("score2_2")[0].value);
+		if (x > y) {
+			document.getElementsByName("winner2")[0].innerHTML = "KAIST";
+		} else if (y > x) {
+			document.getElementsByName("winner2")[0].innerHTML = "POSTECH";
+		} else {
+			document.getElementsByName("winner2")[0].innerHTML = "NONE";
+		}
+		show_formbutton();
+	}
+	function get_winner3()
+	{
+		var x = Number(document.getElementsByName("score3_1")[0].value);
+		var y = Number(document.getElementsByName("score3_2")[0].value);
+		if (x > y) {
+			document.getElementsByName("winner3")[0].innerHTML = "KAIST";
+		} else if (y > x) {
+			document.getElementsByName("winner3")[0].innerHTML = "POSTECH";
+		} else {
+			document.getElementsByName("winner3")[0].innerHTML = "NONE";
+		}
+		show_formbutton();
+	}
+	function get_winner4()
+	{
+		var x = Number(document.getElementsByName("score4_1")[0].value);
+		var y = Number(document.getElementsByName("score4_2")[0].value);
+		if (x > y) {
+			document.getElementsByName("winner4")[0].innerHTML = "KAIST";
+		} else if (y > x) {
+			document.getElementsByName("winner4")[0].innerHTML = "POSTECH";
+		} else {
+			document.getElementsByName("winner4")[0].innerHTML = "NONE";
+		}
+		show_formbutton();
+	}
+	function show_formbutton()
+	{
+		if (!isNaN(document.getElementsByName("score1_1")[0].value) &&
+		!isNaN(document.getElementsByName("score1_2")[0].value) &&
+		!isNaN(document.getElementsByName("score2_1")[0].value) &&
+		!isNaN(document.getElementsByName("score2_2")[0].value) &&
+		!isNaN(document.getElementsByName("score3_1")[0].value) &&
+		!isNaN(document.getElementsByName("score3_2")[0].value) &&
+		!isNaN(document.getElementsByName("score4_1")[0].value) &&
+		!isNaN(document.getElementsByName("score4_2")[0].value) &&
+		document.getElementsByName("score1_1")[0].value !== "" &&
+		document.getElementsByName("score1_2")[0].value !== "" &&
+		document.getElementsByName("score2_1")[0].value !== "" &&
+		document.getElementsByName("score2_2")[0].value !== "" &&
+		document.getElementsByName("score3_1")[0].value !== "" &&
+		document.getElementsByName("score3_2")[0].value !== "" &&
+		document.getElementsByName("score4_1")[0].value !== "" &&
+		document.getElementsByName("score4_2")[0].value !== "" &&
+		document.getElementsByName("student_id")[0].value.length == 8 &&
+		document.getElementsByName("name")[0].value !== "")
+			document.getElementsByClassName("form-button")[0].disabled = false;
+		else {
+			document.getElementsByClassName("form-button")[0].disabled = true;
+		}
+	}
+</script>
+{% endblock %}
+
+{% block right %}
+<div class="board-container">
+    <form class="board-form" method="post" action="/toto/write/" id="apply-form">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="control-label">Student ID</label>
+            <input name="student_id" class="form-control-small" onchange="show_formbutton()" placeholder="ex)20999999">
+        </div>
+        <div class="form-group">
+            <label class="control-label">Name</label>
+            <input name="name" class="form-control-small" onchange="show_formbutton()" placeholder="ex)김카이">
+		</div>
+		<div class="toto-content">
+			<h4 class="table-title">스포츠 종목 점수맞추기</h4>
+			<table class="toto-table board-table">
+				<thead>
+					<tr>
+						<th></th>
+						<th>KAIST</th>
+						<th>POSTECH</th>
+						<th>WINNER</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Football</td>
+						<td><input name="score1_1" placeholder="ex)4" onchange="get_winner1()"></td>
+						<td><input name="score1_2" placeholder="ex)0" onchange="get_winner1()"></td>
+						<td class="winner"><span name="winner1">NONE</span></td>
+					</tr>
+					<tr>
+						<td>Baseball</td>
+						<td><input name="score2_1" placeholder="ex)12" onchange="get_winner2()"></td>
+						<td><input name="score2_2" placeholder="ex)1" onchange="get_winner2()"></td>
+						<td class="winner"><span name="winner2">NONE</span></td>
+					</tr>
+					<tr>
+						<td>Basketball</td>
+						<td><input name="score3_1" placeholder="ex)67" onchange="get_winner3()"></td>
+						<td><input name="score3_2" placeholder="ex)51" onchange="get_winner3()"></td>
+						<td class="winner"><span name="winner3">NONE</span></td>
+					</tr>
+					<tr>
+						<td>League of Legend</td>
+						<td><input name="score4_1" placeholder="ex)3" onchange="get_winner4()"></td>
+						<td><input name="score4_2" placeholder="ex)0" onchange="get_winner4()"></td>
+						<td class="winner"><span name="winner4">NONE</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<h4 class="table-title">과학경기 승패 맞추기</h4>
+			<table class="toto-table board-table quater">
+				<thead>
+					<tr>
+						<th></th>
+						<th>KAIST win</th>
+						<th>POSTECH win</th>
+						<th>DRAW</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Science Quiz</td>
+						<td><input type="radio" class="radio-button" name="winner5" value="1"></td>
+						<td><input type="radio" class="radio-button" name="winner5" value="2"></td>
+						<td><input type="radio" class="radio-button" name="winner5" value="3" checked></td>
+					</tr>
+					<tr>
+						<td>AI</td>
+						<td><input type="radio" class="radio-button" name="winner6" value="1"></td>
+						<td><input type="radio" class="radio-button" name="winner6" value="2"></td>
+						<td><input type="radio" class="radio-button" name="winner6" value="3" checked></td>
+					</tr>
+					<tr>
+						<td>Hacking Contest</td>
+						<td><input type="radio" class="radio-button" name="winner7" value="1"></td>
+						<td><input type="radio" class="radio-button" name="winner7" value="2"></td>
+						<td><input type="radio" class="radio-button" name="winner7" value="3" checked></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<input class="board-button right form-button" type="submit" value="Apply" disabled/>
+    </form>
+</div>
+{% endblock %}

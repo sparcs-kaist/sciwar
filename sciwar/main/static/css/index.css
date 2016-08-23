@@ -63,7 +63,24 @@
 #option section.today-schedule .list li.now{
 	background:#f5f5f5 url("/media/res/img_ball_sel.png") 12px 50% no-repeat;
 }
-
+#option section.event .list li a {
+    font-size: 20px !important;
+}
+#option section.apply {
+    margin-bottom:14px;
+}
+#option section div {
+    background-color:#F5F5F5;
+    padding:10px;
+    text-align:center;
+    margin-left:12px;
+    margin-right:12px;
+}
+#option section div a {
+    font-size:27px !important;
+    text-transform:uppercase;
+    color:#A52222;
+}
 /* CONTENT */
 
 /* CONTENT - LIVE */

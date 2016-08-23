@@ -8,8 +8,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 
 def main_page(request):
-    today_events = Event.objects.filter(start_time__day = datetime.today().day + 0).order_by('start_time')
-
+    today_events = Event.objects.filter(start_time__day = datetime.today().day, start_time__month = datetime.today().month, start_time__year = datetime.today().year).order_by('start_time')
     current_events = Event.objects.filter(
         start_time__lte = datetime.now()
     ).filter(end_time__gte = datetime.now())
@@ -75,7 +74,7 @@ def map_page(request):
             'building': e.building
         }
         events.append(event_item)
-    return render(request, 'map.html', {"state":_get_state(), "events": events})
+    return render(request, 'map_postech.html', {"state":_get_state(), "events": events})
 
 
 def video_page(request):
@@ -182,7 +181,7 @@ def _get_state():
             state["KAIST"] += event.score
         elif event.winner == 2:
             state["POSTECH"] += event.score
-    state["DONE"] = len(Event.objects.filter(end_time__gte = datetime.now()))
+    state["DONE"] = len(Event.objects.filter(end_time__lte = datetime.now()))
     state["live"] = _count_active
     return state
 
@@ -287,7 +286,7 @@ def _get_user_key():
 
 
 def board(request):
-    board_contents = BoardContent.objects.all().order_by('time')
+    board_contents = BoardContent.objects.all().order_by('-time')[:20]
 
     contents = []
     for content in board_contents:
@@ -312,4 +311,71 @@ def board_write(request):
 
         board_content = BoardContent(title=title, content=content)
         board_content.save()
-        return render(request, 'board.html', {"state": _get_state()})
+        return HttpResponseRedirect('/board/')
+
+def toto(request):
+    toto_contents = TotoContent.objects.all().order_by('-time')[:20]
+
+    contents = []
+    for content in toto_contents:
+        item = {
+            'id': content.id,
+            'student_id': content.student_id,
+            'time': content.time
+        }
+        contents.append(content)
+    state = _get_state()
+    return render(request, 'toto.html', {
+        "state": _get_state(),
+        "contents": contents})
+
+def toto_write(request):
+    if request.method == "GET":
+        return render(request, 'toto_write.html', {"state": _get_state()})
+    if request.method == "POST":
+        student_id = request.POST.get('student_id')
+        name = request.POST.get('name')
+        score1_1 = int(request.POST.get('score1_1'))
+        score1_2 = int(request.POST.get('score1_2'))
+        score2_1 = int(request.POST.get('score2_1'))
+        score2_2 = int(request.POST.get('score2_2'))
+        score3_1 = int(request.POST.get('score3_1'))
+        score3_2 = int(request.POST.get('score3_2'))
+        score4_1 = int(request.POST.get('score4_1'))
+        score4_2 = int(request.POST.get('score4_2'))
+        if score1_1 > score1_2: winner1 = 1
+        elif score1_1 < score1_2: winner1 = 2
+        else: winner1 = 3
+        if score2_1 > score2_2: winner2 = 1
+        elif score2_1 < score2_2: winner2 = 2
+        else: winner2 = 3
+        if score3_1 > score3_2: winner3 = 1
+        elif score3_1 < score3_2: winner3 = 2
+        else: winner3 = 3
+        if score4_1 > score4_2: winner4 = 1
+        elif score4_1 < score4_2: winner4 = 2
+        else: winner4 = 3
+        winner5 = int(request.POST.get('winner5'))
+        winner6 = int(request.POST.get('winner6'))
+        winner7 = int(request.POST.get('winner7'))
+        toto_content = TotoContent(
+                student_id=student_id,
+                name=name,
+                score1_1=score1_1,
+                score1_2=score1_2,
+                score2_1=score2_1,
+                score2_2=score2_2,
+                score3_1=score3_1,
+                score3_2=score3_2,
+                score4_1=score4_1,
+                score4_2=score4_2,
+                winner1=winner1,
+                winner2=winner2,
+                winner3=winner3,
+                winner4=winner4,
+                winner5=winner5,
+                winner6=winner6,
+                winner7=winner7)
+        toto_content.save()
+        #return render(request, 'toto.html', {"state": _get_state()})
+        return HttpResponseRedirect('/toto/')

@@ -25,6 +25,9 @@ class LiveUserAdmin(admin.ModelAdmin):
 class BoardContentAdmin(admin.ModelAdmin):
     list_display = ('title', 'content')
 
+class TotoContentAdmin(admin.ModelAdmin):
+    list_display = ('student_id', 'name', 'score1_1', 'score1_2', 'score2_1', 'score2_2', 'score3_1', 'score3_2', 'score4_1', 'score4_2', 'winner1', 'winner2', 'winner3', 'winner4', 'winner5', 'winner6', 'winner7')
+
 admin.site.register(Player, PlayerAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Event, EventAdmin)
@@ -32,3 +35,4 @@ admin.site.register(Info, InfoAdmin)
 admin.site.register(CheerMessage, CheerMessageAdmin)
 admin.site.register(LiveUser, LiveUserAdmin)
 admin.site.register(BoardContent, BoardContentAdmin)
+admin.site.register(TotoContent, TotoContentAdmin)

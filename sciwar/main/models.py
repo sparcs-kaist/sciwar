@@ -80,3 +80,26 @@ class BoardContent(models.Model):
 
     def __unicode__(self):
         return u'%s : %s' % (self.title, self.content)
+
+class TotoContent(models.Model):
+    student_id = models.CharField(max_length=8)
+    name = models.CharField(max_length=30)
+    score1_1 = models.SmallIntegerField()
+    score1_2 = models.SmallIntegerField()
+    score2_1 = models.SmallIntegerField()
+    score2_2 = models.SmallIntegerField()
+    score3_1 = models.SmallIntegerField()
+    score3_2 = models.SmallIntegerField()
+    score4_1 = models.SmallIntegerField()
+    score4_2 = models.SmallIntegerField()
+    winner1 = models.SmallIntegerField(choices=SCHOOLS)
+    winner2 = models.SmallIntegerField(choices=SCHOOLS)
+    winner3 = models.SmallIntegerField(choices=SCHOOLS)
+    winner4 = models.SmallIntegerField(choices=SCHOOLS)
+    winner5 = models.SmallIntegerField(choices=SCHOOLS)
+    winner6 = models.SmallIntegerField(choices=SCHOOLS)
+    winner7 = models.SmallIntegerField(choices=SCHOOLS)
+    time = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return u'%s' % (self.name)

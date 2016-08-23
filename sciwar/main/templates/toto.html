@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" media="screen" href="{{STATIC_URL}}css/board.css">
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="{{STATIC_URL}}js/jquery.timeago.js"></script>
+<script>
+    $(document).ready(function() {
+        $("abbr.timeago").timeago();
+    });
+</script>
+{% endblock %}
+
+{% block right %}
+<div class="board-container">
+    <p class="board-title">2016 KAIST-POSTECH Science-War TOTO EVENT!</p>
+    <a href="/toto/write/" class="board-button right">Apply</a>
+    <table class="board-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Student ID</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for content in contents %}
+            <tr>
+                <td>{{ content.id }}</td>
+                <td>{{ content.student_id }}</td>
+                <td>
+                    <abbr class="timeago" title={{ content.time|date:"c" }}>{{ content.time }}</abbr>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+{% endblock %}
