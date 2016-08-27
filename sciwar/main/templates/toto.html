@@ -41,12 +41,12 @@
 		<script type="text/javascript">
 			var page_no = {{ page_no }};
 			if (parseInt(page_no / 10) > 0) {
-				document.write("<li><a href=\'?content_no=" + (parseInt(page_no / 10) - 10) * 20 + "\' class=\'paging-next-pagegroup-btn\'>" + '<<' + "</a></li>");
+				document.write("<li><a href=\'?content_no=" + (parseInt((page_no-1) / 10) - 10) * 20 + "\' class=\'paging-next-pagegroup-btn\'>" + '<<' + "</a></li>");
 			}
 			else {
 				document.write("<li><a href=\'?content_no=0\' class=\'paging-prev-pagegroup-btn\'>" + '<<' + "</a></li>");
 			}
-			for (page = parseInt(page_no / 10); page < parseInt(page_no / 10) + 10; page++) {
+			for (page = parseInt((page_no-1) / 10)*10; page < parseInt((page_no-1) / 10)*10 + 10; page++) {
 				if (page >= {{ total_page }}) {
 					break;
 				}
@@ -57,11 +57,11 @@
 					document.write("<li><a href=\'?content_no=" + page * 20 + "\' class=\'paging\'>" + (page+1) + "</a></li>");
 				}
 			}
-			if (page_no / 10 + 9 < {{ total_page }}) {
-				document.write("<li><a href=\'?content_no=" + (parseInt(page_no / 10) + 10) * 20 + "\' class=\'paging-next-pagegroup-btn\'>" + '>>' + "</a></li>");
+			if (parseInt((page_no-1) / 10)*10 + 10 < {{ total_page }}) {
+				document.write("<li><a href=\'?content_no=" + (parseInt((page_no-1) / 10)*10 + 10) * 20 + "\' class=\'paging-next-pagegroup-btn\'>" + '>>' + "</a></li>");
 			}
 			else {
-				document.write("<li><a href=\'?content_no=" + {{ total_page }} * 20 + "\' class=\'paging-next-pagegroup-btn\'>" + '>>' + "</a></li>");
+				document.write("<li><a href=\'?content_no=" + ({{ total_page }} - 1) * 20 + "\' class=\'paging-next-pagegroup-btn\'>" + '>>' + "</a></li>");
 			}
 		</script>
 	</ul>

@@ -308,7 +308,7 @@ def board(request):
         contents.append(content)
     state = _get_state()
     page_no = content_no / 20 + 1
-    total_page = total_num / 20 + 1
+    total_page = (total_num-1) / 20 + 1
     return render(request, 'board.html', {
         "state": _get_state(),
         "contents": contents,
@@ -352,7 +352,7 @@ def toto(request):
         contents.append(content)
     state = _get_state()
     page_no = content_no / 20 + 1
-    total_page = total_num / 20 + 1
+    total_page = (total_num-1) / 20 + 1 
     return render(request, 'toto.html', {
         "state": _get_state(),
         "contents": contents,
