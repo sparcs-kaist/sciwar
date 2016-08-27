@@ -40,8 +40,8 @@
 	<ul class="paging-container">
 		<script type="text/javascript">
 			var page_no = {{ page_no }};
-			if (parseInt(page_no / 10) > 0) {
-				document.write("<li><a href=\'?content_no=" + (parseInt((page_no-1) / 10) - 10) * 20 + "\' class=\'paging-next-pagegroup-btn\'>" + '<<' + "</a></li>");
+			if (parseInt((page_no-1) / 10) > 0) {
+				document.write("<li><a href=\'?content_no=" + (parseInt((page_no-1) / 10)*10 - 10) * 20 + "\' class=\'paging-next-pagegroup-btn\'>" + '<<' + "</a></li>");
 			}
 			else {
 				document.write("<li><a href=\'?content_no=0\' class=\'paging-prev-pagegroup-btn\'>" + '<<' + "</a></li>");
