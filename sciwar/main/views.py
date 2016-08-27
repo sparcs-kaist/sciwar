@@ -284,12 +284,22 @@ def _get_user_key():
     except Exception, e:
         return None
 
-
 def board(request):
-    board_contents = BoardContent.objects.all().order_by('-time')[:20]
+    board_contents = BoardContent.objects.all().order_by('-time')
+    total_num = len(board_contents)
+    try:
+        content_no = request.GET.get('content_no')
+        content_no = int(content_no)
+    except:
+        content_no = 0
+    if content_no < 0:
+        content_no = 0
+    if content_no > total_num:
+        content_no = total_num - total_num % 20
+    contents_list = board_contents[content_no:min(content_no + 20, total_num)]
 
     contents = []
-    for content in board_contents:
+    for content in contents_list:
         item = {
             'id': content.id,
             'title': content.title,
@@ -297,9 +307,14 @@ def board(request):
         }
         contents.append(content)
     state = _get_state()
+    page_no = content_no / 20 + 1
+    total_page = total_num / 20 + 1
     return render(request, 'board.html', {
         "state": _get_state(),
-        "contents": contents})
+        "contents": contents,
+        "page_no": page_no,
+        "total_page": total_page
+        })
 
 
 def board_write(request):
@@ -314,10 +329,21 @@ def board_write(request):
         return HttpResponseRedirect('/board/')
 
 def toto(request):
-    toto_contents = TotoContent.objects.all().order_by('-time')[:20]
+    toto_contents = TotoContent.objects.all().order_by('-time')
+    total_num = len(toto_contents)
+    try:
+        content_no = request.GET.get('content_no')
+        content_no = int(content_no)
+    except:
+        content_no = 0
+    if content_no < 0:
+        content_no = 0
+    if content_no > total_num:
+        content_no = total_num - total_num % 20
+    contents_list = toto_contents[content_no:min(content_no + 20, total_num)]
 
     contents = []
-    for content in toto_contents:
+    for content in contents_list:
         item = {
             'id': content.id,
             'student_id': content.student_id,
@@ -325,9 +351,14 @@ def toto(request):
         }
         contents.append(content)
     state = _get_state()
+    page_no = content_no / 20 + 1
+    total_page = total_num / 20 + 1
     return render(request, 'toto.html', {
         "state": _get_state(),
-        "contents": contents})
+        "contents": contents,
+        "page_no": page_no,
+        "total_page": total_page
+        })
 
 def toto_write(request):
     if request.method == "GET":
