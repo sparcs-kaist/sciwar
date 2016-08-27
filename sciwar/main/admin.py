@@ -23,10 +23,13 @@ class LiveUserAdmin(admin.ModelAdmin):
     list_display = ('token','last_access')
 
 class BoardContentAdmin(admin.ModelAdmin):
-    list_display = ('title', 'content')
+    list_display = ('id', 'title', 'content')
+    search_fields = ['title', 'content']
 
 class TotoContentAdmin(admin.ModelAdmin):
     list_display = ('student_id', 'name', 'score1_1', 'score1_2', 'score2_1', 'score2_2', 'score3_1', 'score3_2', 'score4_1', 'score4_2', 'winner1', 'winner2', 'winner3', 'winner4', 'winner5', 'winner6', 'winner7')
+    search_fields = ['student_id', 'name']
+
 
 admin.site.register(Player, PlayerAdmin)
 admin.site.register(Video, VideoAdmin)
