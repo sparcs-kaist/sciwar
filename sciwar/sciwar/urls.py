@@ -38,5 +38,5 @@ urlpatterns = patterns('',
 
         # Toto event page
         url(r'^toto/$', 'main.views.toto'),
-        url(r'^toto/write/$', 'main.views.toto_write'),
+        #url(r'^toto/write/$', 'main.views.toto_write'),
 )
