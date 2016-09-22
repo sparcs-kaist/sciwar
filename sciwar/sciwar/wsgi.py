@@ -20,7 +20,7 @@ import site
 sys.path.append('/var/www/sciwar/sciwar')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "sciwar.settings")
 
-site.addsitedir('/home/sciwar/sciwar/env/lib/python2.7/site-packages')
+site.addsitedir('/var/www/sciwar/sciwar/env/lib/python2.7/site-packages')
 
 
 # This application object is used by any WSGI server configured to use this
