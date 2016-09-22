@@ -19,28 +19,28 @@
         "pk": 2,
         "model": "main.Event",
         "fields": {
-            "name":"OPENING CEREMONY",
-            "winner":3,
-            "start_time":"2016-09-23 13:00:00",
-            "end_time":"2016-09-23 16:00:00",
-            "building":"Auditorium",
-            "kaist_score":0,
-            "postech_score":0,
-            "score":0,
-            "is_competition":0,
-            "description":""
-
+            "name": "League Of Legends",
+            "winner": 3,
+            "start_time": "2016-09-23 20:20:00",
+            "end_time": "2016-09-23 22:50:00",
+            "building": "Main Stage",
+            "kaist_score": 0,
+            "postech_score": 0,
+            "score": 100,
+            "is_competition": 1,
+            "description": ""
+            
         }
     },
     {
         "pk": 3,
         "model": "main.Event",
         "fields": {
-            "name": "FOOTBALL",
+            "name": "BASEBALL",
             "winner": 3,
-            "start_time": "2016-09-23 16:00:00",
-            "end_time": "2016-09-23 18:00:00",
-            "building": "Main Stadium",
+            "start_time": "2016-09-24 10:00:00",
+            "end_time": "2016-09-24 12:30:00",
+            "building": "Pocheol Middle School",
             "kaist_score": 0,
             "postech_score": 0,
             "score": 100,
@@ -53,16 +53,16 @@
         "pk": 4,
         "model": "main.Event",
         "fields": {
-            "name": "SOCIALIZING EVENTS",
-            "winner": 3,
-            "start_time": "2016-09-23 19:00:00",
-            "end_time": "2016-09-24 00:30:00",
-            "building": "Main Stage",
-            "kaist_score": 0,
-            "postech_score": 0,
-            "score": 0,
-            "is_competition": 0,
-            "description": ""
+            "name":"BASKETBALL",
+            "winner":3,
+            "start_time":"2016-09-24 13:00:00",
+            "end_time":"2016-09-24 15:00:00",
+            "building":"Gymnasium",
+            "kaist_score":0,
+            "postech_score":0,
+            "score":100,
+            "is_competition":1,
+            "description":""
 
         }
     },
@@ -70,11 +70,11 @@
         "pk": 5,
         "model": "main.Event",
         "fields": {
-            "name": "A.I.",
+            "name": "SCIENCE QUIZ",
             "winner": 3,
-            "start_time": "2016-09-23 19:00:00",
-            "end_time": "2016-09-24 00:30:00",
-            "building": "Main Stage",
+            "start_time": "2016-09-24 16:30:00",
+            "end_time": "2016-09-24 18:30:00",
+            "building": "Gymnasium",
             "kaist_score": 0,
             "postech_score": 0,
             "score": 100,
@@ -87,32 +87,32 @@
         "pk": 6,
         "model": "main.Event",
         "fields": {
-            "name": "League Of Legends",
+            "name": "FOOTBALL",
             "winner": 3,
-            "start_time": "2016-09-23 19:00:00",
-            "end_time": "2016-09-24 00:30:00",
-            "building": "Main Stage",
+            "start_time": "2016-09-24 17:00:00",
+            "end_time": "2016-09-24 19:00:00",
+            "building": "Main Stadium",
             "kaist_score": 0,
             "postech_score": 0,
             "score": 100,
             "is_competition": 1,
             "description": ""
-            
+
         }
     },
     {
         "pk": 7,
         "model": "main.Event",
         "fields": {
-            "name": "BASEBALL",
+            "name": "SOCIALIZING EVENTS",
             "winner": 3,
-            "start_time": "2016-09-24 10:30:00",
-            "end_time": "2016-09-24 13:00:00",
-            "building": "Pocheol Middle School",
+            "start_time": "2016-09-24 20:20:00",
+            "end_time": "2016-09-24 22:00:00",
+            "building": "Main Stage",
             "kaist_score": 0,
             "postech_score": 0,
-            "score": 100,
-            "is_competition": 1,
+            "score": 0,
+            "is_competition": 0,
             "description": ""
 
         }
@@ -121,28 +121,11 @@
         "pk": 8,
         "model": "main.Event",
         "fields": {
-            "name":"BASKETBALL",
-            "winner":3,
-            "start_time":"2016-09-24 13:30:00",
-            "end_time":"2016-09-24 15:30:00",
-            "building":"Gymnasium",
-            "kaist_score":0,
-            "postech_score":0,
-            "score":100,
-            "is_competition":1,
-            "description":""
-
-        }
-    },
-    {
-        "pk": 9,
-        "model": "main.Event",
-        "fields": {
-            "name": "SCIENCE QUIZ",
+            "name": "A.I.",
             "winner": 3,
-            "start_time": "2016-09-24 16:00:00",
-            "end_time": "2016-09-24 18:00:00",
-            "building": "Gymnasium",
+            "start_time": "2016-09-24 20:20:00",
+            "end_time": "2016-09-24 20:50:00",
+            "building": "Main Stage",
             "kaist_score": 0,
             "postech_score": 0,
             "score": 100,
@@ -152,13 +135,13 @@
         }
     },
     {
-        "pk": 10,
+        "pk": 9,
         "model": "main.Event",
         "fields": {
             "name": "CLOSING CEREMONY",
             "winner": 3,
-            "start_time": "2016-09-24 19:00:00",
-            "end_time": "2016-09-24 21:00:00",
+            "start_time": "2016-09-24 21:30:00",
+            "end_time": "2016-09-24 22:00:00",
             "building": "Main Stage",
             "kaist_score": 0,
             "postech_score": 0,
