@@ -24,9 +24,9 @@
 		</section>-->
     <section class="today-schedule">
         <h2>TODAY</h2>
-		<div>
+		<!--<div>
 			<a href="/board/">Apply for <span style="color:#FF3F80;">Supporters!</span></a>
-		</div>
+			</div>-->
         <ul class="list">
             {% for event in today_events %}
             <li{% if event in live %} class="now"{% endif %}>
@@ -68,7 +68,7 @@
             <button class="flip-hide">hide</button>
             <h4>{{ event.building }}</h4>
             <p>
-                <img class="map-image" src="{{MEDIA_URL}}res/map_{{ event.building }}.png">
+                <img class="map-image" src="{{MEDIA_URL}}res/map_postech_{{ event.building }}.png">
             </p>
         </section>
         {% if event.is_competition %}
